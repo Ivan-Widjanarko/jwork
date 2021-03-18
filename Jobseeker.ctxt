@@ -12,6 +12,7 @@ comment11.target=void\ setJoinDate(java.lang.String)
 comment11.text=\r\n\ method\ for\ setJoinDate\r\n\ @param\ joinDate\ Date\ when\ the\ Jobseeker\ join\ the\ app\r\n
 comment12.params=
 comment12.target=void\ printData()
+comment12.text=method\ for\ print\ Jobseeker's\ name
 comment2.params=
 comment2.target=int\ getId()
 comment2.text=\r\n\ method\ for\ getId\r\n\ @return\ id\ Jobseeker's\ ID\r\n

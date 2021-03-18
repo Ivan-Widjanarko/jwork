@@ -12,6 +12,7 @@ comment11.target=void\ setCategory(java.lang.String)
 comment11.text=\r\n\ method\ for\ setCategory\r\n\ @param\ category\ Job's\ category\r\n
 comment12.params=
 comment12.target=void\ printData()
+comment12.text=method\ for\ printData
 comment2.params=
 comment2.target=int\ getId()
 comment2.text=\r\n\ method\ for\ getId\r\n\ @return\ \ \ \ Recruiter's\ ID\r\n

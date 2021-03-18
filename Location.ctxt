@@ -24,4 +24,5 @@ comment7.target=void\ setDescription(java.lang.String)
 comment7.text=\r\n\ method\ for\ setDescription\r\n\ @param\ description\ Recruiter's\ description\r\n
 comment8.params=
 comment8.target=void\ printData()
+comment8.text=method\ for\ print\ Recruiter's\ province
 numComments=9

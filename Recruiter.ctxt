@@ -12,6 +12,7 @@ comment11.target=void\ setLocation(Location)
 comment11.text=\r\n\ method\ for\ setLocation\r\n\ @param\ location\ Recruiter's\ location\r\n
 comment12.params=
 comment12.target=void\ printData()
+comment12.text=method\ for\ print\ Recruiter's\ nama
 comment2.params=
 comment2.target=int\ getId()
 comment2.text=\r\n\ method\ for\ getId\r\n\ @return\ \ \ \ Recruiter's\ ID\r\n
