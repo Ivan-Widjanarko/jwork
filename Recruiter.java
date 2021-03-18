@@ -3,20 +3,24 @@
  * Class for Recruiter
  *
  * @author Ivan Widjanarko
- * @version 04-21-2001
+ * @version 18-03-2021
  */
 public class Recruiter
 {
-    // instance variables - replace the example below with your own
     private int id;
     private String name, email, phoneNumber;
+    private Location location;
 
     /**
      * Constructor for objects of class Recruiter
      */
-    public void Recruiter()
+    public Recruiter(int id, String name, String email, String phoneNumber, Location location)
     {
-        
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.location = location;
     }
 
     /**
@@ -24,7 +28,7 @@ public class Recruiter
      */
     public int getId()
     {
-        return 0;
+        return id;
     }
     
     /**
@@ -32,7 +36,7 @@ public class Recruiter
      */
     public String getName()
     {
-        return "oop";
+        return name;
     }
     
     /**
@@ -40,7 +44,7 @@ public class Recruiter
      */
     public String getEmail()
     {
-        return "oop";
+        return email;
     }
     
     /**
@@ -48,7 +52,15 @@ public class Recruiter
      */
     public String getPhoneNumber()
     {
-        return "oop";
+        return phoneNumber;
+    }
+    
+    /**
+     * method for getLocation
+     */
+    public Location getLocation()
+    {
+        return location;
     }
     
     /**
@@ -56,7 +68,7 @@ public class Recruiter
      */
     public void setId(int id)
     {
-        
+        this.id = id;
     }
     
     /**
@@ -64,7 +76,7 @@ public class Recruiter
      */
     public void setEmail(String email)
     {
-        
+        this.name = name;
     }
     
     /**
@@ -72,7 +84,7 @@ public class Recruiter
      */
     public void setName(String name)
     {
-        
+        this.email = email;
     }
     
     /**
@@ -80,6 +92,22 @@ public class Recruiter
      */
     public void setPhoneNumber(String phoneNumber)
     {
-        
+        this.phoneNumber = phoneNumber;
+    }
+    
+    /**
+     * method for setLocation
+     */
+    public void setLocation(Location location)
+    {
+        this.location = location;
+    }
+    
+    /**
+     * method for printData
+     */
+    public void printData()
+    {
+        System.out.println(name);
     }
 }

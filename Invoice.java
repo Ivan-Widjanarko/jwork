@@ -3,52 +3,64 @@
  * Class for Invoice
  *
  * @author Ivan Widjanarko
- * @version 04-03-2021
+ * @version 18-03-2021
  */
 public class Invoice
 {
-    // instance variables - replace the example below with your own
     private int id, idJob, totalFee;
     private String date;
+    private Jobseeker jobseeker;
 
     /**
      * Constructor for objects of class Invoice
      */
-    public void Invoice()
+    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker)
     {
-        
+        this.id = id;
+        this.idJob = idJob;
+        this.date = date;
+        this.totalFee = totalFee;
+        this.jobseeker = jobseeker;
     }
 
-     /**
+    /**
      * method for getId
      */
     public int getId()
     {
-        return 0;
+        return id;
     }
     
-     /**
-     * method for getJobId
+    /**
+     * method for getIdJob
      */
-    public int getJobId()
+    public int getIdJob()
     {
-        return 0;
+        return idJob;
     }
     
-     /**
+    /**
      * method for getDate
      */
     public String getDate()
     {
-        return "oop";
+        return date;
     }
     
-     /**
+    /**
      * method for getTotalFee
      */
     public int getTotalFee()
     {
-        return 0;
+        return totalFee;
+    }
+    
+    /**
+     * method for getJobseeker
+     */
+    public Jobseeker getJobseeker()
+    {
+        return jobseeker;
     }
     
     /**
@@ -56,15 +68,15 @@ public class Invoice
      */
     public void setId(int id)
     {
-        
+        this.id = id;
     }
     
     /**
-     * method for setIdJobs
+     * method for setIdJob
      */
-    public void setIdJobs(int idJobs)
+    public void setIdJob(int idJob)
     {
-        
+        this.idJob = idJob;
     }
     
     /**
@@ -72,13 +84,29 @@ public class Invoice
      */
     public void setDate(String date)
     {
-        
+        this.date = date;
     }
     
     /**
      * method for setTotalFee
      */
-    public void setTotalFee(String totalFee)
+    public void setTotalFee(int totalFee)
+    {
+        this.totalFee = totalFee;
+    }
+    
+    /**
+     * method for setJobseeker
+     */
+    public void setJobseeeker(Jobseeker jobseeker)
+    {
+        this.jobseeker = jobseeker;
+    }
+    
+    /**
+     * method for printData
+     */
+    public void printData()
     {
         
     }

@@ -3,20 +3,24 @@
  * Class for Job
  *
  * @author Ivan Widjanarko
- * @version 04-03-2021
+ * @version 18-03-2021
  */
 public class Job
 {
-    // instance variables - replace the example below with your own
     private int id, fee;
     private String name, category;
+    private Recruiter recruiter;
     
     /**
      * Constructor for objects of class Job
      */
-    public void Job()
+    public Job(int id, String name, Recruiter recruiter, int fee, String category)
     {
-        
+        this.id = id;
+        this.name = name;
+        this.recruiter = recruiter;
+        this.fee = fee;
+        this.category = category;
     }
 
     /**
@@ -24,7 +28,7 @@ public class Job
      */
     public int getId()
     {
-        return 0;
+        return id;
     }
     
     /**
@@ -32,7 +36,7 @@ public class Job
      */
     public String getName()
     {
-        return "oop";
+        return name;
     }
     
     /**
@@ -40,7 +44,7 @@ public class Job
      */
     public int getFee()
     {
-        return 0;
+        return fee;
     }
     
     /**
@@ -48,7 +52,15 @@ public class Job
      */
     public String getCategory()
     {
-        return "oop";
+        return category;
+    }
+    
+    /**
+     * method for getRecruiter
+     */
+    public Recruiter getRecruiter()
+    {
+        return recruiter;
     }
     
     /**
@@ -56,7 +68,7 @@ public class Job
      */
     public void setId(int id)
     {
-        
+        this.id = id;
     }
     
     /**
@@ -64,7 +76,15 @@ public class Job
      */
     public void setName(String name)
     {
-        
+        this.name = name;
+    }
+    
+    /**
+     * method for setRecruiter
+     */
+    public void setRecuiter(Recruiter recruiter)
+    {
+        this.recruiter = recruiter;
     }
     
     /**
@@ -72,13 +92,21 @@ public class Job
      */
     public void setFee(int Fee)
     {
-        
+        this.fee = fee;
     }
     
     /**
      * method for setCategory
      */
     public void setCategory(String category)
+    {
+        this.category = category;
+    }
+    
+    /**
+     * method for printData
+     */
+    public void printData()
     {
         
     }

@@ -3,20 +3,23 @@
  * Class for Jobseeker
  *
  * @author Ivan Widjanarko
- * @version 04-03-2021
+ * @version 18-03-2021
  */
 public class Jobseeker
 {
-    // instance variables - replace the example below with your own
     private int id;
     private String name, email, password, joinDate;
     
     /**
      * Constructor for objects of class Jobseeker
      */
-    public void Jobseeker()
+    public Jobseeker(int id, String name, String email, String password, String joinDate)
     {
-        
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.joinDate = joinDate;
     }
 
     /**
@@ -24,7 +27,7 @@ public class Jobseeker
      */
     public int getId()
     {
-        return 0;
+        return id;
     }
     
     /**
@@ -32,7 +35,7 @@ public class Jobseeker
      */
     public String getName()
     {
-        return "oop";
+        return name;
     }
     
     /**
@@ -40,7 +43,7 @@ public class Jobseeker
      */
     public String getEmail()
     {
-        return "oop";
+        return email;
     }
     
     /**
@@ -48,7 +51,7 @@ public class Jobseeker
      */
     public String getPassword()
     {
-        return "oop";
+        return password;
     }
     
     /**
@@ -56,7 +59,7 @@ public class Jobseeker
      */
     public String getJoinDate()
     {
-        return "oop";
+        return joinDate;
     }
     
     /**
@@ -97,6 +100,14 @@ public class Jobseeker
     public void setJoinDate(String joinDate)
     {
         
+    }
+    
+    /**
+     * method for printData
+     */
+    public void printData()
+    {
+        System.out.println(name);
     }
 }
     
