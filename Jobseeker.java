@@ -14,7 +14,7 @@ public class Jobseeker
     /**
      * Constructor for objects of class Jobseeker
      */
-    public static void Jobseeker()
+    public void Jobseeker()
     {
         
     }
@@ -22,7 +22,7 @@ public class Jobseeker
     /**
      * method for getId
      */
-    public static int getId()
+    public int getId()
     {
         return 0;
     }
@@ -30,7 +30,7 @@ public class Jobseeker
     /**
      * method for getName
      */
-    public static String getName()
+    public String getName()
     {
         return "oop";
     }
@@ -38,7 +38,7 @@ public class Jobseeker
     /**
      * method for getEmail
      */
-    public static String getEmail()
+    public String getEmail()
     {
         return "oop";
     }
@@ -46,7 +46,7 @@ public class Jobseeker
     /**
      * method for getPassword
      */
-    public static String getPassword()
+    public String getPassword()
     {
         return "oop";
     }
@@ -54,7 +54,7 @@ public class Jobseeker
     /**
      * method for getJoinDate
      */
-    public static String getJoinDate()
+    public String getJoinDate()
     {
         return "oop";
     }
@@ -62,7 +62,7 @@ public class Jobseeker
     /**
      * method for setId
      */
-    public static void setId(int id)
+    public void setId(int id)
     {
         
     }
@@ -70,7 +70,7 @@ public class Jobseeker
     /**
      * method for setName
      */
-    public static void setName(String name)
+    public void setName(String name)
     {
         
     }
@@ -78,7 +78,7 @@ public class Jobseeker
     /**
      * method for setEmail
      */
-    public static void setEmail(String email)
+    public void setEmail(String email)
     {
         
     }
@@ -86,7 +86,7 @@ public class Jobseeker
     /**
      * method for setPassword
      */
-    public static void setPassword(String password)
+    public void setPassword(String password)
     {
         
     }
@@ -94,7 +94,7 @@ public class Jobseeker
     /**
      * method for setJoinDate
      */
-    public static void setJoinDate(String joinDate)
+    public void setJoinDate(String joinDate)
     {
         
     }

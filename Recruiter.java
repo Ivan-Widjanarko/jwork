@@ -14,7 +14,7 @@ public class Recruiter
     /**
      * Constructor for objects of class Recruiter
      */
-    public static void Recruiter()
+    public void Recruiter()
     {
         
     }
@@ -22,7 +22,7 @@ public class Recruiter
     /**
      * method for getId
      */
-    public static int getId()
+    public int getId()
     {
         return 0;
     }
@@ -30,7 +30,7 @@ public class Recruiter
     /**
      * method for getName
      */
-    public static String getName()
+    public String getName()
     {
         return "oop";
     }
@@ -38,7 +38,7 @@ public class Recruiter
     /**
      * method for getEmail
      */
-    public static String getEmail()
+    public String getEmail()
     {
         return "oop";
     }
@@ -46,7 +46,7 @@ public class Recruiter
     /**
      * method for getPhoneNumber
      */
-    public static String getPhoneNumber()
+    public String getPhoneNumber()
     {
         return "oop";
     }
@@ -54,7 +54,7 @@ public class Recruiter
     /**
      * method for setId
      */
-    public static void setId(int id)
+    public void setId(int id)
     {
         
     }
@@ -62,7 +62,7 @@ public class Recruiter
     /**
      * method for setEmail
      */
-    public static void setEmail(String email)
+    public void setEmail(String email)
     {
         
     }
@@ -70,7 +70,7 @@ public class Recruiter
     /**
      * method for setName
      */
-    public static void setName(String name)
+    public void setName(String name)
     {
         
     }
@@ -78,7 +78,7 @@ public class Recruiter
     /**
      * method for setPhoneNumber
      */
-    public static void setPhoneNumber(String phoneNumber)
+    public void setPhoneNumber(String phoneNumber)
     {
         
     }

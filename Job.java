@@ -14,7 +14,7 @@ public class Job
     /**
      * Constructor for objects of class Job
      */
-    public static void Job()
+    public void Job()
     {
         
     }
@@ -22,7 +22,7 @@ public class Job
     /**
      * method for getId
      */
-    public static int getId()
+    public int getId()
     {
         return 0;
     }
@@ -30,7 +30,7 @@ public class Job
     /**
      * method for getName
      */
-    public static String getName()
+    public String getName()
     {
         return "oop";
     }
@@ -38,7 +38,7 @@ public class Job
     /**
      * method for getFee
      */
-    public static int getFee()
+    public int getFee()
     {
         return 0;
     }
@@ -46,7 +46,7 @@ public class Job
     /**
      * method for getCategory
      */
-    public static String getCategory()
+    public String getCategory()
     {
         return "oop";
     }
@@ -54,7 +54,7 @@ public class Job
     /**
      * method for setId
      */
-    public static void setId(int id)
+    public void setId(int id)
     {
         
     }
@@ -62,7 +62,7 @@ public class Job
     /**
      * method for setName
      */
-    public static void setName(String name)
+    public void setName(String name)
     {
         
     }
@@ -70,7 +70,7 @@ public class Job
     /**
      * method for setFee
      */
-    public static void setFee(int Fee)
+    public void setFee(int Fee)
     {
         
     }
@@ -78,7 +78,7 @@ public class Job
     /**
      * method for setCategory
      */
-    public static void setCategory(String category)
+    public void setCategory(String category)
     {
         
     }

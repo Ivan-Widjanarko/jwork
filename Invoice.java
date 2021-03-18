@@ -14,7 +14,7 @@ public class Invoice
     /**
      * Constructor for objects of class Invoice
      */
-    public static void Invoice()
+    public void Invoice()
     {
         
     }
@@ -22,7 +22,7 @@ public class Invoice
      /**
      * method for getId
      */
-    public static int getId()
+    public int getId()
     {
         return 0;
     }
@@ -30,7 +30,7 @@ public class Invoice
      /**
      * method for getJobId
      */
-    public static int getJobId()
+    public int getJobId()
     {
         return 0;
     }
@@ -38,7 +38,7 @@ public class Invoice
      /**
      * method for getDate
      */
-    public static String getDate()
+    public String getDate()
     {
         return "oop";
     }
@@ -46,7 +46,7 @@ public class Invoice
      /**
      * method for getTotalFee
      */
-    public static int getTotalFee()
+    public int getTotalFee()
     {
         return 0;
     }
@@ -54,7 +54,7 @@ public class Invoice
     /**
      * method for setId
      */
-    public static void setId(int id)
+    public void setId(int id)
     {
         
     }
@@ -62,7 +62,7 @@ public class Invoice
     /**
      * method for setIdJobs
      */
-    public static void setIdJobs(int idJobs)
+    public void setIdJobs(int idJobs)
     {
         
     }
@@ -70,7 +70,7 @@ public class Invoice
     /**
      * method for setDate
      */
-    public static void setDate(String date)
+    public void setDate(String date)
     {
         
     }
@@ -78,7 +78,7 @@ public class Invoice
     /**
      * method for setTotalFee
      */
-    public static void setTotalFee(String totalFee)
+    public void setTotalFee(String totalFee)
     {
         
     }
