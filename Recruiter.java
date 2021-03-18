@@ -118,7 +118,7 @@ public class Recruiter
         this.location = location;
     }
     
-    //method for print Recruiter's nama
+    /*method for print Recruiter's nama*/
     public void printData()
     {
         System.out.println(name);

@@ -118,7 +118,7 @@ public class Job
         this.category = category;
     }
     
-    //method for printData
+    /*method for printData*/
     public void printData()
     {
         

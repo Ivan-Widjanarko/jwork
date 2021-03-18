@@ -117,7 +117,7 @@ public class Jobseeker
         
     }
     
-    //method for print Jobseeker's name
+    /*method for print Jobseeker's name*/
     public void printData()
     {
         System.out.println(name);

@@ -76,7 +76,7 @@ public class Location
         this.description = description;
     }
     
-    //method for print Recruiter's province
+    /*method for print Recruiter's province*/
     public void printData()
     {
         System.out.println(province);

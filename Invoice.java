@@ -118,7 +118,7 @@ public class Invoice
         this.jobseeker = jobseeker;
     }
     
-    //method for printData
+    /*method for printData*/
     public void printData()
     {
         
