@@ -13,6 +13,11 @@ public class Recruiter
 
     /**
      * Constructor for objects of class Recruiter
+     * @param id Recruiter's ID
+     * @param name Recruiter's name
+     * @param email Recruiter's email
+     * @param phoneNumber Recruiter's phone number
+     * @param location Recruiter's location
      */
     public Recruiter(int id, String name, String email, String phoneNumber, Location location)
     {
@@ -25,6 +30,7 @@ public class Recruiter
 
     /**
      * method for getId
+     * @return    Recruiter's ID
      */
     public int getId()
     {
@@ -33,6 +39,7 @@ public class Recruiter
     
     /**
      * method for getName
+     * @return    Recruiter's name
      */
     public String getName()
     {
@@ -41,6 +48,7 @@ public class Recruiter
     
     /**
      * method for getEmail
+     * @return    Recruiter's email
      */
     public String getEmail()
     {
@@ -49,6 +57,7 @@ public class Recruiter
     
     /**
      * method for getPhoneNumber
+     * @return    Recruiter's phone number
      */
     public String getPhoneNumber()
     {
@@ -57,6 +66,7 @@ public class Recruiter
     
     /**
      * method for getLocation
+     * @return    Recruiter's location
      */
     public Location getLocation()
     {
@@ -65,6 +75,7 @@ public class Recruiter
     
     /**
      * method for setId
+     * @param id Recruiter's ID
      */
     public void setId(int id)
     {
@@ -73,6 +84,7 @@ public class Recruiter
     
     /**
      * method for setEmail
+     * @param email Recruiter's email
      */
     public void setEmail(String email)
     {
@@ -81,6 +93,7 @@ public class Recruiter
     
     /**
      * method for setName
+     * @param name Recruiter's name
      */
     public void setName(String name)
     {
@@ -89,6 +102,7 @@ public class Recruiter
     
     /**
      * method for setPhoneNumber
+     * @param phoneNumber Recruiter's phone number
      */
     public void setPhoneNumber(String phoneNumber)
     {
@@ -97,15 +111,14 @@ public class Recruiter
     
     /**
      * method for setLocation
+     * @param location Recruiter's location
      */
     public void setLocation(Location location)
     {
         this.location = location;
     }
     
-    /**
-     * method for printData
-     */
+    //method for print Recruiter's nama
     public void printData()
     {
         System.out.println(name);

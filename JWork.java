@@ -1,15 +1,5 @@
-
-/**
- * Class for JWork
- *
- * @author Ivan Widjanarko
- * @version 18-21-2001
- */
 public class JWork
 {
-    /**
-     * Constructor for objects of class JWork
-     */
     public static void main(String [] args)
     {
         Location locationIvan = new Location("DKI Jakarta", "Depok", "Ivan's House");

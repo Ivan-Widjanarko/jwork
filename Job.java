@@ -13,6 +13,11 @@ public class Job
     
     /**
      * Constructor for objects of class Job
+     * @param id Recruiter's ID
+     * @param name Jobs's name
+     * @param recruiter Recruiter Information
+     * @param fee Recruiter's fee
+     * @param category Job's category
      */
     public Job(int id, String name, Recruiter recruiter, int fee, String category)
     {
@@ -25,6 +30,7 @@ public class Job
 
     /**
      * method for getId
+     * @return    Recruiter's ID
      */
     public int getId()
     {
@@ -33,6 +39,7 @@ public class Job
     
     /**
      * method for getName
+     * @return    Jobs's name
      */
     public String getName()
     {
@@ -41,6 +48,7 @@ public class Job
     
     /**
      * method for getFee
+     * @return    Recruiter's fee
      */
     public int getFee()
     {
@@ -49,6 +57,7 @@ public class Job
     
     /**
      * method for getCategory
+     * @return   Job's category
      */
     public String getCategory()
     {
@@ -57,6 +66,7 @@ public class Job
     
     /**
      * method for getRecruiter
+     * @return    Recruiter Information
      */
     public Recruiter getRecruiter()
     {
@@ -65,6 +75,7 @@ public class Job
     
     /**
      * method for setId
+     * @param id Recruiter's ID
      */
     public void setId(int id)
     {
@@ -73,6 +84,7 @@ public class Job
     
     /**
      * method for setName
+     * @param name Jobs's name
      */
     public void setName(String name)
     {
@@ -81,6 +93,7 @@ public class Job
     
     /**
      * method for setRecruiter
+     * @param recruiter Recruiter Information
      */
     public void setRecuiter(Recruiter recruiter)
     {
@@ -89,6 +102,7 @@ public class Job
     
     /**
      * method for setFee
+     * @param fee Recruiter's fee
      */
     public void setFee(int Fee)
     {
@@ -97,15 +111,14 @@ public class Job
     
     /**
      * method for setCategory
+     * @param category Job's category
      */
     public void setCategory(String category)
     {
         this.category = category;
     }
     
-    /**
-     * method for printData
-     */
+    //method for printData
     public void printData()
     {
         

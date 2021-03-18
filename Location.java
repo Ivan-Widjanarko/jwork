@@ -11,6 +11,9 @@ public class Location
 
     /**
      * Constructor for objects of class Location
+     * @param province Recruiter's province
+     * @param city Recruiter's city
+     * @param description Recruiter's description
      */
     public Location(String province, String city, String description)
     {
@@ -21,6 +24,7 @@ public class Location
 
     /**
      * method for getProvince
+     * @return    Recruiter's province
      */
     public String getProvince()
     {
@@ -29,6 +33,7 @@ public class Location
     
     /**
      * method for getCity
+     * @return    Recruiter's city
      */
     public String getCity()
     {
@@ -37,6 +42,7 @@ public class Location
     
     /**
      * method for getDescription
+     * @return    Recruiter's description
      */
     public String getDescription()
     {
@@ -45,6 +51,7 @@ public class Location
     
     /**
      * method for setProvince
+     * @param province Recruiter's province
      */
     public void setProvince(String province)
     {
@@ -53,6 +60,7 @@ public class Location
     
     /**
      * method for setCity
+     * @param city Recruiter's city
      */
     public void setCity(String city)
     {
@@ -61,15 +69,14 @@ public class Location
     
     /**
      * method for setDescription
+     * @param description Recruiter's description
      */
     public void setDescription(String description)
     {
         this.description = description;
     }
     
-    /**
-     * method for printData
-     */
+    //method for print Recruiter's province
     public void printData()
     {
         System.out.println(province);

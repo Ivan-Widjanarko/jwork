@@ -19,6 +19,7 @@ public class DatabaseJob
 
     /**
      * method for addJob
+     * @return    false
      */
     public boolean addJob()
     {
@@ -27,6 +28,7 @@ public class DatabaseJob
     
     /**
      * method for removeJob
+     * @return    false
      */
     public boolean removeJob()
     {
@@ -35,6 +37,7 @@ public class DatabaseJob
     
     /**
      * method for getJob
+     * @return    null
      */
     public Job getJob()
     {
@@ -43,6 +46,7 @@ public class DatabaseJob
     
     /**
      * method for getListJob
+     * @return    null
      */
     public String[] getListJob()
     {

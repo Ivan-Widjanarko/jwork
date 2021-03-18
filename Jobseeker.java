@@ -12,6 +12,11 @@ public class Jobseeker
     
     /**
      * Constructor for objects of class Jobseeker
+     * @param id Jobseeker's ID
+     * @param name Jobseeker's name
+     * @param email Jobseeker's email
+     * @param password Jobseeker's password
+     * @param joinDate Date when the Jobseeker join the app
      */
     public Jobseeker(int id, String name, String email, String password, String joinDate)
     {
@@ -24,6 +29,7 @@ public class Jobseeker
 
     /**
      * method for getId
+     * @return id Jobseeker's ID
      */
     public int getId()
     {
@@ -32,6 +38,7 @@ public class Jobseeker
     
     /**
      * method for getName
+     * @return name Jobseeker's name
      */
     public String getName()
     {
@@ -40,6 +47,7 @@ public class Jobseeker
     
     /**
      * method for getEmail
+     * @return    Jobseeker's email
      */
     public String getEmail()
     {
@@ -48,6 +56,7 @@ public class Jobseeker
     
     /**
      * method for getPassword
+     * @return    Jobseeker's password
      */
     public String getPassword()
     {
@@ -56,6 +65,7 @@ public class Jobseeker
     
     /**
      * method for getJoinDate
+     * @return    Date when the Jobseeker join the app
      */
     public String getJoinDate()
     {
@@ -64,6 +74,7 @@ public class Jobseeker
     
     /**
      * method for setId
+     * @param ID Jobseeker's ID
      */
     public void setId(int id)
     {
@@ -72,6 +83,7 @@ public class Jobseeker
     
     /**
      * method for setName
+     * @param name Jobseeker's name
      */
     public void setName(String name)
     {
@@ -80,6 +92,7 @@ public class Jobseeker
     
     /**
      * method for setEmail
+     * @param email Jobseeker's email
      */
     public void setEmail(String email)
     {
@@ -88,6 +101,7 @@ public class Jobseeker
     
     /**
      * method for setPassword
+     * @param password Jobseeker's password
      */
     public void setPassword(String password)
     {
@@ -96,15 +110,14 @@ public class Jobseeker
     
     /**
      * method for setJoinDate
+     * @param joinDate Date when the Jobseeker join the app
      */
     public void setJoinDate(String joinDate)
     {
         
     }
     
-    /**
-     * method for printData
-     */
+    //method for print Jobseeker's name
     public void printData()
     {
         System.out.println(name);

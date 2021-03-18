@@ -13,6 +13,11 @@ public class Invoice
 
     /**
      * Constructor for objects of class Invoice
+     * @param id Jobseeker's ID
+     * @param idJob Job's ID
+     * @param date Date of Invoice
+     * @param totalFee Total of Fee
+     * @param jobseeker Jobseeker Information
      */
     public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker)
     {
@@ -25,6 +30,7 @@ public class Invoice
 
     /**
      * method for getId
+     * @return    Jobseeker's ID
      */
     public int getId()
     {
@@ -33,6 +39,7 @@ public class Invoice
     
     /**
      * method for getIdJob
+     * @return    Job's ID
      */
     public int getIdJob()
     {
@@ -41,6 +48,7 @@ public class Invoice
     
     /**
      * method for getDate
+     * @return    Date of Invoice
      */
     public String getDate()
     {
@@ -49,6 +57,7 @@ public class Invoice
     
     /**
      * method for getTotalFee
+     * @return    Total of Fee
      */
     public int getTotalFee()
     {
@@ -57,6 +66,7 @@ public class Invoice
     
     /**
      * method for getJobseeker
+     * @return    Jobseeker Information
      */
     public Jobseeker getJobseeker()
     {
@@ -65,6 +75,7 @@ public class Invoice
     
     /**
      * method for setId
+     * @param id Jobseeker's ID
      */
     public void setId(int id)
     {
@@ -73,6 +84,7 @@ public class Invoice
     
     /**
      * method for setIdJob
+     * @param idJob Job's ID
      */
     public void setIdJob(int idJob)
     {
@@ -81,6 +93,7 @@ public class Invoice
     
     /**
      * method for setDate
+     * @param date Date of Invoice
      */
     public void setDate(String date)
     {
@@ -89,6 +102,7 @@ public class Invoice
     
     /**
      * method for setTotalFee
+     * @param totalFee Total of Fee
      */
     public void setTotalFee(int totalFee)
     {
@@ -97,15 +111,14 @@ public class Invoice
     
     /**
      * method for setJobseeker
+     * @param jobseeker Jobseeker Information
      */
     public void setJobseeeker(Jobseeker jobseeker)
     {
         this.jobseeker = jobseeker;
     }
     
-    /**
-     * method for printData
-     */
+    //method for printData
     public void printData()
     {
         
