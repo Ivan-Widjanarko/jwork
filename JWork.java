@@ -1,6 +1,18 @@
+/**
+ * Class for JWork
+ *
+ * @author Ivan Widjanarko
+ * @version 18-03-2021
+ */
+
 public class JWork
 {
-    public static void main(String [] args)
+    /**
+     * method for entry point (main method)
+     * @param  args  List String Arguments
+     */
+    
+    public static void main(String[] args)
     {
         Location locationIvan = new Location("DKI Jakarta", "Depok", "Ivan's House");
         Recruiter recruiterIvan = new Recruiter(1806148706, "Ivan", "ivan@ui.ac.id", "085780736569", locationIvan);
