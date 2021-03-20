@@ -3,7 +3,7 @@
  * Class for Invoice
  *
  * @author Ivan Widjanarko
- * @version 18-03-2021
+ * @version 19-03-2021
  */
 public class Invoice
 {
@@ -121,6 +121,6 @@ public class Invoice
     /**method for printData*/
     public void printData()
     {
-        
+        System.out.println(totalFee);
     }
 }

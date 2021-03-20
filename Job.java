@@ -3,7 +3,7 @@
  * Class for Job
  *
  * @author Ivan Widjanarko
- * @version 18-03-2021
+ * @version 19-03-2021
  */
 public class Job
 {
@@ -121,6 +121,6 @@ public class Job
     /**method for printData*/
     public void printData()
     {
-        
+        System.out.println(name);
     }
 }

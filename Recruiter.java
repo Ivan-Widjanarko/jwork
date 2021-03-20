@@ -3,7 +3,7 @@
  * Class for Recruiter
  *
  * @author Ivan Widjanarko
- * @version 18-03-2021
+ * @version 19-03-2021
  */
 public class Recruiter
 {
@@ -88,7 +88,7 @@ public class Recruiter
      */
     public void setEmail(String email)
     {
-        this.name = name;
+        this.email = email;
     }
     
     /**
@@ -97,7 +97,7 @@ public class Recruiter
      */
     public void setName(String name)
     {
-        this.email = email;
+        this.name = name;
     }
     
     /**

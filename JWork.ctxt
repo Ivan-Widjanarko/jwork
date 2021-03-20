@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=JWork
-comment0.text=\r\n\ Class\ for\ JWork\r\n\r\n\ @author\ Ivan\ Widjanarko\r\n\ @version\ 18-03-2021\r\n
+comment0.text=\r\n\ Class\ for\ JWork\r\n\r\n\ @author\ Ivan\ Widjanarko\r\n\ @version\ 19-03-2021\r\n
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
 comment1.text=\r\n\ method\ for\ entry\ point\ (main\ method)\r\n\ @param\ \ args\ \ List\ String\ Arguments\r\n

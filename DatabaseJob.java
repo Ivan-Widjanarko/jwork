@@ -21,7 +21,7 @@ public class DatabaseJob
      * method for addJob
      * @return    false
      */
-    public boolean addJob()
+    public boolean addJob(Job job)
     {
         return false;
     }
@@ -30,7 +30,7 @@ public class DatabaseJob
      * method for removeJob
      * @return    false
      */
-    public boolean removeJob()
+    public boolean removeJob(Job job)
     {
         return false;
     }

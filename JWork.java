@@ -2,7 +2,7 @@
  * Class for JWork
  *
  * @author Ivan Widjanarko
- * @version 18-03-2021
+ * @version 19-03-2021
  */
 
 public class JWork
@@ -14,10 +14,15 @@ public class JWork
     
     public static void main(String[] args)
     {
-        Location locationIvan = new Location("DKI Jakarta", "Depok", "Ivan's House");
-        Recruiter recruiterIvan = new Recruiter(1806148706, "Ivan", "ivan@ui.ac.id", "085780736569", locationIvan);
-        Job jobIvan = new Job(1806148706, "Programmer", recruiterIvan, 10000000, "Engineer");
-        Jobseeker jobseekerWidjanarko = new Jobseeker(1806148706, "Widjanarko", "widjanarko@ui.ac.id", "123456", "18-03-2021");
-        Invoice invoiceWidjanarko = new Invoice(1806148707, 369, "18-03-2021", 10000000, jobseekerWidjanarko);
+        Location locationOne = new Location("DKI Jakarta", "Depok", "Ivan's House");
+        Recruiter recruiterOne = new Recruiter(1806148706, "Ivan", "ivan@ui.ac.id", "08558069151", locationOne);
+        Job jobOne = new Job(1806148706, "Programmer", recruiterOne, 10000000, "Engineer");
+        Jobseeker jobseekerOne = new Jobseeker(1806148706, "Widjanarko", "widjanarko@ui.ac.id", "123456", "18-03-2021");
+        Invoice invoiceOne = new Invoice(1806148707, 369, "18-03-2021", 10000000, jobseekerOne);
+        
+        System.out.println(recruiterOne.getName());
+        recruiterOne.setName("Fajar");
+        System.out.println(recruiterOne.getName());
+        jobOne.printData();
     }
 }
