@@ -10,14 +10,6 @@ public class DatabaseJob
     private String[] listJob;
 
     /**
-     * Constructor for objects of class DatabaseJob
-     */
-    public DatabaseJob()
-    {
-        
-    }
-
-    /**
      * method for addJob
      * @return    false
      */

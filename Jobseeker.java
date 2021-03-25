@@ -78,7 +78,7 @@ public class Jobseeker
      */
     public void setId(int id)
     {
-        
+        this.id = id;
     }
     
     /**
@@ -87,7 +87,7 @@ public class Jobseeker
      */
     public void setName(String name)
     {
-        
+        this.name = name;
     }
     
     /**
@@ -96,7 +96,7 @@ public class Jobseeker
      */
     public void setEmail(String email)
     {
-        
+        this.email = email;
     }
     
     /**
@@ -105,7 +105,7 @@ public class Jobseeker
      */
     public void setPassword(String password)
     {
-        
+        this.password = password;
     }
     
     /**
@@ -114,7 +114,7 @@ public class Jobseeker
      */
     public void setJoinDate(String joinDate)
     {
-        
+        this.joinDate = joinDate;
     }
     
     /**method for print Jobseeker's name*/

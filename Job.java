@@ -3,13 +3,14 @@
  * Class for Job
  *
  * @author Ivan Widjanarko
- * @version 19-03-2021
+ * @version 25-03-2021
  */
 public class Job
 {
     private int id, fee;
-    private String name, category;
+    private String name;
     private Recruiter recruiter;
+    private JobCategory category;
     
     /**
      * Constructor for objects of class Job
@@ -19,7 +20,7 @@ public class Job
      * @param fee Recruiter's fee
      * @param category Job's category
      */
-    public Job(int id, String name, Recruiter recruiter, int fee, String category)
+    public Job(int id, String name, Recruiter recruiter, int fee, JobCategory category)
     {
         this.id = id;
         this.name = name;
@@ -59,7 +60,7 @@ public class Job
      * method for getCategory
      * @return   Job's category
      */
-    public String getCategory()
+    public JobCategory getCategory()
     {
         return category;
     }
@@ -113,14 +114,20 @@ public class Job
      * method for setCategory
      * @param category Job's category
      */
-    public void setCategory(String category)
+    public void setCategory(JobCategory category)
     {
         this.category = category;
     }
     
-    /**method for printData*/
+    /**method for print Job's Description*/
     public void printData()
     {
-        System.out.println(name);
+        System.out.println("===================== JOB =====================");
+        System.out.println("ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Recruiter: " + getRecruiter().getName());
+        System.out.println("City: " + getRecruiter().getLocation().getCity());
+        System.out.println("Fee: " + fee);
+        System.out.println("Category: " + category.toString());
     }
 }

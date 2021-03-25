@@ -10,14 +10,6 @@ public class DatabaseRecruiter
     private String[] listRecruiter;
 
     /**
-     * Constructor for objects of class DatabaseRecruiter
-     */
-    public DatabaseRecruiter()
-    {
-        
-    }
-
-    /**
      * method for addRecruiter
      * @return    false
      */

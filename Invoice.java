@@ -118,7 +118,7 @@ public class Invoice
         this.jobseeker = jobseeker;
     }
     
-    /**method for printData*/
+    /**method for print Total Fee*/
     public void printData()
     {
         System.out.println(totalFee);
