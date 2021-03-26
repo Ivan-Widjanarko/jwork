@@ -7,13 +7,13 @@
  */
 public class DatabaseRecruiter
 {
-    private String[] listRecruiter;
+    private static String[] listRecruiter;
 
     /**
      * method for addRecruiter
      * @return    false
      */
-    public boolean addRecruiter(Recruiter recruiter)
+    public static boolean addRecruiter(Recruiter recruiter)
     {
         return false;
     }
@@ -22,7 +22,7 @@ public class DatabaseRecruiter
      * method for removeRecruiter
      * @return    false
      */
-    public boolean removeRecruiter(Recruiter recruiter)
+    public static boolean removeRecruiter(Recruiter recruiter)
     {
         return false;
     }
@@ -31,7 +31,7 @@ public class DatabaseRecruiter
      * method for getRecruiter
      * @return    null
      */
-    public Recruiter getRecruiter()
+    public static Recruiter getRecruiter()
     {
         return null;
     }
@@ -40,7 +40,7 @@ public class DatabaseRecruiter
      * method for getListRecruiter
      * @return    null
      */
-    public String[] getListRecruiter()
+    public static String[] getListRecruiter()
     {
         return null;
     }

@@ -7,13 +7,13 @@
  */
 public class DatabaseJob
 {
-    private String[] listJob;
+    private static String[] listJob;
 
     /**
      * method for addJob
      * @return    false
      */
-    public boolean addJob(Job job)
+    public static boolean addJob(Job job)
     {
         return false;
     }
@@ -22,7 +22,7 @@ public class DatabaseJob
      * method for removeJob
      * @return    false
      */
-    public boolean removeJob(Job job)
+    public static boolean removeJob(Job job)
     {
         return false;
     }
@@ -31,7 +31,7 @@ public class DatabaseJob
      * method for getJob
      * @return    null
      */
-    public Job getJob()
+    public static Job getJob()
     {
         return null;
     }
@@ -40,7 +40,7 @@ public class DatabaseJob
      * method for getListJob
      * @return    null
      */
-    public String[] getListJob()
+    public static String[] getListJob()
     {
         return null;
     }
