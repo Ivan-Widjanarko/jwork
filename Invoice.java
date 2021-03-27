@@ -3,13 +3,15 @@
  * Class for Invoice
  *
  * @author Ivan Widjanarko
- * @version 19-03-2021
+ * @version 27-03-2021
  */
 public class Invoice
 {
     private int id, idJob, totalFee;
     private String date;
     private Jobseeker jobseeker;
+    private PaymentType paymentType;
+    private InvoiceStatus status;
 
     /**
      * Constructor for objects of class Invoice
@@ -18,14 +20,18 @@ public class Invoice
      * @param date Date of Invoice
      * @param totalFee Total of Fee
      * @param jobseeker Jobseeker Information
+     * @param totalPrice Total of price
+     * @param status Invoice's Status
      */
-    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker)
+    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker, PaymentType paymentType, InvoiceStatus status)
     {
         this.id = id;
         this.idJob = idJob;
         this.date = date;
         this.totalFee = totalFee;
         this.jobseeker = jobseeker;
+        this.paymentType = paymentType;
+        this.status = status;
     }
 
     /**
@@ -74,6 +80,24 @@ public class Invoice
     }
     
     /**
+     * method for getPaymentType
+     * @return    Type of Payment
+     */
+    public PaymentType getPaymentType()
+    {
+        return paymentType;
+    }
+    
+    /**
+     * method for getInvoiceStatus
+     * @return    Invoice's Status
+     */
+    public InvoiceStatus getInvoiceStatus()
+    {
+        return status;
+    }
+    
+    /**
      * method for setId
      * @param id Jobseeker's ID
      */
@@ -118,9 +142,33 @@ public class Invoice
         this.jobseeker = jobseeker;
     }
     
+    /**
+     * method for setPaymentType
+     * @param paymentType Type of Payment
+     */
+    public void setPaymentType(PaymentType paymentType)
+    {
+        this.paymentType = paymentType;
+    }
+    
+    /**
+     * method for setInvoiceStatus
+     * @param invoiceStatus Invoice's Status
+     */
+    public void setInvoiceStatus(InvoiceStatus status)
+    {
+        this.status = status;
+    }
+    
     /**method for print Total Fee*/
     public void printData()
     {
-        System.out.println(totalFee);
+        System.out.println("===================== INVOICE =====================");
+        System.out.println("ID: " + id);
+        System.out.println("ID Job: " + idJob);
+        System.out.println("Date: " + date);
+        System.out.println("Seeker: " + jobseeker.getName());
+        System.out.println("Fee: " + totalFee);
+        System.out.println("Status: " + status.toString());
     }
 }
