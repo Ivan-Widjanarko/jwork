@@ -2,7 +2,7 @@
  * Class for JWork
  *
  * @author Ivan Widjanarko
- * @version 19-03-2021
+ * @version 01-04-2021
  */
 
 public class JWork
@@ -16,15 +16,19 @@ public class JWork
     {
         Location locationOne = new Location("DKI Jakarta", "Depok", "Ivan's House");
         Recruiter recruiterOne = new Recruiter(1806148706, "Ivan", "ivan@ui.ac.id", "08558069151", locationOne);
-        Job jobOne = new Job(1806148706, "Programmer", recruiterOne, 10000000, JobCategory.WebDeveloper);
+        Job jobOne = new Job(1806148706, "Programmer", recruiterOne, 100, JobCategory.WebDeveloper);
         Jobseeker jobseekerOne = new Jobseeker(1806148706, "Widjanarko", "widjanarko@ui.ac.id", "123456", "18-03-2021");
-        Invoice invoiceOne = new Invoice(100, jobOne.getId(), "18-03-2021", jobOne.getFee(), jobseekerOne, PaymentType.EwalletPayment, InvoiceStatus.Finished);
+        Bonus bonusOne = new Bonus(1, "VANKO123", 10, 150, true);
+        Bonus bonusTwo = new Bonus(2, "VANKO456", 10, 50, true);
+        EwalletPayment EPayOne = new EwalletPayment(1, jobOne, "01-04-2021", jobseekerOne, InvoiceStatus.OnGoing);
+        EwalletPayment EPayTwo = new EwalletPayment(2, jobOne, "01-04-2021", jobseekerOne, bonusOne, InvoiceStatus.OnGoing);
+        EwalletPayment EPayThree = new EwalletPayment(3, jobOne, "01-04-2021", jobseekerOne, bonusTwo, InvoiceStatus.OnGoing);
         
-        System.out.println(recruiterOne.getName());
-        recruiterOne.setName("Fajar");
-        System.out.println(recruiterOne.getName());
-        jobOne.printData();
-        invoiceOne.printData();
-        
+        EPayOne.setTotalFee();
+        EPayTwo.setTotalFee();
+        EPayThree.setTotalFee();
+        EPayOne.printData();
+        EPayTwo.printData();
+        EPayThree.printData();
     }
 }

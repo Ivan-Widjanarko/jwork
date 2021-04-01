@@ -1,37 +1,34 @@
 
 /**
- * Class for Invoice
+ * Abstract class for Invoice
  *
  * @author Ivan Widjanarko
- * @version 27-03-2021
+ * @version 01-04-2021
  */
-public class Invoice
+public abstract class Invoice
 {
-    private int id, idJob, totalFee;
+    private int id;
+    protected int totalFee;
+    private Job job;
     private String date;
     private Jobseeker jobseeker;
-    private PaymentType paymentType;
-    private InvoiceStatus status;
+    private InvoiceStatus invoiceStatus;
 
     /**
      * Constructor for objects of class Invoice
      * @param id Jobseeker's ID
-     * @param idJob Job's ID
+     * @param job Job
      * @param date Date of Invoice
-     * @param totalFee Total of Fee
      * @param jobseeker Jobseeker Information
-     * @param totalPrice Total of price
      * @param status Invoice's Status
      */
-    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker, PaymentType paymentType, InvoiceStatus status)
+    public Invoice(int id, Job job, String date,Jobseeker jobseeker, InvoiceStatus invoiceStatus)
     {
         this.id = id;
-        this.idJob = idJob;
+        this.job = job;
         this.date = date;
-        this.totalFee = totalFee;
         this.jobseeker = jobseeker;
-        this.paymentType = paymentType;
-        this.status = status;
+        this.invoiceStatus = invoiceStatus;
     }
 
     /**
@@ -44,12 +41,12 @@ public class Invoice
     }
     
     /**
-     * method for getIdJob
-     * @return    Job's ID
+     * method for getJob
+     * @return    Job
      */
-    public int getIdJob()
+    public Job getJob()
     {
-        return idJob;
+        return job;
     }
     
     /**
@@ -80,13 +77,9 @@ public class Invoice
     }
     
     /**
-     * method for getPaymentType
-     * @return    Type of Payment
+     * abstract method for getPaymentType
      */
-    public PaymentType getPaymentType()
-    {
-        return paymentType;
-    }
+    public abstract PaymentType getPaymentType();
     
     /**
      * method for getInvoiceStatus
@@ -94,7 +87,7 @@ public class Invoice
      */
     public InvoiceStatus getInvoiceStatus()
     {
-        return status;
+        return invoiceStatus;
     }
     
     /**
@@ -110,9 +103,9 @@ public class Invoice
      * method for setIdJob
      * @param idJob Job's ID
      */
-    public void setIdJob(int idJob)
+    public void setJob(Job job)
     {
-        this.idJob = idJob;
+        this.job = job;
     }
     
     /**
@@ -125,13 +118,9 @@ public class Invoice
     }
     
     /**
-     * method for setTotalFee
-     * @param totalFee Total of Fee
+     * abstract method for setTotalFee
      */
-    public void setTotalFee(int totalFee)
-    {
-        this.totalFee = totalFee;
-    }
+    public abstract void setTotalFee();
     
     /**
      * method for setJobseeker
@@ -143,32 +132,14 @@ public class Invoice
     }
     
     /**
-     * method for setPaymentType
-     * @param paymentType Type of Payment
-     */
-    public void setPaymentType(PaymentType paymentType)
-    {
-        this.paymentType = paymentType;
-    }
-    
-    /**
      * method for setInvoiceStatus
      * @param invoiceStatus Invoice's Status
      */
-    public void setInvoiceStatus(InvoiceStatus status)
+    public void setInvoiceStatus(InvoiceStatus invoiceStatus)
     {
-        this.status = status;
+        this.invoiceStatus = invoiceStatus;
     }
     
-    /**method for print Total Fee*/
-    public void printData()
-    {
-        System.out.println("===================== INVOICE =====================");
-        System.out.println("ID: " + id);
-        System.out.println("ID Job: " + idJob);
-        System.out.println("Date: " + date);
-        System.out.println("Seeker: " + jobseeker.getName());
-        System.out.println("Fee: " + totalFee);
-        System.out.println("Status: " + status.toString());
-    }
+    /**abstract method for print Data*/
+    public abstract void printData();
 }
