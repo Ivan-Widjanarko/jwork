@@ -2,7 +2,7 @@
  * Class for JWork
  *
  * @author Ivan Widjanarko
- * @version 01-04-2021
+ * @version 03-04-2021
  */
 
 public class JWork
@@ -23,13 +23,19 @@ public class JWork
         EwalletPayment EPayOne = new EwalletPayment(1, jobOne, "01-04-2021", jobseekerOne, InvoiceStatus.OnGoing);
         EwalletPayment EPayTwo = new EwalletPayment(2, jobOne, "01-04-2021", jobseekerOne, bonusOne, InvoiceStatus.Finished);
         EwalletPayment EPayThree = new EwalletPayment(3, jobOne, "01-04-2021", jobseekerOne, bonusTwo, InvoiceStatus.Cancelled);
+        BankPayment BPayOne = new BankPayment(1, jobOne, "03-04-2021", jobseekerOne, InvoiceStatus.Finished);
+        BankPayment BPayTwo = new BankPayment(2, jobOne, "03-04-2021", jobseekerOne, InvoiceStatus.Finished, 10);
         
-        EPayOne.setTotalFee();
-        EPayTwo.setTotalFee();
-        EPayThree.setTotalFee();
+        //EPayOne.setTotalFee();
+        //EPayTwo.setTotalFee();
+        //EPayThree.setTotalFee();
+        BPayOne.setTotalFee();
+        BPayTwo.setTotalFee();
         
-        EPayOne.printData();
-        EPayTwo.printData();
-        EPayThree.printData();
+        //EPayOne.printData();
+        //EPayTwo.printData();
+        //EPayThree.printData();
+        BPayOne.printData();
+        BPayTwo.printData();
     }
 }
