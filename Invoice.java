@@ -5,7 +5,7 @@
  * @author Ivan Widjanarko
  * @version 01-04-2021
  */
-public abstract class Invoice
+abstract class Invoice
 {
     private int id;
     protected int totalFee;

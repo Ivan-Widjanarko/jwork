@@ -31,7 +31,7 @@ public class DatabaseBonus
      * method for getBonus
      * @return    null
      */
-    public static Job getBonus()
+    public static Bonus getBonus()
     {
         return null;
     }

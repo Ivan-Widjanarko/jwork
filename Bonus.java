@@ -71,7 +71,7 @@ public class Bonus
      */
     public boolean getActive()
     {
-        return false;
+        return active;
     }
     
     /**
