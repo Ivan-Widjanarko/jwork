@@ -72,7 +72,7 @@ public class BankPayment extends Invoice
     @Override
     public void setTotalFee()
     {
-        if(adminFee>0)
+        if(adminFee!=0)
         {
             super.totalFee = super.getJob().getFee() - adminFee;
         }
