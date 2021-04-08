@@ -3,7 +3,7 @@
  * Class for Location
  *
  * @author Ivan Widjanarko
- * @version 18-03-2021
+ * @version 08-04-2021
  */
 public class Location
 {
@@ -76,9 +76,11 @@ public class Location
         this.description = description;
     }
     
-    /**method for print Recruiter's province*/
-    public void printData()
-    {
-        System.out.println(province);
+    /**method for print detail*/
+    public String toString(){
+        String value = "Province = " + province + "\n" +
+            "City = " + city + "\n" +
+            "Description = " + description + "\n";
+        return value;
     }
 }

@@ -3,7 +3,7 @@
  * Class for Job
  *
  * @author Ivan Widjanarko
- * @version 25-03-2021
+ * @version 08-04-2021
  */
 public class Job
 {
@@ -119,15 +119,14 @@ public class Job
         this.category = category;
     }
     
-    /**method for print Job's Description*/
-    public void printData()
-    {
-        System.out.println("===================== JOB =====================");
-        System.out.println("ID: " + id);
-        System.out.println("Name: " + name);
-        System.out.println("Recruiter: " + getRecruiter().getName());
-        System.out.println("City: " + getRecruiter().getLocation().getCity());
-        System.out.println("Fee: " + fee);
-        System.out.println("Category: " + category.toString());
+    /**method for print detail*/
+    public String toString(){
+        String value = "Id = " + id + "\n" +
+            "Nama = " + name + "\n" +
+            "Recruiter = " + recruiter + "\n" +
+            "City = " + getRecruiter().getLocation().getCity() + "\n" +
+            "Fee = " + fee + "\n" +
+            "Category = " + category.toString() + "\n";
+        return value;
     }
 }

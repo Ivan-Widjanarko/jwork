@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Recruiter
-comment0.text=\r\n\ Class\ for\ Recruiter\r\n\r\n\ @author\ Ivan\ Widjanarko\r\n\ @version\ 19-03-2021\r\n
+comment0.text=\r\n\ Class\ for\ Recruiter\r\n\r\n\ @author\ Ivan\ Widjanarko\r\n\ @version\ 08-04-2021\r\n
 comment1.params=id\ name\ email\ phoneNumber\ location
 comment1.target=Recruiter(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ Location)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Recruiter\r\n\ @param\ id\ Recruiter's\ ID\r\n\ @param\ name\ Recruiter's\ name\r\n\ @param\ email\ Recruiter's\ email\r\n\ @param\ phoneNumber\ Recruiter's\ phone\ number\r\n\ @param\ location\ Recruiter's\ location\r\n
@@ -11,8 +11,8 @@ comment11.params=location
 comment11.target=void\ setLocation(Location)
 comment11.text=\r\n\ method\ for\ setLocation\r\n\ @param\ location\ Recruiter's\ location\r\n
 comment12.params=
-comment12.target=void\ printData()
-comment12.text=method\ for\ print\ Recruiter's\ nama
+comment12.target=java.lang.String\ toString()
+comment12.text=method\ for\ print\ detail
 comment2.params=
 comment2.target=int\ getId()
 comment2.text=\r\n\ method\ for\ getId\r\n\ @return\ \ \ \ Recruiter's\ ID\r\n

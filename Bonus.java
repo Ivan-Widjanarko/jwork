@@ -3,7 +3,7 @@
  * Class for Bonus
  *
  * @author Ivan Widjanarko
- * @version 01-04-2021
+ * @version 08-04-2021
  */
 public class Bonus
 {
@@ -119,13 +119,13 @@ public class Bonus
         this.active = active;
     }
     
-    /**method for print Data*/
-    public void printData()
-    {
-        System.out.println("ID = " + id);
-        System.out.println("Extra Fee = " + extraFee);
-        System.out.println("Min Total Fee = " + minTotalFee);
-        System.out.println("Referral Code = " + referralCode);
-        System.out.println("Status = " + active);
+    /**method for print detail*/
+    public String toString(){
+        String value = "ID = " + id + "\n" +
+            "Referral Code = " + referralCode + "\n" +
+            "Extra Fee = " + extraFee + "\n" +
+            "Min Total Fee = " + minTotalFee + "\n" +
+            "Active Status = " + active;
+        return value;
     }
 }

@@ -1,14 +1,19 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.regex.Pattern;
+import java.text.SimpleDateFormat;
 
 /**
  * Class for Jobseeker
  *
  * @author Ivan Widjanarko
- * @version 18-03-2021
+ * @version 08-04-2021
  */
 public class Jobseeker
 {
     private int id;
-    private String name, email, password, joinDate;
+    private String name, email, password;
+    public Calendar joinDate;
     
     /**
      * Constructor for objects of class Jobseeker
@@ -16,15 +21,55 @@ public class Jobseeker
      * @param name Jobseeker's name
      * @param email Jobseeker's email
      * @param password Jobseeker's password
-     * @param joinDate Date when the Jobseeker join the app
+     * @param joinDate Calendar when the Jobseeker join the app
      */
-    public Jobseeker(int id, String name, String email, String password, String joinDate)
+    public Jobseeker(int id, String name, String email, String password, Calendar joinDate)
     {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
         this.joinDate = joinDate;
+        setEmail(email);
+        setPassword(password);
+    }
+    
+    /**
+     * Constructor for objects of class Jobseeker
+     * @param id Jobseeker's ID
+     * @param name Jobseeker's name
+     * @param email Jobseeker's email
+     * @param password Jobseeker's password
+     * @param year Year of Join
+     * @param month Month of Join
+     * @param dayOfMonth Day of Join
+     */
+    public Jobseeker(int id, String name, String email, String password, int year, int month, int dayOfMonth)
+    {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
+        setEmail(email);
+        setPassword(password);
+    }
+    
+    /**
+     * Constructor for objects of class Jobseeker
+     * @param id Jobseeker's ID
+     * @param name Jobseeker's name
+     * @param email Jobseeker's email
+     * @param password Jobseeker's password
+     */
+    public Jobseeker(int id, String name, String email, String password)
+    {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        setEmail(email);
+        setPassword(password);
     }
 
     /**
@@ -67,7 +112,7 @@ public class Jobseeker
      * method for getJoinDate
      * @return    Date when the Jobseeker join the app
      */
-    public String getJoinDate()
+    public Calendar getJoinDate()
     {
         return joinDate;
     }
@@ -96,7 +141,13 @@ public class Jobseeker
      */
     public void setEmail(String email)
     {
-        this.email = email;
+        String pattern = "^[\\w&*~]+(\\.?[\\w&*~]+)*@[^\\-][\\w&*~.-]+$";
+        if(Pattern.matches(pattern, email)){
+            this.email = email;
+        }
+        else{
+            this.email = "";
+        }
     }
     
     /**
@@ -105,22 +156,43 @@ public class Jobseeker
      */
     public void setPassword(String password)
     {
-        this.password = password;
+        String pattern = "(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])\\w.{6,}\\w";
+        if(Pattern.matches(pattern, password)){
+            this.password = password;
+        }
+        else{
+            this.password = "";
+        }
     }
     
     /**
      * method for setJoinDate
      * @param joinDate Date when the Jobseeker join the app
      */
-    public void setJoinDate(String joinDate)
+    public void setJoinDate(Calendar joinDate)
     {
         this.joinDate = joinDate;
     }
     
-    /**method for print Jobseeker's name*/
-    public void printData()
+    /**
+     * method for setJoinDate
+     * @return    Date when the Jobseeker join the app
+     */
+    public void setJoinDate(int year, int month, int dayOfMonth)
     {
-        System.out.println(name);
+        this.joinDate.set(year, month, dayOfMonth);
+    }
+    
+    /**method for print detail*/
+    public String toString(){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy");
+        
+        String value = "Id = " + id + "\n" +
+            "Nama = " + name + "\n" +
+            "Email = " + email + "\n" +
+            "Password = " + password + "\n" +
+            "Join Date = " + sdf.format(joinDate.getTime()) + "\n";
+        return value;
     }
 }
     

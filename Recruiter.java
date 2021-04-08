@@ -3,7 +3,7 @@
  * Class for Recruiter
  *
  * @author Ivan Widjanarko
- * @version 19-03-2021
+ * @version 08-04-2021
  */
 public class Recruiter
 {
@@ -118,9 +118,12 @@ public class Recruiter
         this.location = location;
     }
     
-    /**method for print Recruiter's nama*/
-    public void printData()
-    {
-        System.out.println(name);
+    /**method for print detail*/
+    public String toString(){
+        String value = "Id = " + id + "\n" +
+            "Nama = " + name + "\n" +
+            "PhoneNumber = " + phoneNumber + "\n" +
+            "Location = " + location.getDescription() + "\n";
+        return value;
     }
 }
