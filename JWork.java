@@ -20,7 +20,7 @@ public class JWork
         Recruiter recruiterOne = new Recruiter(1806148706, "Ivan", "ivan@ui.ac.id", "08558069151", locationOne);
         Job jobOne = new Job(1806148706, "Programmer", recruiterOne, 100, JobCategory.WebDeveloper);
         Jobseeker jobseekerOne = new Jobseeker(1, "Widjanarko", "..widjanarko@ui.ac.id", "123456", new GregorianCalendar(2021, 3, 8));
-        Jobseeker jobseekerTwo = new Jobseeker(2, "Widjanarko", "widjanarko@ui.ac.id", "Pass123", 2021, 3, 8);
+        Jobseeker jobseekerTwo = new Jobseeker(2, "Widjanarko", "widjanarko@ui.ac.id", "Pass123", 2021, 4, 8);
         Jobseeker jobseekerThree = new Jobseeker(3, "Widjanarko", "widjanarko@ui.ac.id", "123456");
         Bonus bonusOne = new Bonus(1, "VANKO123", 10, 110, true);
         Bonus bonusTwo = new Bonus(2, "VANKO456", 10, 60, true);

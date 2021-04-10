@@ -27,12 +27,10 @@ public class Jobseeker
     public Jobseeker(int id, String name, String email, String password, Calendar joinDate)
     {
         this.id = id;
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.joinDate = joinDate;
         setEmail(email);
         setPassword(password);
+        this.password = password;
+        this.joinDate = joinDate;
     }
     
     /**
@@ -49,11 +47,9 @@ public class Jobseeker
     {
         this.id = id;
         this.name = name;
-        this.email = email;
-        this.password = password;
-        this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
         setEmail(email);
         setPassword(password);
+        this.joinDate = new GregorianCalendar(year, month-1, dayOfMonth);
     }
     
     /**
@@ -66,11 +62,9 @@ public class Jobseeker
     public Jobseeker(int id, String name, String email, String password)
     {
         this.id = id;
-        this.name = name;
-        this.email = email;
-        this.password = password;
         setEmail(email);
         setPassword(password);
+        this.password = password;
         joinDate = Calendar.getInstance();
     }
 
@@ -182,7 +176,7 @@ public class Jobseeker
      */
     public void setJoinDate(int year, int month, int dayOfMonth)
     {
-        this.joinDate.set(year, month, dayOfMonth);
+        this.joinDate.set(year, month-1, dayOfMonth);
     }
     
     /**method for print detail*/
