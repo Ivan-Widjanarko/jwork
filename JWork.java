@@ -4,7 +4,7 @@ import java.util.GregorianCalendar;
  * Class for JWork
  *
  * @author Ivan Widjanarko
- * @version 08-04-2021
+ * @version 10-04-2021
  */
 
 public class JWork
@@ -34,13 +34,17 @@ public class JWork
         System.out.println(jobseekerTwo.toString());
         System.out.println(jobseekerThree.toString());
         
-        jobseekerOne.setEmail("..widjanarko@ui.ac.id");
+        jobseekerOne.setEmail("widjanarko@ui.ac.id");
         jobseekerTwo.setEmail("widjanarko@ui.ac.id");
         jobseekerThree.setEmail("widjanarko@ui.ac.id");
         
-        jobseekerOne.setPassword("123456");
+        jobseekerOne.setPassword("Pass123");
         jobseekerTwo.setPassword("Pass123");
-        jobseekerThree.setPassword("123456");
+        jobseekerThree.setPassword("Pass123");
+        
+        System.out.println(jobseekerOne.toString());
+        System.out.println(jobseekerTwo.toString());
+        System.out.println(jobseekerThree.toString());
         
         //EPayOne.setTotalFee();
         //EPayTwo.setTotalFee();

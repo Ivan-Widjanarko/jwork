@@ -3,7 +3,7 @@
  * Class for Location
  *
  * @author Ivan Widjanarko
- * @version 08-04-2021
+ * @version 10-04-2021
  */
 public class Location
 {
@@ -78,7 +78,8 @@ public class Location
     
     /**method for print detail*/
     public String toString(){
-        String value = "Province = " + province + "\n" +
+        String value =  "===================== LOCATION =====================" + "\n" +
+            "Province = " + province + "\n" +
             "City = " + city + "\n" +
             "Description = " + description + "\n";
         return value;

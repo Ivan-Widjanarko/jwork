@@ -2,12 +2,13 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.regex.Pattern;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Class for Jobseeker
  *
  * @author Ivan Widjanarko
- * @version 08-04-2021
+ * @version 10-04-2021
  */
 public class Jobseeker
 {
@@ -70,6 +71,7 @@ public class Jobseeker
         this.password = password;
         setEmail(email);
         setPassword(password);
+        joinDate = Calendar.getInstance();
     }
 
     /**
@@ -156,7 +158,7 @@ public class Jobseeker
      */
     public void setPassword(String password)
     {
-        String pattern = "(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])\\w.{6,}\\w";
+        String pattern = "(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])\\w.{6,}";
         if(Pattern.matches(pattern, password)){
             this.password = password;
         }
@@ -186,12 +188,15 @@ public class Jobseeker
     /**method for print detail*/
     public String toString(){
         SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy");
-        
-        String value = "Id = " + id + "\n" +
+            
+        String value = "===================== JOBSEEKER =====================" + "\n" +
+            "Id = " + id + "\n" +
             "Nama = " + name + "\n" +
             "Email = " + email + "\n" +
             "Password = " + password + "\n" +
             "Join Date = " + sdf.format(joinDate.getTime()) + "\n";
+        
+            
         return value;
     }
 }

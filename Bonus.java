@@ -3,7 +3,7 @@
  * Class for Bonus
  *
  * @author Ivan Widjanarko
- * @version 08-04-2021
+ * @version 10-04-2021
  */
 public class Bonus
 {
@@ -121,7 +121,8 @@ public class Bonus
     
     /**method for print detail*/
     public String toString(){
-        String value = "ID = " + id + "\n" +
+        String value =  "===================== INVOICE =====================" + "\n" +
+            "ID = " + id + "\n" +
             "Referral Code = " + referralCode + "\n" +
             "Extra Fee = " + extraFee + "\n" +
             "Min Total Fee = " + minTotalFee + "\n" +

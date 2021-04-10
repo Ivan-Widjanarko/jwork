@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Jobseeker
-comment0.text=\r\n\ Class\ for\ Jobseeker\r\n\r\n\ @author\ Ivan\ Widjanarko\r\n\ @version\ 08-04-2021\r\n
+comment0.text=\r\n\ Class\ for\ Jobseeker\r\n\r\n\ @author\ Ivan\ Widjanarko\r\n\ @version\ 10-04-2021\r\n
 comment1.params=id\ name\ email\ password\ joinDate
 comment1.target=Jobseeker(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.util.Calendar)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Jobseeker\r\n\ @param\ id\ Jobseeker's\ ID\r\n\ @param\ name\ Jobseeker's\ name\r\n\ @param\ email\ Jobseeker's\ email\r\n\ @param\ password\ Jobseeker's\ password\r\n\ @param\ joinDate\ Calendar\ when\ the\ Jobseeker\ join\ the\ app\r\n

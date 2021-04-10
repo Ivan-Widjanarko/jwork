@@ -3,7 +3,7 @@
  * Class for Job
  *
  * @author Ivan Widjanarko
- * @version 08-04-2021
+ * @version 10-04-2021
  */
 public class Job
 {
@@ -121,7 +121,8 @@ public class Job
     
     /**method for print detail*/
     public String toString(){
-        String value = "Id = " + id + "\n" +
+        String value =  "===================== JOB =====================" + "\n" +
+            "Id = " + id + "\n" +
             "Nama = " + name + "\n" +
             "Recruiter = " + recruiter + "\n" +
             "City = " + getRecruiter().getLocation().getCity() + "\n" +

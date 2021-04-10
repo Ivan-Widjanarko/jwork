@@ -3,7 +3,7 @@
  * Class for Recruiter
  *
  * @author Ivan Widjanarko
- * @version 08-04-2021
+ * @version 10-04-2021
  */
 public class Recruiter
 {
@@ -120,7 +120,8 @@ public class Recruiter
     
     /**method for print detail*/
     public String toString(){
-        String value = "Id = " + id + "\n" +
+        String value =  "===================== RECRUITER =====================" + "\n" +
+            "Id = " + id + "\n" +
             "Nama = " + name + "\n" +
             "PhoneNumber = " + phoneNumber + "\n" +
             "Location = " + location.getDescription() + "\n";
