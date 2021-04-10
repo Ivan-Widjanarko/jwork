@@ -1,3 +1,4 @@
+import java.util.Calendar;
 
 /**
  * Abstract class for Invoice
@@ -10,7 +11,7 @@ abstract class Invoice
     private int id;
     protected int totalFee;
     private Job job;
-    private String date;
+    private Calendar date;
     private Jobseeker jobseeker;
     private InvoiceStatus invoiceStatus;
 
@@ -22,13 +23,13 @@ abstract class Invoice
      * @param jobseeker Jobseeker Information
      * @param status Invoice's Status
      */
-    public Invoice(int id, Job job, String date,Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public Invoice(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
     {
         this.id = id;
         this.job = job;
-        this.date = date;
         this.jobseeker = jobseeker;
         this.invoiceStatus = invoiceStatus;
+        date = Calendar.getInstance();
     }
 
     /**
@@ -53,7 +54,7 @@ abstract class Invoice
      * method for getDate
      * @return    Date of Invoice
      */
-    public String getDate()
+    public Calendar getDate()
     {
         return date;
     }
@@ -110,11 +111,20 @@ abstract class Invoice
     
     /**
      * method for setDate
-     * @param date Date of Invoice
+     * @param date Date when the Jobseeker join the app
      */
-    public void setDate(String date)
+    public void setDate(Calendar date)
     {
         this.date = date;
+    }
+    
+    /**
+     * method for setDate
+     * @return    Date when the Jobseeker join the app
+     */
+    public void setDate(int year, int month, int dayOfMonth)
+    {
+        this.date.set(year, month-1, dayOfMonth);
     }
     
     /**
@@ -141,5 +151,5 @@ abstract class Invoice
     }
     
     /**abstract method for print Data*/
-    public abstract void printData();
+    public abstract String toString();
 }

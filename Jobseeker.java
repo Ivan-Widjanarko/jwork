@@ -27,6 +27,7 @@ public class Jobseeker
     public Jobseeker(int id, String name, String email, String password, Calendar joinDate)
     {
         this.id = id;
+        this.name = name;
         setEmail(email);
         setPassword(password);
         this.password = password;
@@ -49,7 +50,7 @@ public class Jobseeker
         this.name = name;
         setEmail(email);
         setPassword(password);
-        this.joinDate = new GregorianCalendar(year, month-1, dayOfMonth);
+        joinDate = new GregorianCalendar(year, month-1, dayOfMonth);
     }
     
     /**
@@ -62,6 +63,7 @@ public class Jobseeker
     public Jobseeker(int id, String name, String email, String password)
     {
         this.id = id;
+        this.name = name;
         setEmail(email);
         setPassword(password);
         this.password = password;

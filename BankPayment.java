@@ -1,3 +1,4 @@
+import java.text.SimpleDateFormat;
 
 /**
  * Abstract sub-class for BankPayment from super-class Invoice
@@ -18,9 +19,9 @@ public class BankPayment extends Invoice
      * @param jobseeker Jobseeker Information
      * @param status Invoice's Status
      */
-    public BankPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public BankPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
     {
-        super(id, job, date, jobseeker, invoiceStatus);
+        super(id, job, jobseeker, invoiceStatus);
     }
     
     /**
@@ -32,9 +33,9 @@ public class BankPayment extends Invoice
      * @param bonus Bonus
      * @param status Invoice's Status
      */
-    public BankPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus, int adminFee)
+    public BankPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus, int adminFee)
     {
-        super(id, job, date, jobseeker, invoiceStatus);
+        super(id, job, jobseeker, invoiceStatus);
         this.adminFee = adminFee;
     }
     
@@ -81,18 +82,22 @@ public class BankPayment extends Invoice
         }
     }
     
-    /**method for print */
+    /**method for print detail*/
     @Override
-    public void printData()
-    {
-        System.out.println("===================== INVOICE =====================");
-        System.out.println("ID: " + getId());
-        System.out.println("Job: " + getJob().getName());
-        System.out.println("Date: " + getDate());
-        System.out.println("Job Seeker: " + getJobseeker().getName());
-        System.out.println("Admin Fee: " + getAdminFee());
-        System.out.println("Total Fee: " + super.totalFee);
-        System.out.println("Status: " + getInvoiceStatus().toString());
-        System.out.println("Payment Type: " + PAYMENT_TYPE.toString());
+    public String toString(){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy");
+            
+        String value = "===================== INVOICE =====================" + "\n" +
+            "ID: " + getId() + "\n" +
+            "Job: " + getJob().getName() + "\n" +
+            "Date: " + sdf.format(getDate().getTime()) + "\n" +
+            "Job Seeker: " + getJobseeker().getName() + "\n" +
+            "Admin Fee: " + getAdminFee() + "\n" + 
+            "Total Fee: " + super.totalFee + "\n" +
+            "Status: " + getInvoiceStatus().toString() + "\n" +
+            "Payment Type: " + PAYMENT_TYPE.toString() + "\n";
+        
+            
+        return value;
     }
 }
