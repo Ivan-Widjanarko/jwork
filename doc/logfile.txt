@@ -81,10 +81,10 @@ C:\Users\Ivan\Java\Praktikum_OOP\jwork\EwalletPayment.java:31: warning - @param 
 C:\Users\Ivan\Java\Praktikum_OOP\jwork\EwalletPayment.java:34: warning - @param argument "status" is not a parameter name.
 C:\Users\Ivan\Java\Praktikum_OOP\jwork\EwalletPayment.java:71: warning - @param argument "totalFee" is not a parameter name.
 Generating C:\Users\Ivan\Java\Praktikum_OOP\jwork\doc\Invoice.html...
-C:\Users\Ivan\Java\Praktikum_OOP\jwork\Invoice.java:22: warning - @param argument "date" is not a parameter name.
-C:\Users\Ivan\Java\Praktikum_OOP\jwork\Invoice.java:24: warning - @param argument "status" is not a parameter name.
-C:\Users\Ivan\Java\Praktikum_OOP\jwork\Invoice.java:105: warning - @param argument "idJob" is not a parameter name.
-C:\Users\Ivan\Java\Praktikum_OOP\jwork\Invoice.java:125: warning - @return tag cannot be used in method with void return type.
+C:\Users\Ivan\Java\Praktikum_OOP\jwork\Invoice.java:23: warning - @param argument "date" is not a parameter name.
+C:\Users\Ivan\Java\Praktikum_OOP\jwork\Invoice.java:25: warning - @param argument "status" is not a parameter name.
+C:\Users\Ivan\Java\Praktikum_OOP\jwork\Invoice.java:106: warning - @param argument "idJob" is not a parameter name.
+C:\Users\Ivan\Java\Praktikum_OOP\jwork\Invoice.java:126: warning - @return tag cannot be used in method with void return type.
 Generating C:\Users\Ivan\Java\Praktikum_OOP\jwork\doc\InvoiceStatus.html...
 Generating C:\Users\Ivan\Java\Praktikum_OOP\jwork\doc\Job.html...
 C:\Users\Ivan\Java\Praktikum_OOP\jwork\Job.java:106: warning - @param argument "fee" is not a parameter name.

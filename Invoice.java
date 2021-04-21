@@ -1,4 +1,5 @@
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /**
  * Abstract class for Invoice
@@ -124,7 +125,7 @@ abstract class Invoice
      */
     public void setDate(int year, int month, int dayOfMonth)
     {
-        this.date.set(year, month-1, dayOfMonth);
+        date = new GregorianCalendar(year, month, dayOfMonth);
     }
     
     /**
