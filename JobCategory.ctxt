@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.target=JobCategory
-comment0.text=\r\n\ Enumeration\ class\ for\ JobCategory\r\n\r\n\ @author\ Ivan\ Widjanarko\r\n\ @version\ 25-03-2021\r\n
-comment1.params=jobCategory
-comment1.target=JobCategory(java.lang.String)
-comment2.params=
-comment2.target=java.lang.String\ toString()
-numComments=3
