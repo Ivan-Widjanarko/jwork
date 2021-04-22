@@ -72,7 +72,7 @@ public class DatabaseJob
      */
     public static ArrayList<Job> getJobByCategory(JobCategory category)
     {
-        ArrayList<Job> returnObject = null;
+        ArrayList<Job> returnObject = new ArrayList<Job>();
         for(Job jobObject: JOB_DATABASE)
         {
             if(jobObject.getCategory() == category)

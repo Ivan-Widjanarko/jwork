@@ -117,7 +117,7 @@ public class Jobseeker
     
     /**
      * method for setId
-     * @param ID Jobseeker's ID
+     * @param id Jobseeker's ID
      */
     public void setId(int id)
     {

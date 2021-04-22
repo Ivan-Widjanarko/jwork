@@ -27,42 +27,12 @@ public class JWork
             System.out.println(jobseeker.toString());
         }
 
-        DatabaseJob.addJob(new Job(DatabaseJob.getLastId()+1, "Programmer", DatabaseRecruiter.getRecruiterById(1), 1000000, JobCategory.WebDeveloper));
+        DatabaseJob.addJob(new Job(DatabaseJob.getLastId()+1, "Web Developer", DatabaseRecruiter.getRecruiterById(1), 1000000, JobCategory.WebDeveloper));
+        DatabaseJob.addJob(new Job(DatabaseJob.getLastId()+1, "Front End", DatabaseRecruiter.getRecruiterById(1), 1000000, JobCategory.FrontEnd));
+        DatabaseJob.addJob(new Job(DatabaseJob.getLastId()+1, "Front End", DatabaseRecruiter.getRecruiterById(1), 1000000, JobCategory.FrontEnd));
 
-        Bonus bonusOne = new Bonus(1, "VANKO123", 10, 110, true);
-        Bonus bonusTwo = new Bonus(2, "VANKO456", 10, 60, true);
-        EwalletPayment EPayOne = new EwalletPayment(1, jobOne, jobseekerOne);
-        EwalletPayment EPayTwo = new EwalletPayment(2, jobOne, jobseekerOne, bonusOne, InvoiceStatus.Finished);
-        EwalletPayment EPayThree = new EwalletPayment(3, jobOne, jobseekerOne, bonusTwo, InvoiceStatus.Cancelled);
-        BankPayment BPayOne = new BankPayment(1, jobOne, jobseekerOne, InvoiceStatus.Finished);
-        BankPayment BPayTwo = new BankPayment(2, jobOne, jobseekerOne, InvoiceStatus.Finished, 10);
-        
-        System.out.println(jobseekerOne.toString());
-        System.out.println(jobseekerTwo.toString());
-        System.out.println(jobseekerThree.toString());
-        
-        jobseekerOne.setEmail("widjanarko@ui.ac.id");
-        jobseekerTwo.setEmail("widjanarko@ui.ac.id");
-        jobseekerThree.setEmail("widjanarko@ui.ac.id");
-        
-        jobseekerOne.setPassword("Pass123");
-        jobseekerTwo.setPassword("Pass123");
-        jobseekerThree.setPassword("Pass123");
-        
-        System.out.println(jobseekerOne.toString());
-        System.out.println(jobseekerTwo.toString());
-        System.out.println(jobseekerThree.toString());
-        
-        EPayOne.setTotalFee();
-        EPayTwo.setTotalFee();
-        EPayThree.setTotalFee();
-        BPayOne.setTotalFee();
-        BPayTwo.setTotalFee();
-        
-        System.out.println(EPayOne.toString());
-        System.out.println(EPayTwo.toString());
-        System.out.println(EPayThree.toString());
-        System.out.println(BPayOne.toString());
-        System.out.println(BPayTwo.toString());
+        for(Job job: DatabaseJob.getJobByCategory(JobCategory.FrontEnd)){
+            System.out.println(job.toString());
+        }
     }
 }

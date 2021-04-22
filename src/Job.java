@@ -105,7 +105,7 @@ public class Job
      * method for setFee
      * @param fee Recruiter's fee
      */
-    public void setFee(int Fee)
+    public void setFee(int fee)
     {
         this.fee = fee;
     }
