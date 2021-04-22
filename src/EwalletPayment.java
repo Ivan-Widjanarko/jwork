@@ -1,10 +1,11 @@
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 /**
  * Abstract sub-class for EwalletPayment from super-class Invoice
  *
  * @author Ivan Widjanarko
- * @version 01-04-2021
+ * @version 22-04-2021
  */
 public class EwalletPayment extends Invoice
 {
@@ -14,28 +15,24 @@ public class EwalletPayment extends Invoice
     /**
      * Constructor 1 for objects of class EwalletPayment
      * @param id Jobseeker's ID
-     * @param job Job
-     * @param date Date of Invoice
+     * @param jobs Job
      * @param jobseeker Jobseeker Information
-     * @param status Invoice's Status
      */
-    public EwalletPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
     {
-        super(id, job, jobseeker, invoiceStatus);
+        super(id, jobs, jobseeker);
     }
     
     /**
      * Constructor 2 for objects of class EwalletPayment
      * @param id Jobseeker's ID
-     * @param job Job
-     * @param date Date of Invoice
+     * @param jobs Job
      * @param jobseeker Jobseeker Information
      * @param bonus Bonus
-     * @param status Invoice's Status
      */
-    public EwalletPayment(int id, Job job, Jobseeker jobseeker, Bonus bonus, InvoiceStatus invoiceStatus)
+    public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, Bonus bonus)
     {
-        super(id, job, jobseeker, invoiceStatus);
+        super(id, jobs, jobseeker);
         this.bonus = bonus;
     }
     
@@ -68,17 +65,22 @@ public class EwalletPayment extends Invoice
     
     /**
      * method for setTotalFee
-     * @param totalFee Total Fee
      */
     @Override
     public void setTotalFee()
     {
-        if(bonus instanceof Bonus && bonus.getActive() && getJob().getFee() >= bonus.getMinTotalFee())
+        int total = 0;
+        for(Job job: getJobs())
         {
-            super.totalFee = super.getJob().getFee() + bonus.getExtraFee();
+            total += job.getFee();
         }
-        else {
-            super.totalFee = super.getJob().getFee();
+        if(bonus instanceof Bonus && bonus.getActive() && total > bonus.getMinTotalFee())
+        {
+            totalFee = total + bonus.getExtraFee();
+        }
+        else
+        {
+            totalFee = total;
         }
     }
     
@@ -89,11 +91,18 @@ public class EwalletPayment extends Invoice
             
         String value = "===================== INVOICE =====================" + "\n" +
             "Id = " + getId() + "\n" +
-            "Job: " + getJob().getName() + "\n" +
+                "Job: ";;
+
+        for(Job job: getJobs())
+        {
+            value += job.getName() + ", ";
+        }
+
+        value +=
             "Date: " + sdf.format(getDate().getTime()) + "\n" +
             "Job Seeker: " + getJobseeker().getName() + "\n";
         
-        if (bonus instanceof Bonus && bonus.getActive() && getJob().getFee() >= bonus.getMinTotalFee()) {
+        if (bonus instanceof Bonus && bonus.getActive() && totalFee >= bonus.getMinTotalFee()) {
             value += "Referral Code: " + bonus.getReferralCode() + "\n";
         }
         

@@ -1,47 +1,127 @@
+import java.util.ArrayList;
 
 /**
  * Class for DatabaseBonus
  *
  * @author Ivan Widjanarko
- * @version 01-04-2021
+ * @version 22 -04-2021
  */
 public class DatabaseBonus
 {
-    private static String[] listBonus;
+    private static ArrayList<Bonus> BONUS_DATABASE = new ArrayList<Bonus>();
+    private static int lastId = 0;
+
+    /**
+     * method for getBonusDatabase
+     * @return    BONUS_DATABASE
+     */
+    public static ArrayList<Bonus> getBonusDatabase()
+    {
+        return BONUS_DATABASE;
+    }
+
+    /**
+     * method for getLastId
+     * @return    lastId
+     */
+    public static int getLastId()
+    {
+        return lastId;
+    }
+
+    /**
+     * method for getBonusById
+     * @param id Bonus ID
+     * @return    returnObject
+     */
+    public static Bonus getBonusById(int id)
+    {
+        Bonus returnObject = null;
+        for(Bonus bonusObject: BONUS_DATABASE)
+        {
+            if(bonusObject.getId() == id)
+            {
+                returnObject = bonusObject;
+            }
+        }
+        return returnObject;
+    }
+
+    /**
+     * method for getBonusByReferralCode
+     * @param referralCode Referral Code
+     * @return    returnObject
+     */
+    public static Bonus getBonusByReferralCode(String referralCode)
+    {
+        Bonus returnObject = null;
+        for(Bonus bonusObject: BONUS_DATABASE)
+        {
+            if(bonusObject.getReferralCode() == referralCode)
+            {
+                returnObject = bonusObject;
+            }
+        }
+        return returnObject;
+    }
 
     /**
      * method for addBonus
-     * @return    false
+     * @param bonus Bonus
+     * @return    BONUS_DATABASE.add(bonus)
      */
     public static boolean addBonus(Bonus bonus)
     {
-        return false;
+        for(Bonus bonusObject: BONUS_DATABASE)
+        {
+            if(bonusObject.getReferralCode() == bonus.getReferralCode())
+            {
+                return false;
+            }
+        }
+        lastId = bonus.getId();
+        return BONUS_DATABASE.add(bonus);
     }
-    
+
     /**
-     * method for removeBonus
+     * method for activateBonus
+     * @param id Bonus ID
      * @return    false
      */
-    public static boolean removeBonus(Bonus bonus)
+    public static boolean activateBonus(int id)
     {
+        for(Bonus bonus: BONUS_DATABASE) {
+            if (bonus.getId() == id) {
+                bonus.setActive(true);
+                return true;
+            }
+        }
         return false;
     }
-    
+
     /**
-     * method for getBonus
-     * @return    null
+     * method for deactivateBonus
+     * @param id Bonus ID
+     * @return    false
      */
-    public static Bonus getBonus()
+    public static boolean deactivateBonus(int id)
     {
-        return null;
+        for(Bonus bonus: BONUS_DATABASE) {
+            if (bonus.getId() == id) {
+                bonus.setActive(false);
+                return true;
+            }
+        }
+        return false;
     }
-    
+
     /**
-     * method for getListBonus
-     * @return    null
+     * method for removeBonus
+     * @param id Bonus ID
+     * @return    false
      */
-    public static String[] getListBonus()
+    public static boolean removeBonus(int id)
     {
-        return null;
+        return BONUS_DATABASE.removeIf(bonus -> bonus.getId() == id);
     }
 }

@@ -103,7 +103,7 @@ public class Bonus
     
     /**
      * method for setMinTotalFee
-     * @param MinTotalFee Minimal of Total Fee
+     * @param minTotalFee Minimal of Total Fee
      */
     public void setMinTotalFee(int minTotalFee)
     {

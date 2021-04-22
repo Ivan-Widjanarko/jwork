@@ -1,4 +1,5 @@
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 /**
  * Abstract sub-class for BankPayment from super-class Invoice
@@ -14,28 +15,24 @@ public class BankPayment extends Invoice
     /**
      * Constructor 1 for objects of class BankPayment
      * @param id Jobseeker's ID
-     * @param job Job
-     * @param date Date of Invoice
+     * @param jobs Job
      * @param jobseeker Jobseeker Information
-     * @param status Invoice's Status
      */
-    public BankPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
     {
-        super(id, job, jobseeker, invoiceStatus);
+        super(id, jobs, jobseeker);
     }
     
     /**
      * Constructor 2 for objects of class BankPayment
      * @param id Jobseeker's ID
-     * @param job Job
-     * @param date Date of Invoice
+     * @param jobs Job
      * @param jobseeker Jobseeker Information
-     * @param bonus Bonus
-     * @param status Invoice's Status
+     * @param invoiceStatus Invoice's Status
      */
-    public BankPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus, int adminFee)
+    public BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, int adminFee)
     {
-        super(id, job, jobseeker, invoiceStatus);
+        super(id, jobs, jobseeker);
         this.adminFee = adminFee;
     }
     
@@ -59,7 +56,7 @@ public class BankPayment extends Invoice
     
     /**
      * method for setAdminFee
-     * @param bonus Bonus
+     * @param adminFee Admin Fee
      */
     public void setAdminFee(int adminFee)
     {
@@ -68,17 +65,26 @@ public class BankPayment extends Invoice
     
     /**
      * method for setTotalFee
-     * @param totalFee Total Fee
      */
     @Override
     public void setTotalFee()
     {
-        if(adminFee!=0)
+        if(adminFee != 0)
         {
-            super.totalFee = super.getJob().getFee() - adminFee;
+            totalFee = 0;
+            for(Job job: getJobs())
+            {
+                totalFee += job.getFee();
+            }
+            totalFee -= adminFee;
         }
-        else {
-            super.totalFee = super.getJob().getFee();
+        else
+        {
+            totalFee = 0;
+            for(Job job: getJobs())
+            {
+                totalFee += job.getFee();
+            }
         }
     }
     
@@ -89,15 +95,21 @@ public class BankPayment extends Invoice
             
         String value = "===================== INVOICE =====================" + "\n" +
             "ID: " + getId() + "\n" +
-            "Job: " + getJob().getName() + "\n" +
+            "Job: ";
+
+        for(Job job: getJobs())
+        {
+            value += job.getName() + ", ";
+        }
+
+        value +=
             "Date: " + sdf.format(getDate().getTime()) + "\n" +
             "Job Seeker: " + getJobseeker().getName() + "\n" +
             "Admin Fee: " + getAdminFee() + "\n" + 
             "Total Fee: " + super.totalFee + "\n" +
             "Status: " + getInvoiceStatus().toString() + "\n" +
             "Payment Type: " + PAYMENT_TYPE.toString() + "\n";
-        
-            
+
         return value;
     }
 }

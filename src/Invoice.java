@@ -1,17 +1,18 @@
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.ArrayList;
 
 /**
  * Abstract class for Invoice
  *
  * @author Ivan Widjanarko
- * @version 01-04-2021
+ * @version 22-04-2021
  */
 abstract class Invoice
 {
     private int id;
     protected int totalFee;
-    private Job job;
+    private ArrayList<Job> jobs = new ArrayList<Job>();
     private Calendar date;
     private Jobseeker jobseeker;
     private InvoiceStatus invoiceStatus;
@@ -19,18 +20,16 @@ abstract class Invoice
     /**
      * Constructor for objects of class Invoice
      * @param id Jobseeker's ID
-     * @param job Job
-     * @param date Date of Invoice
+     * @param jobs Job
      * @param jobseeker Jobseeker Information
-     * @param status Invoice's Status
      */
-    public Invoice(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public Invoice(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
     {
         this.id = id;
-        this.job = job;
+        this.jobs = jobs;
+        this.invoiceStatus = InvoiceStatus.OnGoing;
+        this.date = Calendar.getInstance();
         this.jobseeker = jobseeker;
-        this.invoiceStatus = invoiceStatus;
-        date = Calendar.getInstance();
     }
 
     /**
@@ -43,12 +42,12 @@ abstract class Invoice
     }
     
     /**
-     * method for getJob
-     * @return    Job
+     * method for getJobs
+     * @return    Jobs
      */
-    public Job getJob()
+    public ArrayList<Job> getJobs()
     {
-        return job;
+        return jobs;
     }
     
     /**
@@ -102,12 +101,12 @@ abstract class Invoice
     }
     
     /**
-     * method for setIdJob
-     * @param idJob Job's ID
+     * method for setJobs
+     * @param jobs Job
      */
-    public void setJob(Job job)
+    public void setJobs(ArrayList<Job> jobs)
     {
-        this.job = job;
+        this.jobs = jobs;
     }
     
     /**
