@@ -103,7 +103,7 @@ public class BankPayment extends Invoice
         }
 
         value +=
-            "Date: " + sdf.format(getDate().getTime()) + "\n" +
+            "\nDate: " + sdf.format(getDate().getTime()) + "\n" +
             "Job Seeker: " + getJobseeker().getName() + "\n" +
             "Admin Fee: " + getAdminFee() + "\n" + 
             "Total Fee: " + super.totalFee + "\n" +

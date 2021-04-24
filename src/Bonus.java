@@ -121,12 +121,12 @@ public class Bonus
     
     /**method for print detail*/
     public String toString(){
-        String value =  "===================== INVOICE =====================" + "\n" +
+        String value =  "===================== BONUS =====================" + "\n" +
             "ID = " + id + "\n" +
             "Referral Code = " + referralCode + "\n" +
             "Extra Fee = " + extraFee + "\n" +
             "Min Total Fee = " + minTotalFee + "\n" +
-            "Active Status = " + active;
+            "Active Status = " + active + "\n";
         return value;
     }
 }

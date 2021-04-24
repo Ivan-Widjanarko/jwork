@@ -99,7 +99,7 @@ public class EwalletPayment extends Invoice
         }
 
         value +=
-            "Date: " + sdf.format(getDate().getTime()) + "\n" +
+            "\nDate: " + sdf.format(getDate().getTime()) + "\n" +
             "Job Seeker: " + getJobseeker().getName() + "\n";
         
         if (bonus instanceof Bonus && bonus.getActive() && totalFee >= bonus.getMinTotalFee()) {

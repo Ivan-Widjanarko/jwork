@@ -52,14 +52,14 @@ public class DatabaseInvoice
      * @param jobseekerId Jobseeker's ID
      * @return    returnObject
      */
-    public static ArrayList<Invoice> getJobByJobseeker(int jobseekerId)
+    public static ArrayList<Invoice> getInvoiceByJobseeker(int jobseekerId)
     {
-        ArrayList<Invoice> returnObject = null;
-        for(Invoice jobObject: INVOICE_DATABASE)
+        ArrayList<Invoice> returnObject = new ArrayList<Invoice>();
+        for(Invoice invoiceObject: INVOICE_DATABASE)
         {
-            if(jobObject.getJobseeker().getId() == jobseekerId)
+            if(invoiceObject.getJobseeker().getId() == jobseekerId)
             {
-                returnObject.add(jobObject);
+                returnObject.add(invoiceObject);
             }
         }
         return returnObject;
@@ -86,7 +86,8 @@ public class DatabaseInvoice
     /**
      * method for activateBonus
      * @param id Bonus ID
-     * @return    false
+     * @param invoiceStatus Invoice Status
+     * @return    boolean
      */
     public static boolean changeInvoiceStatus(int id, InvoiceStatus invoiceStatus)
     {
