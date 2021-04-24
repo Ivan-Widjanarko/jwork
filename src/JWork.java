@@ -34,5 +34,8 @@ public class JWork
         for(Job job: DatabaseJob.getJobByCategory(JobCategory.FrontEnd)){
             System.out.println(job.toString());
         }
+
+        DatabaseBonus.addBonus(new Bonus(DatabaseBonus.getLastId()+1, "VANKO456", 10, 60, false));
+        DatabaseBonus.addBonus(new Bonus(DatabaseBonus.getLastId()+1, "VANKO456", 10, 60, false));
     }
 }
