@@ -79,6 +79,7 @@ abstract class Invoice
     
     /**
      * abstract method for getPaymentType
+     * @return null
      */
     public abstract PaymentType getPaymentType();
     
@@ -120,7 +121,9 @@ abstract class Invoice
     
     /**
      * method for setDate
-     * @return    Date when the Jobseeker join the app
+     * @param year Year of Join Date
+     * @param month Month of Join Date
+     * @param dayOfMonth Day of Join Date
      */
     public void setDate(int year, int month, int dayOfMonth)
     {

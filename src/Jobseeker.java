@@ -174,7 +174,9 @@ public class Jobseeker
     
     /**
      * method for setJoinDate
-     * @return    Date when the Jobseeker join the app
+     * @param year Year of Join Date
+     * @param month Month of Join Date
+     * @param dayOfMonth Day of Join Date
      */
     public void setJoinDate(int year, int month, int dayOfMonth)
     {

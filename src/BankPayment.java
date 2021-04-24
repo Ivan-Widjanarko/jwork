@@ -28,6 +28,7 @@ public class BankPayment extends Invoice
      * @param id Jobseeker's ID
      * @param jobs Job
      * @param jobseeker Jobseeker Information
+     * @param adminFee Administration Fee
      */
     public BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, int adminFee)
     {

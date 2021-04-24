@@ -97,7 +97,7 @@ public class DatabaseJob
     /**
      * method for removeJob
      * @param id Job ID
-     * @return    JOB_DATABASE.removeIf(job -> job.getId() == id)
+     * @return    boolean
      */
     public static boolean removeJob(int id)
     {

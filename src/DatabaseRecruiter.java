@@ -61,7 +61,7 @@ public class DatabaseRecruiter
     /**
      * method for removeRecruiter
      * @param id Recruiter ID
-     * @return    RECRUITER_DATABASE.removeIf(recruiter -> recruiter.getId() == id)
+     * @return    boolean
      */
     public static boolean removeRecruiter(int id)
     {

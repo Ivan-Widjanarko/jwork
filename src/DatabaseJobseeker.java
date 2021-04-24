@@ -68,7 +68,7 @@ public class DatabaseJobseeker
     /**
      * method for removeJobseeker
      * @param id Jobseeker ID
-     * @return    JOBSEEKER_DATABASE.removeIf(jobseeker -> jobseeker.getId() == id)
+     * @return    boolean
      */
     public static boolean removeJobseeker(int id)
     {

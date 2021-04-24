@@ -124,7 +124,7 @@ public class Job
         String value =  "===================== JOB =====================" + "\n" +
             "Id = " + id + "\n" +
             "Nama = " + name + "\n" +
-            "Recruiter = " + recruiter + "\n" +
+            "Recruiter = " + recruiter.getName() + "\n" +
             "City = " + getRecruiter().getLocation().getCity() + "\n" +
             "Fee = " + fee + "\n" +
             "Category = " + category.toString() + "\n";
