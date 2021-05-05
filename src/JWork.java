@@ -5,7 +5,7 @@ import java.util.GregorianCalendar;
  * Class for JWork
  *
  * @author Ivan Widjanarko
- * @version 22-04-2021
+ * @version 05-05-2021
  */
 
 public class JWork
@@ -64,7 +64,7 @@ public class JWork
 
         DatabaseInvoice.addInvoice(new EwalletPayment(DatabaseInvoice.getLastId()+1, DatabaseJob.getJobDatabase(), DatabaseJobseeker.getJobseekerById(2), DatabaseBonus.getBonusByReferralCode("VANKO456")));
 
-        DatabaseBonus.getBonusById(1).setActive(true);
+        DatabaseBonus.activateBonus(1);
 
         DatabaseInvoice.getInvoiceDatabase().forEach(invoiceObj -> invoiceObj.setTotalFee());
 

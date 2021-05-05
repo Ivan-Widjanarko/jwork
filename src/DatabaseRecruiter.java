@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Class for DatabaseRecruiter
  *
  * @author Ivan Widjanarko
- * @version 22 -04-2021
+ * @version 05-05-2021
  */
 public class DatabaseRecruiter
 {

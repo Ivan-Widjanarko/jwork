@@ -3,7 +3,7 @@
  * Enumeration class for JobCategory
  *
  * @author Ivan Widjanarko
- * @version 25-03-2021
+ * @version 05-05-2021
  */
 public enum JobCategory
 {

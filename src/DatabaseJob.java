@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Class for DatabaseJob
  *
  * @author Ivan Widjanarko
- * @version 22 -04-2021
+ * @version 05-05-2021
  */
 public class DatabaseJob
 {
@@ -54,7 +54,7 @@ public class DatabaseJob
      */
     public static ArrayList<Job> getJobByRecruiter(int recruiterId)
     {
-        ArrayList<Job> returnObject = null;
+        ArrayList<Job> returnObject = new ArrayList<Job>();
         for(Job jobObject: JOB_DATABASE)
         {
             if(jobObject.getRecruiter().getId() == recruiterId)

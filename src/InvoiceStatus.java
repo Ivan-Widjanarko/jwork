@@ -3,7 +3,7 @@
  * Enumeration class for InvoiceStatus
  *
  * @author Ivan Widjanarko
- * @version 27-03-2021
+ * @version 05-05-2021
  */
 public enum InvoiceStatus
 {

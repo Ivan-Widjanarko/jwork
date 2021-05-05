@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Class for DatabaseInvoice
  *
  * @author Ivan Widjanarko
- * @version 22 -04-2021
+ * @version 05-05-2021
  */
 public class DatabaseInvoice
 {
@@ -84,7 +84,7 @@ public class DatabaseInvoice
     }
 
     /**
-     * method for activateBonus
+     * method for changeInvoiceStatus
      * @param id Bonus ID
      * @param invoiceStatus Invoice Status
      * @return    boolean

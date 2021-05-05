@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * Abstract sub-class for BankPayment from super-class Invoice
  *
  * @author Ivan Widjanarko
- * @version 03-04-2021
+ * @version 05-05-2021
  */
 public class BankPayment extends Invoice
 {

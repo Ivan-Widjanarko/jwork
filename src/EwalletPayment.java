@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * Abstract sub-class for EwalletPayment from super-class Invoice
  *
  * @author Ivan Widjanarko
- * @version 22-04-2021
+ * @version 05-05-2021
  */
 public class EwalletPayment extends Invoice
 {
