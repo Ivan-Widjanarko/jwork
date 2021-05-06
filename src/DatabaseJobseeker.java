@@ -33,6 +33,7 @@ public class DatabaseJobseeker
      * method for getJobseekerById
      * @param id Jobseeker ID
      * @return    returnObject
+     * @throws JobseekerNotFoundException Exception for Jobseeker
      */
     public static Jobseeker getJobseekerById(int id) throws JobseekerNotFoundException
     {
@@ -55,6 +56,7 @@ public class DatabaseJobseeker
      * method for addJobseeker
      * @param jobseeker Jobseeker
      * @return    JOBSEEKER_DATABASE.add(jobseeker)
+     * @throws EmailAlreadyExistsException Exception for Email
      */
     public static boolean addJobseeker(Jobseeker jobseeker) throws EmailAlreadyExistsException
     {
@@ -73,6 +75,7 @@ public class DatabaseJobseeker
      * method for removeJobseeker
      * @param id Jobseeker ID
      * @return    boolean
+     * @throws JobseekerNotFoundException Exception for Jobseeker
      */
     public static boolean removeJobseeker(int id) throws JobseekerNotFoundException
     {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Class for JWork
  *
  * @author Ivan Widjanarko
- * @version 05-05-2021
+ * @version 06-05-2021
  */
 
 public class JWork
@@ -108,7 +108,7 @@ public class JWork
 
         /*ArrayList<Job> arrayJob = new ArrayList<Job>();
         arrayJob.add(DatabaseJob.getJobById(1));
-        arrayJob.add(DatabaseJob.getJobById(2));*/
+        arrayJob.add(DatabaseJob.getJobById(2));
 
         try
         {
@@ -133,9 +133,9 @@ public class JWork
 
         invoice.get(invoice.size() - 1).setTotalFee();
 
-        /*for(Invoice invoiceObject: DatabaseInvoice.getInvoiceDatabase()){
+        for(Invoice invoiceObject: DatabaseInvoice.getInvoiceDatabase()){
             System.out.println(invoiceObject.toString());
-        }*/
+        }
 
         DatabaseInvoice.changeInvoiceStatus(1, InvoiceStatus.Finished);
 
@@ -146,7 +146,7 @@ public class JWork
         catch (JobseekerNotFoundException errorMessage)
         {
             System.out.println(errorMessage.getMessage());
-        }
+        }*/
 
         DatabaseBonus.activateBonus(1);
 
@@ -204,6 +204,7 @@ public class JWork
         {
             System.out.println(errorMessage.getMessage());
         }
+        DatabaseInvoice.addInvoice(invoiceOne);
 
         try
         {
@@ -213,6 +214,7 @@ public class JWork
         {
             System.out.println(errorMessage.getMessage());
         }
+        DatabaseInvoice.addInvoice(invoiceTwo);
 
         try
         {
@@ -222,10 +224,17 @@ public class JWork
         {
             System.out.println(errorMessage.getMessage());
         }
-
-        DatabaseInvoice.addInvoice(invoiceOne);
-        DatabaseInvoice.addInvoice(invoiceTwo);
         DatabaseInvoice.addInvoice(invoiceThree);
-        
+
+        FeeCalculator fcOne = new FeeCalculator(invoiceOne);
+        FeeCalculator fcTwo = new FeeCalculator(invoiceTwo);
+        FeeCalculator fcThree = new FeeCalculator(invoiceThree);
+
+        Thread threadOne = new Thread(fcOne);
+        threadOne.start();
+        Thread threadTwo = new Thread(fcTwo);
+        threadTwo.start();
+        Thread threadThree = new Thread(fcThree);
+        threadThree.start();
     }
 }

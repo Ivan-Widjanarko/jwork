@@ -33,6 +33,7 @@ public class DatabaseJob
      * method for getJobById
      * @param id Job ID
      * @return    returnObject
+     * @throws JobNotFoundException Exception for Job
      */
     public static Job getJobById(int id) throws JobNotFoundException
     {
@@ -103,6 +104,7 @@ public class DatabaseJob
      * method for removeJob
      * @param id Job ID
      * @return    boolean
+     * @throws JobNotFoundException Exception for Job
      */
     public static boolean removeJob(int id) throws JobNotFoundException
     {

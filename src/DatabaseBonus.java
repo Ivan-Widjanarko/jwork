@@ -33,6 +33,7 @@ public class DatabaseBonus
      * method for getBonusById
      * @param id Bonus ID
      * @return    returnObject
+     * @throws BonusNotFoundException Exception for Bonus
      */
     public static Bonus getBonusById(int id) throws BonusNotFoundException
     {
@@ -73,6 +74,7 @@ public class DatabaseBonus
      * method for addBonus
      * @param bonus Bonus
      * @return    BONUS_DATABASE.add(bonus)
+     * @throws ReferralCodeAlreadyExistsException Exception for Referral Code
      */
     public static boolean addBonus(Bonus bonus) throws ReferralCodeAlreadyExistsException
     {
@@ -123,6 +125,7 @@ public class DatabaseBonus
      * method for removeBonus
      * @param id Bonus ID
      * @return    false
+     * @throws BonusNotFoundException Exception for Bonus
      */
     public static boolean removeBonus(int id) throws BonusNotFoundException
     {

@@ -33,6 +33,7 @@ public class DatabaseRecruiter
      * method for getRecruiterById
      * @param id Recruiter ID
      * @return returnObject
+     * @throws RecruiterNotFoundException Exception for Recruiter
      */
     public static Recruiter getRecruiterById(int id) throws RecruiterNotFoundException
     {
@@ -66,6 +67,7 @@ public class DatabaseRecruiter
      * method for removeRecruiter
      * @param id Recruiter ID
      * @return    boolean
+     * @throws RecruiterNotFoundException Exception for Recruiter
      */
     public static boolean removeRecruiter(int id) throws RecruiterNotFoundException
     {
