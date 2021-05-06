@@ -3,64 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c317eb7f-0a60-4ada-865b-6c4c3362e77a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/BankPayment.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/BankPayment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/Bonus.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/Bonus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/DatabaseBonus.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/DatabaseBonus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/DatabaseInvoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/DatabaseInvoice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/DatabaseJob.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/DatabaseJob.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/DatabaseJobseeker.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/DatabaseJobseeker.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/DatabaseRecruiter.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/DatabaseRecruiter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/EwalletPayment.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/EwalletPayment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/InvoiceStatus.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/InvoiceStatus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/JWork.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/JWork.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/Job.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/Job.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/JobCategory.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/JobCategory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/Jobseeker.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/Jobseeker.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/Location.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/Location.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/PaymentType.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/PaymentType.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/Recruiter.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/Recruiter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/allclasses.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/allclasses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/allpackages-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/company/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/com/company/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/company/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/com/company/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/com/company/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/com/company/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-13.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-14.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-15.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-16.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-17.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-17.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-18.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-18.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-19.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-19.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/member-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/member-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/member-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/overview-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/package-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/package-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/type-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/type-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/type-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseBonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseBonus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseJob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseJobseeker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseJobseeker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseRecruiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseRecruiter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JWork.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +71,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/JWork.java</url>
-          <line>192</line>
+          <line>201</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

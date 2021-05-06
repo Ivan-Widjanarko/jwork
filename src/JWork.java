@@ -146,11 +146,20 @@ public class JWork
         catch (JobseekerNotFoundException errorMessage)
         {
             System.out.println(errorMessage.getMessage());
-        }*/
+        }
 
         DatabaseBonus.activateBonus(1);
 
-        DatabaseInvoice.getInvoiceDatabase().forEach(invoiceObj -> invoiceObj.setTotalFee());
+        DatabaseInvoice.getInvoiceDatabase().forEach(invoiceObj -> invoiceObj.setTotalFee());*/
+
+        try
+        {
+            DatabaseJobseeker.getJobseekerById(100);
+        }
+        catch (JobseekerNotFoundException errorMessage)
+        {
+            System.out.println(errorMessage.getMessage());
+        }
 
         try
         {
@@ -225,6 +234,10 @@ public class JWork
             System.out.println(errorMessage.getMessage());
         }
         DatabaseInvoice.addInvoice(invoiceThree);
+
+        for(Invoice invoiceObject: DatabaseInvoice.getInvoiceDatabase()){
+            System.out.println(invoiceObject.toString());
+        }
 
         FeeCalculator fcOne = new FeeCalculator(invoiceOne);
         FeeCalculator fcTwo = new FeeCalculator(invoiceTwo);
