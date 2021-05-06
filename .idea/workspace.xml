@@ -2,30 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c317eb7f-0a60-4ada-865b-6c4c3362e77a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jwork/JWork.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jwork/JWork.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BankPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BankPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bonus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DatabaseBonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseBonus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseInvoice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DatabaseJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseJob.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DatabaseJobseeker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseJobseeker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DatabaseRecruiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseRecruiter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EwalletPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EwalletPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InvoiceStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InvoiceStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JWork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Job.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JobCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JobCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Jobseeker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Jobseeker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PaymentType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PaymentType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Recruiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recruiter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,6 +33,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="JWork" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -63,5 +59,27 @@
       <updated>1619234561979</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/JWork.java</url>
+          <line>192</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

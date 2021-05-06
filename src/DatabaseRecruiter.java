@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Class for DatabaseRecruiter
  *
  * @author Ivan Widjanarko
- * @version 05-05-2021
+ * @version 06-05-2021
  */
 public class DatabaseRecruiter
 {
@@ -34,7 +34,7 @@ public class DatabaseRecruiter
      * @param id Recruiter ID
      * @return returnObject
      */
-    public static Recruiter getRecruiterById(int id)
+    public static Recruiter getRecruiterById(int id) throws RecruiterNotFoundException
     {
         Recruiter returnObject = null;
         for(Recruiter recruiterObject: RECRUITER_DATABASE)
@@ -44,7 +44,11 @@ public class DatabaseRecruiter
                 returnObject = recruiterObject;
             }
         }
-        return returnObject;
+        if (returnObject == null) {
+            throw new RecruiterNotFoundException(id);
+        } else {
+            return returnObject;
+        }
     }
 
     /**
@@ -63,8 +67,12 @@ public class DatabaseRecruiter
      * @param id Recruiter ID
      * @return    boolean
      */
-    public static boolean removeRecruiter(int id)
+    public static boolean removeRecruiter(int id) throws RecruiterNotFoundException
     {
-        return RECRUITER_DATABASE.removeIf(recruiter -> recruiter.getId() == id);
+        if (RECRUITER_DATABASE.removeIf(job -> job.getId() == id)) {
+            return true;
+        } else {
+            throw new RecruiterNotFoundException(id);
+        }
     }
 }

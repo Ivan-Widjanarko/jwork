@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Class for DatabaseJob
  *
  * @author Ivan Widjanarko
- * @version 05-05-2021
+ * @version 06-05-2021
  */
 public class DatabaseJob
 {
@@ -34,7 +34,7 @@ public class DatabaseJob
      * @param id Job ID
      * @return    returnObject
      */
-    public static Job getJobById(int id)
+    public static Job getJobById(int id) throws JobNotFoundException
     {
         Job returnObject = null;
         for(Job jobObject: JOB_DATABASE)
@@ -44,8 +44,13 @@ public class DatabaseJob
                 returnObject = jobObject;
             }
         }
-        return returnObject;
+        if (returnObject == null) {
+            throw new JobNotFoundException(id);
+        } else {
+            return returnObject;
+        }
     }
+
 
     /**
      * method for getJobByRecruiter
@@ -99,8 +104,12 @@ public class DatabaseJob
      * @param id Job ID
      * @return    boolean
      */
-    public static boolean removeJob(int id)
+    public static boolean removeJob(int id) throws JobNotFoundException
     {
-        return JOB_DATABASE.removeIf(job -> job.getId() == id);
+        if (JOB_DATABASE.removeIf(job -> job.getId() == id)) {
+            return true;
+        } else {
+            throw new JobNotFoundException(id);
+        }
     }
 }

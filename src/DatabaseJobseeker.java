@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Class for DatabaseJobseeker
  *
  * @author Ivan Widjanarko
- * @version 05-05-2021
+ * @version 06-05-2021
  */
 public class DatabaseJobseeker
 {
@@ -34,7 +34,7 @@ public class DatabaseJobseeker
      * @param id Jobseeker ID
      * @return    returnObject
      */
-    public static Jobseeker getJobseekerById(int id)
+    public static Jobseeker getJobseekerById(int id) throws JobseekerNotFoundException
     {
         Jobseeker returnObject = null;
         for(Jobseeker jobseekerObject: JOBSEEKER_DATABASE)
@@ -44,7 +44,11 @@ public class DatabaseJobseeker
                 returnObject = jobseekerObject;
             }
         }
-        return returnObject;
+        if (returnObject == null) {
+            throw new JobseekerNotFoundException(id);
+        } else {
+            return returnObject;
+        }
     }
 
     /**
@@ -52,13 +56,13 @@ public class DatabaseJobseeker
      * @param jobseeker Jobseeker
      * @return    JOBSEEKER_DATABASE.add(jobseeker)
      */
-    public static boolean addJobseeker(Jobseeker jobseeker)
+    public static boolean addJobseeker(Jobseeker jobseeker) throws EmailAlreadyExistsException
     {
         for(Jobseeker jobseekerObject: JOBSEEKER_DATABASE)
         {
             if(jobseekerObject.getEmail() == jobseeker.getEmail())
             {
-                return false;
+                throw new EmailAlreadyExistsException(jobseekerObject);
             }
         }
         lastId = jobseeker.getId();
@@ -70,8 +74,12 @@ public class DatabaseJobseeker
      * @param id Jobseeker ID
      * @return    boolean
      */
-    public static boolean removeJobseeker(int id)
+    public static boolean removeJobseeker(int id) throws JobseekerNotFoundException
     {
-        return JOBSEEKER_DATABASE.removeIf(jobseeker -> jobseeker.getId() == id);
+        if (JOBSEEKER_DATABASE.removeIf(job -> job.getId() == id)) {
+            return true;
+        } else {
+            throw new JobseekerNotFoundException(id);
+        }
     }
 }

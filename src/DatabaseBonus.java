@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Class for DatabaseBonus
  *
  * @author Ivan Widjanarko
- * @version 05-05-2021
+ * @version 06-05-2021
  */
 public class DatabaseBonus
 {
@@ -34,7 +34,7 @@ public class DatabaseBonus
      * @param id Bonus ID
      * @return    returnObject
      */
-    public static Bonus getBonusById(int id)
+    public static Bonus getBonusById(int id) throws BonusNotFoundException
     {
         Bonus returnObject = null;
         for(Bonus bonusObject: BONUS_DATABASE)
@@ -44,7 +44,11 @@ public class DatabaseBonus
                 returnObject = bonusObject;
             }
         }
-        return returnObject;
+        if (returnObject == null) {
+            throw new BonusNotFoundException(id);
+        } else {
+            return returnObject;
+        }
     }
 
     /**
@@ -70,13 +74,13 @@ public class DatabaseBonus
      * @param bonus Bonus
      * @return    BONUS_DATABASE.add(bonus)
      */
-    public static boolean addBonus(Bonus bonus)
+    public static boolean addBonus(Bonus bonus) throws ReferralCodeAlreadyExistsException
     {
         for(Bonus bonusObject: BONUS_DATABASE)
         {
             if(bonusObject.getReferralCode() == bonus.getReferralCode())
             {
-                return false;
+                throw new ReferralCodeAlreadyExistsException(bonusObject);
             }
         }
         lastId = bonus.getId();
@@ -120,8 +124,12 @@ public class DatabaseBonus
      * @param id Bonus ID
      * @return    false
      */
-    public static boolean removeBonus(int id)
+    public static boolean removeBonus(int id) throws BonusNotFoundException
     {
-        return BONUS_DATABASE.removeIf(bonus -> bonus.getId() == id);
+        if (BONUS_DATABASE.removeIf(job -> job.getId() == id)) {
+            return true;
+        } else {
+            throw new BonusNotFoundException(id);
+        }
     }
 }
