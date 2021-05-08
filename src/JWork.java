@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /**
  * Class for JWork
  *
@@ -179,6 +177,15 @@ public class JWork
             System.out.println(errorMessage.getMessage());
         }
 
+        try
+        {
+            DatabaseInvoice.getInvoiceById(100);
+        }
+        catch (InvoiceNotFoundException errorMessage)
+        {
+            System.out.println(errorMessage.getMessage());
+        }
+
         for(Invoice invoiceObject: DatabaseInvoice.getInvoiceDatabase()){
             System.out.println(invoiceObject.toString());
         }
@@ -204,6 +211,7 @@ public class JWork
         Invoice invoiceOne = null;
         Invoice invoiceTwo = null;
         Invoice invoiceThree = null;
+        Invoice invoiceFour = null;
 
         try
         {
@@ -213,7 +221,15 @@ public class JWork
         {
             System.out.println(errorMessage.getMessage());
         }
-        DatabaseInvoice.addInvoice(invoiceOne);
+
+        try
+        {
+            DatabaseInvoice.addInvoice(invoiceOne);
+        }
+        catch (OngoingInvoiceAlreadyExistsException errorMessage)
+        {
+            System.out.println(errorMessage.getMessage());
+        }
 
         try
         {
@@ -223,7 +239,15 @@ public class JWork
         {
             System.out.println(errorMessage.getMessage());
         }
-        DatabaseInvoice.addInvoice(invoiceTwo);
+
+        try
+        {
+            DatabaseInvoice.addInvoice(invoiceTwo);
+        }
+        catch (OngoingInvoiceAlreadyExistsException errorMessage)
+        {
+            System.out.println(errorMessage.getMessage());
+        }
 
         try
         {
@@ -233,7 +257,33 @@ public class JWork
         {
             System.out.println(errorMessage.getMessage());
         }
-        DatabaseInvoice.addInvoice(invoiceThree);
+
+        try
+        {
+            DatabaseInvoice.addInvoice(invoiceThree);
+        }
+        catch (OngoingInvoiceAlreadyExistsException errorMessage)
+        {
+            System.out.println(errorMessage.getMessage());
+        }
+
+        try
+        {
+            invoiceFour = new EwalletPayment(DatabaseInvoice.getLastId()+1, DatabaseJob.getJobDatabase(), DatabaseJobseeker.getJobseekerById(3), DatabaseBonus.getBonusByReferralCode("VANKO456"));
+        }
+        catch (JobseekerNotFoundException errorMessage)
+        {
+            System.out.println(errorMessage.getMessage());
+        }
+
+        try
+        {
+            DatabaseInvoice.addInvoice(invoiceFour);
+        }
+        catch (OngoingInvoiceAlreadyExistsException errorMessage)
+        {
+            System.out.println(errorMessage.getMessage());
+        }
 
         for(Invoice invoiceObject: DatabaseInvoice.getInvoiceDatabase()){
             System.out.println(invoiceObject.toString());

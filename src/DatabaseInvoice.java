@@ -33,8 +33,9 @@ public class DatabaseInvoice
      * method for getInvoiceById
      * @param id Invoice ID
      * @return returnObject
+     * @throws InvoiceNotFoundException Exception for Invoice
      */
-    public static Invoice getInvoiceById(int id)
+    public static Invoice getInvoiceById(int id) throws InvoiceNotFoundException
     {
         Invoice returnObject = null;
         for(Invoice recruiterObject: INVOICE_DATABASE)
@@ -44,7 +45,11 @@ public class DatabaseInvoice
                 returnObject = recruiterObject;
             }
         }
-        return returnObject;
+        if (returnObject == null) {
+            throw new InvoiceNotFoundException(id);
+        } else {
+            return returnObject;
+        }
     }
 
     /**
@@ -69,14 +74,15 @@ public class DatabaseInvoice
      * method for addInvoice
      * @param invoice Invoice
      * @return INVOICE_DATABASE.add(invoice)
+     * @throws OngoingInvoiceAlreadyExistsException Exception for Ongoing Invoice
      */
-    public static boolean addInvoice(Invoice invoice)
+    public static boolean addInvoice(Invoice invoice) throws OngoingInvoiceAlreadyExistsException
     {
         for(Invoice invoiceObject: INVOICE_DATABASE)
         {
             if(invoiceObject.getJobseeker() == invoice.getJobseeker() && invoiceObject.getInvoiceStatus() == InvoiceStatus.OnGoing)
             {
-                return false;
+                throw new OngoingInvoiceAlreadyExistsException(invoiceObject);
             }
         }
         lastId = invoice.getId();
@@ -104,9 +110,14 @@ public class DatabaseInvoice
      * method for removeInvoice
      * @param id Invoice ID
      * @return    boolean
+     * @throws InvoiceNotFoundException Exception for Invoice
      */
-    public static boolean removeInvoice(int id)
+    public static boolean removeInvoice(int id) throws InvoiceNotFoundException
     {
-        return INVOICE_DATABASE.removeIf(invoice -> invoice.getId() == id);
+        if (INVOICE_DATABASE.removeIf(invoice -> invoice.getId() == id)) {
+            return true;
+        } else {
+            throw new InvoiceNotFoundException(id);
+        }
     }
 }
