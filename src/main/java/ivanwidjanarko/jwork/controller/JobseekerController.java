@@ -3,6 +3,8 @@ package ivanwidjanarko.jwork.controller;
 import ivanwidjanarko.jwork.*;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 /**
  * Class for JobseekerController
  *
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/jobseeker")
 @RestController
 public class JobseekerController {
+    private static ArrayList<Jobseeker> JOBSEEKER_DATABASE = new ArrayList<Jobseeker>();
+    private static int lastId;
 
     @RequestMapping("")
     public String indexPage(@RequestParam(value="name", defaultValue="world") String name) {
@@ -47,7 +51,7 @@ public class JobseekerController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Jobseeker loginJobseeker(@RequestParam(value="email") String email,
-                                       @RequestParam(value="password") String password)
+                                    @RequestParam(value="password") String password)
     {
         return DatabaseJobseeker.jobseekerLogin(email, password);
     }

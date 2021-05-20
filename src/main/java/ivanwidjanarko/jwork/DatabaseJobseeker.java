@@ -96,9 +96,11 @@ public class DatabaseJobseeker
      */
     public static Jobseeker jobseekerLogin(String email, String password)
     {
-        for(Jobseeker jobseekerObject: JOBSEEKER_DATABASE) {
-            if (jobseekerObject.getEmail() == email && jobseekerObject.getPassword() == password) {
-                return jobseekerObject;
+        for(Jobseeker jobseeker: JOBSEEKER_DATABASE)
+        {
+            if(jobseeker.getEmail().equals(email) && jobseeker.getPassword().equals(password))
+            {
+                return jobseeker;
             }
         }
         return null;

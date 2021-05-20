@@ -15,16 +15,20 @@ import java.util.ArrayList;
 @RestController
 public class BonusController {
 
+    private static ArrayList<Bonus> BONUS_DATABASE = new ArrayList<Bonus>();
+    private static int lastId;
+
     @RequestMapping(value = "")
     public ArrayList<Bonus> getAllBonus() {
         return DatabaseBonus.getBonusDatabase();
     }
 
     @RequestMapping("/{referralCode}")
-    public Bonus getBonusByReferralCode(@PathVariable String referralCode) {
-        Bonus bonus = null;
-        bonus = DatabaseBonus.getBonusByReferralCode(referralCode);
-        return bonus;
+    public Bonus getBonusByReferralCode(@PathVariable String referralCode)
+    {
+        Bonus bonusObj = null;
+        bonusObj = DatabaseBonus.getBonusByReferralCode(referralCode);
+        return bonusObj;
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
