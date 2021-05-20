@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Abstract sub-class for BankPayment from super-class Invoice
  *
  * @author Ivan Widjanarko
- * @version 18-05-2021
+ * @version 20-05-2021
  */
 public class BankPayment extends Invoice
 {
@@ -73,7 +73,6 @@ public class BankPayment extends Invoice
     {
         if(adminFee != 0)
         {
-            totalFee = 0;
             for(Job job: getJobs())
             {
                 totalFee += job.getFee();
@@ -82,7 +81,6 @@ public class BankPayment extends Invoice
         }
         else
         {
-            totalFee = 0;
             for(Job job: getJobs())
             {
                 totalFee += job.getFee();

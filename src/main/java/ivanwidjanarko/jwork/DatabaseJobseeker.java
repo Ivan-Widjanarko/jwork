@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Class for DatabaseJobseeker
  *
  * @author Ivan Widjanarko
- * @version 18-05-2021
+ * @version 20-05-2021
  */
 public class DatabaseJobseeker
 {
@@ -86,5 +86,21 @@ public class DatabaseJobseeker
         } else {
             throw new JobseekerNotFoundException(id);
         }
+    }
+
+    /**
+     * method for jobseekerLogin
+     * @param email Jobseeker Email
+     * @param password Jobseeker Password
+     * @return    Jobseeker
+     */
+    public static Jobseeker jobseekerLogin(String email, String password)
+    {
+        for(Jobseeker jobseekerObject: JOBSEEKER_DATABASE) {
+            if (jobseekerObject.getEmail() == email && jobseekerObject.getPassword() == password) {
+                return jobseekerObject;
+            }
+        }
+        return null;
     }
 }
