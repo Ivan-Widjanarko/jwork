@@ -68,7 +68,17 @@ public class InvoiceController {
                       @RequestParam(value="jobseekerId") int jobseekerId,
                       @RequestParam(value="adminFee") int adminFee)
     {
-        return null;
+        Invoice invoice = null;
+        try
+        {
+            DatabaseInvoice.addInvoice(new BankPayment(DatabaseInvoice.getLastId()+1, DatabaseJob.getJobDatabase(), DatabaseJobseeker.getJobseekerById(jobseekerId)));
+            return invoice;
+        }
+        catch (OngoingInvoiceAlreadyExistsException | JobseekerNotFoundException errorMessage)
+        {
+            System.out.println(errorMessage.getMessage());
+            return null;
+        }
     }
 
     @RequestMapping(value = "/createBankPayment", method = RequestMethod.POST)
@@ -76,7 +86,17 @@ public class InvoiceController {
                                   @RequestParam(value="jobseekerId") int jobseekerId,
                                   @RequestParam(value="referralCode") String referralCode)
     {
-        return null;
+        Invoice invoice = null;
+        try
+        {
+            DatabaseInvoice.addInvoice(new EwalletPayment(DatabaseInvoice.getLastId()+1, DatabaseJob.getJobDatabase(), DatabaseJobseeker.getJobseekerById(jobseekerId)));
+            return invoice;
+        }
+        catch (OngoingInvoiceAlreadyExistsException | JobseekerNotFoundException errorMessage)
+        {
+            System.out.println(errorMessage.getMessage());
+            return null;
+        }
     }
 
 }
