@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * Class for BonusController
  *
  * @author Ivan Widjanarko
- * @version 20-05-2021
+ * @version 24-05-2021
  */
 @RequestMapping("/bonus")
 @RestController
@@ -18,19 +18,36 @@ public class BonusController {
     private static ArrayList<Bonus> BONUS_DATABASE = new ArrayList<Bonus>();
     private static int lastId;
 
+    /**
+     * method for get all bonus
+     * @return Database Bonus
+     */
     @RequestMapping(value = "")
     public ArrayList<Bonus> getAllBonus() {
         return DatabaseBonus.getBonusDatabase();
     }
 
+    /**
+     * method for get bonus by referral code
+     * @param referralCode Referral Code
+     * @return bonus
+     */
     @RequestMapping("/{referralCode}")
     public Bonus getBonusByReferralCode(@PathVariable String referralCode)
     {
-        Bonus bonusObj = null;
-        bonusObj = DatabaseBonus.getBonusByReferralCode(referralCode);
-        return bonusObj;
+        Bonus bonus = null;
+        bonus = DatabaseBonus.getBonusByReferralCode(referralCode);
+        return bonus;
     }
 
+    /**
+     * method for add bonus
+     * @param referralCode Referral Code
+     * @param extraFee Extra Fee
+     * @param minTotalFee Minimal of Total Fee
+     * @param active Bonus' Status
+     * @return bonus
+     */
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Bonus addBonus(@RequestParam(value="referralCode") String referralCode,
                                   @RequestParam(value="extraFee") int extraFee,
@@ -47,5 +64,4 @@ public class BonusController {
         }
         return bonus;
     }
-
 }

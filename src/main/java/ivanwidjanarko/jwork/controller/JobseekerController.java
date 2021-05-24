@@ -9,19 +9,30 @@ import java.util.ArrayList;
  * Class for JobseekerController
  *
  * @author Ivan Widjanarko
- * @version 20-05-2021
+ * @version 24-05-2021
  */
 @RequestMapping("/jobseeker")
 @RestController
 public class JobseekerController {
+
     private static ArrayList<Jobseeker> JOBSEEKER_DATABASE = new ArrayList<Jobseeker>();
     private static int lastId;
 
+    /**
+     * method for index page
+     * @param name name
+     * @return String
+     */
     @RequestMapping("")
     public String indexPage(@RequestParam(value="name", defaultValue="world") String name) {
         return "Hello " + name;
     }
 
+    /**
+     * method for get jobseeker by id
+     * @param id Jobseeker's ID
+     * @return jobseeker
+     */
     @RequestMapping("/{id}")
     public Jobseeker getJobseekerById(@PathVariable int id) {
         Jobseeker jobseeker = null;
@@ -34,6 +45,13 @@ public class JobseekerController {
         return jobseeker;
     }
 
+    /**
+     * method for register job
+     * @param name Jobseeker's Name
+     * @param email Jobseeker's Email
+     * @param password Jobseeker's Password
+     * @return jobseeker
+     */
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public Jobseeker registerJobseeker(@RequestParam(value="name") String name,
                                   @RequestParam(value="email") String email,
@@ -49,6 +67,12 @@ public class JobseekerController {
         return jobseeker;
     }
 
+    /**
+     * method for jobseeker login
+     * @param email Jobseeker's Email
+     * @param password Jobseeker's Password
+     * @return Database Jobseeker
+     */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Jobseeker loginJobseeker(@RequestParam(value="email") String email,
                                     @RequestParam(value="password") String password)

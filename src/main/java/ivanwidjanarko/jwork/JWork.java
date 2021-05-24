@@ -3,13 +3,11 @@ package ivanwidjanarko.jwork;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.ArrayList;
-
 /**
  * Class for JWork
  *
  * @author Ivan Widjanarko
- * @version 22-05-2021
+ * @version 24-05-2021
  */
 @SpringBootApplication
 public class JWork {
@@ -25,7 +23,7 @@ public class JWork {
 
         DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Ivan", "ivan@ui.ac.id", "08558069151", locationOne));
         DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId()+1, "Widjanarko", "widjanarko@ui.ac.id", "085780736569", locationTwo));
-        DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId()+1, "Fajar", "fajar@ui.ac.id", "0895333889470", locationThree));;
+        DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId()+1, "Fajar", "fajar@ui.ac.id", "0895333889470", locationThree));
 
         try
         {
@@ -59,6 +57,25 @@ public class JWork {
             DatabaseJob.addJob(new Job(DatabaseJob.getLastId()+1, "User Interface", DatabaseRecruiter.getRecruiterById(3), 250, JobCategory.UI));
         }
         catch (RecruiterNotFoundException errorMessage)
+        {
+            System.out.println(errorMessage.getMessage());
+        }
+
+        //Post Test
+        try
+        {
+            DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId()+1, "Ivan", "ivan@ui.ac.id", "Pass123"));
+        }
+        catch (EmailAlreadyExistsException errorMessage)
+        {
+            System.out.println(errorMessage.getMessage());
+        }
+
+        try
+        {
+            DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId()+1, "Fajar", "fajar@ui.ac.id", "Pass456"));
+        }
+        catch (EmailAlreadyExistsException errorMessage)
         {
             System.out.println(errorMessage.getMessage());
         }

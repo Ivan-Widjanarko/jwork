@@ -9,17 +9,26 @@ import java.util.ArrayList;
  * Class for JobController
  *
  * @author Ivan Widjanarko
- * @version 20-05-2021
+ * @version 24-05-2021
  */
 @RequestMapping("/job")
 @RestController
 public class JobController {
 
+    /**
+     * method for get all job
+     * @return Database Job
+     */
     @RequestMapping(value = "")
     public ArrayList<Job> getAllJob() {
         return DatabaseJob.getJobDatabase();
     }
 
+    /**
+     * method for get job by id
+     * @param id Job's ID
+     * @return job
+     */
     @RequestMapping("/{id}")
     public Job getJobById(@PathVariable int id) {
         Job job = null;
@@ -32,16 +41,34 @@ public class JobController {
         return job;
     }
 
+    /**
+     * method for get job by recruiter id
+     * @param recruiterId Recruiter's ID
+     * @return Database Job
+     */
     @RequestMapping("/recruiter/{recruiterId}")
     public ArrayList<Job> getJobByRecruiter(@PathVariable int recruiterId) {
         return DatabaseJob.getJobByRecruiter(recruiterId);
     }
 
+    /**
+     * method for get job by category
+     * @param category Job's Category
+     * @return Database Job
+     */
     @RequestMapping("/category/{category}")
     public ArrayList<Job> getJobByCategory(@PathVariable JobCategory category) {
         return DatabaseJob.getJobByCategory(category);
     }
 
+    /**
+     * method for add job
+     * @param name Job's Name
+     * @param recruiterId  Recruiter's ID
+     * @param fee Fee
+     * @param category Job's Category
+     * @return job
+     */
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Job addJob(@RequestParam(value="name") String name,
                                        @RequestParam(value="recruiterId") int recruiterId,
@@ -60,5 +87,4 @@ public class JobController {
         DatabaseJob.addJob(job);
         return job;
     }
-
 }

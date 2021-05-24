@@ -4,13 +4,13 @@ package ivanwidjanarko.jwork;
  * Enumeration class for InvoiceStatus
  *
  * @author Ivan Widjanarko
- * @version 18-05-2021
+ * @version 24-05-2021
  */
 public enum InvoiceStatus
 {
     OnGoing("On Going"),
     Finished("Finished"),
-    Cancelled("Cancelled");
+    Canceled("Canceled");
     
     private String invoiceStatus;
     
