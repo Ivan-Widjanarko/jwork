@@ -116,10 +116,20 @@ public class DatabaseInvoice
      */
     public static boolean removeInvoice(int id) throws InvoiceNotFoundException
     {
-        if (INVOICE_DATABASE.removeIf(invoice -> invoice.getId() == id)) {
-            return true;
-        } else {
-            throw new InvoiceNotFoundException(id);
+        boolean status = false;
+        for(Invoice invoice : INVOICE_DATABASE)
+        {
+            if(invoice.getId() == id)
+            {
+                INVOICE_DATABASE.remove(invoice);
+                status = true;
+            }
         }
+        if(status == false)
+        {
+            InvoiceNotFoundException e = new InvoiceNotFoundException(id);
+            System.out.println(e.getMessage());
+        }
+        return status;
     }
 }

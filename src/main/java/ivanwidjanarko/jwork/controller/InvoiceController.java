@@ -79,13 +79,21 @@ public class InvoiceController {
      */
     @RequestMapping(name = "/{id}", method = RequestMethod.DELETE)
     public boolean removeInvoice(@PathVariable int id) {
-        Invoice invoice = null;
-        try {
-            return DatabaseInvoice.removeInvoice(id);
-        } catch (InvoiceNotFoundException e) {
-            e.getMessage();
-            return false;
+        boolean status = false;
+        for(Invoice invoice : DatabaseInvoice.getInvoiceDatabase())
+        {
+            if(invoice.getId() == id)
+            {
+                DatabaseInvoice.getInvoiceDatabase().remove(invoice);
+                status = true;
+            }
         }
+        if(status == false)
+        {
+            InvoiceNotFoundException e = new InvoiceNotFoundException(id);
+            System.out.println(e.getMessage());
+        }
+        return status;
     }
 
     /**
