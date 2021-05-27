@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * Class for JobController
  *
  * @author Ivan Widjanarko
- * @version 24-05-2021
+ * @version 27-05-2021
  */
 @RequestMapping("/job")
 @RestController

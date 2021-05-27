@@ -61,25 +61,6 @@ public class JWork {
             System.out.println(errorMessage.getMessage());
         }
 
-        //Post Test
-        try
-        {
-            DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId()+1, "Ivan", "ivan@ui.ac.id", "Pass123"));
-        }
-        catch (EmailAlreadyExistsException errorMessage)
-        {
-            System.out.println(errorMessage.getMessage());
-        }
-
-        try
-        {
-            DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId()+1, "Fajar", "fajar@ui.ac.id", "Pass456"));
-        }
-        catch (EmailAlreadyExistsException errorMessage)
-        {
-            System.out.println(errorMessage.getMessage());
-        }
-
         SpringApplication.run(JWork.class, args);
     }
 }
