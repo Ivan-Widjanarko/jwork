@@ -137,7 +137,7 @@ public class InvoiceController {
     @RequestMapping(value = "/createEWalletPayment", method = RequestMethod.POST)
     public Invoice addEWalletPayment(@RequestParam(value="jobIdList") ArrayList<Integer> jobIdList,
                                   @RequestParam(value="jobseekerId") int jobseekerId,
-                                  @RequestParam(value="adminFee") int adminFee)
+                                  @RequestParam(value="referralCode") String referralCode)
     {
         EwalletPayment ewalletPayment = null;
         try {
