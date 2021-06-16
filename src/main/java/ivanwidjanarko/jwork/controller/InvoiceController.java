@@ -115,12 +115,12 @@ public class InvoiceController {
                 Job job = DatabaseJob.getJobById(id);
                 arrayJob.add(job);
             }
-            bankPayment = new BankPayment(DatabaseInvoice.getLastId()+1, arrayJob, DatabaseJobseeker.getJobseekerById(jobseekerId), adminFee);
+            bankPayment = new BankPayment(DatabaseInvoice.getLastId()+1, arrayJob, DatabaseJobseekerPostgre.getJobseekerById(jobseekerId), adminFee);
             bankPayment.setTotalFee();
             DatabaseInvoice.addInvoice(bankPayment);
         }
 
-        catch (JobNotFoundException | JobseekerNotFoundException | OngoingInvoiceAlreadyExistsException e) {
+        catch (JobNotFoundException | OngoingInvoiceAlreadyExistsException e) {
             System.out.println(e.getMessage());
         }
 
@@ -146,12 +146,12 @@ public class InvoiceController {
                 Job job = DatabaseJob.getJobById(id);
                 arrayJob.add(job);
             }
-            ewalletPayment = new EwalletPayment(DatabaseInvoice.getLastId()+1, arrayJob, DatabaseJobseeker.getJobseekerById(jobseekerId), DatabaseBonus.getBonusByReferralCode(referralCode));
+            ewalletPayment = new EwalletPayment(DatabaseInvoice.getLastId()+1, arrayJob, DatabaseJobseekerPostgre.getJobseekerById(jobseekerId), DatabaseBonus.getBonusByReferralCode(referralCode));
             ewalletPayment.setTotalFee();
             DatabaseInvoice.addInvoice(ewalletPayment);
         }
 
-        catch (JobNotFoundException | JobseekerNotFoundException | OngoingInvoiceAlreadyExistsException e) {
+        catch (JobNotFoundException | OngoingInvoiceAlreadyExistsException e) {
             System.out.println(e.getMessage());
         }
 

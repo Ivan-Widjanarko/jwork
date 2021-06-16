@@ -27,7 +27,7 @@ public class JWork {
 
         try
         {
-            DatabaseJob.addJob(new Job(DatabaseJob.getLastId()+1, "Web Developer", DatabaseRecruiter.getRecruiterById(1), 100, JobCategory.WebDeveloper));
+            DatabaseJob.addJob(new Job(DatabaseJob.getLastId()+1, "User Interface", DatabaseRecruiter.getRecruiterById(1), 100000, JobCategory.WebDeveloper));
         }
         catch (RecruiterNotFoundException errorMessage)
         {
@@ -36,7 +36,7 @@ public class JWork {
 
         try
         {
-            DatabaseJob.addJob(new Job(DatabaseJob.getLastId()+1, "Front End", DatabaseRecruiter.getRecruiterById(1), 150, JobCategory.FrontEnd));
+            DatabaseJob.addJob(new Job(DatabaseJob.getLastId()+1, "Front End", DatabaseRecruiter.getRecruiterById(1), 150000, JobCategory.FrontEnd));
         }
         catch (RecruiterNotFoundException errorMessage)
         {
@@ -45,7 +45,7 @@ public class JWork {
 
         try
         {
-            DatabaseJob.addJob(new Job(DatabaseJob.getLastId()+1, "Back End", DatabaseRecruiter.getRecruiterById(2), 200, JobCategory.BackEnd));
+            DatabaseJob.addJob(new Job(DatabaseJob.getLastId()+1, "Back End", DatabaseRecruiter.getRecruiterById(2), 200000, JobCategory.BackEnd));
         }
         catch (RecruiterNotFoundException errorMessage)
         {
@@ -54,7 +54,7 @@ public class JWork {
 
         try
         {
-            DatabaseJob.addJob(new Job(DatabaseJob.getLastId()+1, "User Interface", DatabaseRecruiter.getRecruiterById(3), 250, JobCategory.UI));
+            DatabaseJob.addJob(new Job(DatabaseJob.getLastId()+1, "Web Developer", DatabaseRecruiter.getRecruiterById(3), 250000, JobCategory.UI));
         }
         catch (RecruiterNotFoundException errorMessage)
         {
@@ -63,7 +63,7 @@ public class JWork {
 
         try
         {
-            DatabaseBonus.addBonus(new Bonus(DatabaseBonus.getLastId()+1, "VANKO456", 10, 60, true));
+            DatabaseBonus.addBonus(new Bonus(DatabaseBonus.getLastId()+1, "VANKO123", 10000, 5000, true));
         }
         catch (ReferralCodeAlreadyExistsException errorMessage)
         {
