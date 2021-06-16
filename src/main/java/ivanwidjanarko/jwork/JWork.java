@@ -61,6 +61,15 @@ public class JWork {
             System.out.println(errorMessage.getMessage());
         }
 
+        try
+        {
+            DatabaseBonus.addBonus(new Bonus(DatabaseBonus.getLastId()+1, "VANKO456", 10, 60, true));
+        }
+        catch (ReferralCodeAlreadyExistsException errorMessage)
+        {
+            System.out.println(errorMessage.getMessage());
+        }
+
         SpringApplication.run(JWork.class, args);
     }
 }

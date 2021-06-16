@@ -8,7 +8,6 @@ public class DatabaseConnectionPostgre {
 
     public static Connection connection() {
         Connection c = null;
-        Statement stmt = null;
         String db_name = "ivan_jwork";
         String db_user = "postgres";
         String db_password = "root";

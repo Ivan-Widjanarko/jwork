@@ -46,7 +46,7 @@ public class InvoiceController {
      * @param jobseekerId Jobseeker's ID
      * @return Database Invoice
      */
-    @RequestMapping("/recruiter/{jobseekerId}")
+    @RequestMapping("/jobseeker/{jobseekerId}")
     public ArrayList<Invoice> getInvoiceByJobseeker(@PathVariable int jobseekerId) {
         return DatabaseInvoice.getInvoiceByJobseeker(jobseekerId);
     }
@@ -57,8 +57,8 @@ public class InvoiceController {
      * @param status Invoice's Status
      * @return invoice
      */
-    @RequestMapping(value = "invoiceStatus/{id}", method = RequestMethod.PUT)
-    public Invoice changeInvoiceStatus(@RequestParam(value="id") int id,
+    @RequestMapping(value = "/invoiceStatus/{id}", method = RequestMethod.PUT)
+    public Invoice changeInvoiceStatus(@PathVariable int id,
                       @RequestParam(value="invoiceStatus") InvoiceStatus status)
     {
         Invoice invoice = null;
@@ -106,7 +106,7 @@ public class InvoiceController {
     @RequestMapping(value = "/createBankPayment", method = RequestMethod.POST)
     public Invoice addBankPayment(@RequestParam(value="jobIdList") ArrayList<Integer> jobIdList,
                                   @RequestParam(value="jobseekerId") int jobseekerId,
-                                  @RequestParam(value="adminFee") int adminFee)
+                                  @RequestParam(value="adminFee", defaultValue="0") int adminFee)
     {
         BankPayment bankPayment = null;
         try {
@@ -131,13 +131,13 @@ public class InvoiceController {
      * method for add e-wallet payment invoice
      * @param jobIdList List of Job ID
      * @param jobseekerId   Jobseeker's ID
-     * @param adminFee Administration Fee
+     * @param referralCode Referral Code
      * @return E-Wallet Payment's Invoice
      */
     @RequestMapping(value = "/createEWalletPayment", method = RequestMethod.POST)
     public Invoice addEWalletPayment(@RequestParam(value="jobIdList") ArrayList<Integer> jobIdList,
                                   @RequestParam(value="jobseekerId") int jobseekerId,
-                                  @RequestParam(value="referralCode") String referralCode)
+                                  @RequestParam(value="referralCode", defaultValue="") String referralCode)
     {
         EwalletPayment ewalletPayment = null;
         try {
@@ -146,7 +146,7 @@ public class InvoiceController {
                 Job job = DatabaseJob.getJobById(id);
                 arrayJob.add(job);
             }
-            ewalletPayment = new EwalletPayment(DatabaseInvoice.getLastId()+1, arrayJob, DatabaseJobseeker.getJobseekerById(jobseekerId));
+            ewalletPayment = new EwalletPayment(DatabaseInvoice.getLastId()+1, arrayJob, DatabaseJobseeker.getJobseekerById(jobseekerId), DatabaseBonus.getBonusByReferralCode(referralCode));
             ewalletPayment.setTotalFee();
             DatabaseInvoice.addInvoice(ewalletPayment);
         }

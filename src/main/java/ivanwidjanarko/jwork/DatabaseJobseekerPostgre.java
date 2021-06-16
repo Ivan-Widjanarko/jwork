@@ -22,7 +22,7 @@ public class DatabaseJobseekerPostgre {
             String email = jobseeker.getEmail();
             String password = jobseeker.getPassword();
             Calendar cal = jobseeker.getJoinDate();
-            cal.add(Calendar.DATE, 1);
+            cal.add(Calendar.DATE, 0);
 
             Date date = cal.getTime();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
