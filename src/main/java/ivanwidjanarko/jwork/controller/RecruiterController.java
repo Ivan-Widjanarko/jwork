@@ -9,23 +9,23 @@ import java.util.ArrayList;
  * Class for RecruiterController
  *
  * @author Ivan Widjanarko
- * @version 24-05-2021
+ * @version 19-06-2021
  */
 @RequestMapping("/recruiter")
 @RestController
 public class RecruiterController {
 
     /**
-     * method for get all recruiter
-     * @return Databse Recruiter
+     * Method for get all recruiter
+     * @return Database Recruiter Postgre
      */
     @RequestMapping(value = "")
     public ArrayList<Recruiter> getAllRecruiter() {
-        return DatabaseRecruiter.getRecruiterDatabase();
+        return DatabaseRecruiterPostgre.getRecruiterDatabase();
     }
 
     /**
-     * method for get recruiter by id
+     * Method for get recruiter by id
      * @param id Recruiter's ID
      * @return recruiter
      */
@@ -33,8 +33,8 @@ public class RecruiterController {
     public Recruiter getRecruiterById(@PathVariable int id) {
         Recruiter recruiter = null;
         try {
-            recruiter = DatabaseRecruiter.getRecruiterById(id);
-        } catch (RecruiterNotFoundException e) {
+            recruiter = DatabaseRecruiterPostgre.getRecruiterById(id);
+        } catch (Exception e) {
             e.getMessage();
             return null;
         }
@@ -42,7 +42,7 @@ public class RecruiterController {
     }
 
     /**
-     * method for add recruiter
+     * Method for add recruiter
      * @param name Recruiter's Name
      * @param email Recruiter's Email
      * @param phoneNumber Recruiter's Phone Number
@@ -60,8 +60,8 @@ public class RecruiterController {
                             @RequestParam(value="description") String description)
     {
         Location location = new Location(province, city, description);
-        Recruiter recruiter = new Recruiter(DatabaseRecruiter.getLastId()+1, name, email, phoneNumber, location);
-        DatabaseRecruiter.addRecruiter(recruiter);
+        Recruiter recruiter = new Recruiter(DatabaseRecruiterPostgre.getLastId()+1, name, email, phoneNumber, location);
+        DatabaseRecruiterPostgre.addRecruiter(recruiter);
         return recruiter;
     }
 }

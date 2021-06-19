@@ -4,10 +4,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 /**
- * Abstract sub-class for EwalletPayment from super-class Invoice
+ * Abstract sub-class for E-wallet Payment from super-class of Invoice
  *
  * @author Ivan Widjanarko
- * @version 18-05-2021
+ * @version 19-06-2021
  */
 public class EwalletPayment extends Invoice
 {
@@ -15,10 +15,10 @@ public class EwalletPayment extends Invoice
     private Bonus bonus;
     
     /**
-     * Constructor 1 for objects of class EwalletPayment
-     * @param id Jobseeker's ID
+     * Constructor 1 for objects of class E-walletPayment
+     * @param id Invoice's ID
      * @param jobs Job
-     * @param jobseeker Jobseeker Information
+     * @param jobseeker Jobseeker
      */
     public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
     {
@@ -26,10 +26,10 @@ public class EwalletPayment extends Invoice
     }
     
     /**
-     * Constructor 2 for objects of class EwalletPayment
-     * @param id Jobseeker's ID
+     * Constructor 2 for objects of class E-walletPayment
+     * @param id Invoice's ID
      * @param jobs Job
-     * @param jobseeker Jobseeker Information
+     * @param jobseeker Jobseeker
      * @param bonus Bonus
      */
     public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, Bonus bonus)
@@ -37,19 +37,19 @@ public class EwalletPayment extends Invoice
         super(id, jobs, jobseeker);
         this.bonus = bonus;
     }
-    
+
     /**
-     * method for getPaymentType
+     * Method for get payment type, in this case E-wallet Payment ad the payment type
      * @return    Payment Type
      */
     @Override public PaymentType getPaymentType()
     {
         return PAYMENT_TYPE;
     }
-    
+
     /**
-     * method for getBonus
-     * @return    Bonus
+     * Method for get bonus
+     * @return    bonus
      */
     public Bonus getBonus()
     {
@@ -57,16 +57,16 @@ public class EwalletPayment extends Invoice
     }
     
     /**
-     * method for setBonus
+     * Method for set bonus
      * @param bonus Bonus
      */
     public void setBonus(Bonus bonus)
     {
         this.bonus = bonus;
     }
-    
+
     /**
-     * method for setTotalFee
+     * Method for set the total fee
      */
     @Override
     public void setTotalFee()
@@ -85,8 +85,11 @@ public class EwalletPayment extends Invoice
             totalFee = total;
         }
     }
-    
-    /**method for print detail*/
+
+    /**
+     * Method for print e-wallet payment's detail
+     * @return details
+     */
     @Override
     public String toString(){
         SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy");

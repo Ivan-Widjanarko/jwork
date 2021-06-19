@@ -4,24 +4,24 @@ package ivanwidjanarko.jwork;
  * Class for Job
  *
  * @author Ivan Widjanarko
- * @version 18-05-2021
+ * @version 19-06-2021
  */
 public class Job
 {
     private int id, fee;
     private String name;
     private Recruiter recruiter;
-    private JobCategory category;
+    private String category;
     
     /**
      * Constructor for objects of class Job
-     * @param id Recruiter's ID
+     * @param id Job's ID
      * @param name Jobs's name
-     * @param recruiter Recruiter Information
-     * @param fee Recruiter's fee
+     * @param recruiter Recruiter
+     * @param fee Job's fee
      * @param category Job's category
      */
-    public Job(int id, String name, Recruiter recruiter, int fee, JobCategory category)
+    public Job(int id, String name, Recruiter recruiter, int fee, String category)
     {
         this.id = id;
         this.name = name;
@@ -31,8 +31,8 @@ public class Job
     }
 
     /**
-     * method for getId
-     * @return    Recruiter's ID
+     * Method for get job's ID
+     * @return    job's ID
      */
     public int getId()
     {
@@ -40,7 +40,7 @@ public class Job
     }
     
     /**
-     * method for getName
+     * Method for get job's name
      * @return    Jobs's name
      */
     public String getName()
@@ -49,8 +49,8 @@ public class Job
     }
     
     /**
-     * method for getFee
-     * @return    Recruiter's fee
+     * Method for get job's fee
+     * @return    job's fee
      */
     public int getFee()
     {
@@ -58,17 +58,17 @@ public class Job
     }
     
     /**
-     * method for getCategory
+     * Method for get job's category
      * @return   Job's category
      */
-    public JobCategory getCategory()
+    public String getCategory()
     {
         return category;
     }
     
     /**
-     * method for getRecruiter
-     * @return    Recruiter Information
+     * Method for get recruiter
+     * @return    Recruiter
      */
     public Recruiter getRecruiter()
     {
@@ -76,8 +76,8 @@ public class Job
     }
     
     /**
-     * method for setId
-     * @param id Recruiter's ID
+     * Method for set job's ID
+     * @param id Job's ID
      */
     public void setId(int id)
     {
@@ -85,7 +85,7 @@ public class Job
     }
     
     /**
-     * method for setName
+     * Method for set job's name
      * @param name Jobs's name
      */
     public void setName(String name)
@@ -94,8 +94,8 @@ public class Job
     }
     
     /**
-     * method for setRecruiter
-     * @param recruiter Recruiter Information
+     * Method for set recruiter
+     * @param recruiter Recruiter
      */
     public void setRecuiter(Recruiter recruiter)
     {
@@ -103,8 +103,8 @@ public class Job
     }
     
     /**
-     * method for setFee
-     * @param fee Recruiter's fee
+     * Method for set job's fee
+     * @param fee Job's fee
      */
     public void setFee(int fee)
     {
@@ -112,15 +112,18 @@ public class Job
     }
     
     /**
-     * method for setCategory
+     * Method for set job's category
      * @param category Job's category
      */
-    public void setCategory(JobCategory category)
+    public void setCategory(String category)
     {
         this.category = category;
     }
-    
-    /**method for print detail*/
+
+    /**
+     * Method for print job's detail
+     * @return details
+     */
     public String toString(){
         String value =  "===================== JOB =====================" + "\n" +
             "Id = " + id + "\n" +
@@ -128,7 +131,7 @@ public class Job
             "Recruiter = " + recruiter.getName() + "\n" +
             "City = " + getRecruiter().getLocation().getCity() + "\n" +
             "Fee = " + fee + "\n" +
-            "Category = " + category.toString() + "\n";
+            "Category = " + category + "\n";
         return value;
     }
 }

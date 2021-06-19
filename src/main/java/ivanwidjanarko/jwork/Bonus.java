@@ -4,7 +4,7 @@ package ivanwidjanarko.jwork;
  * Class for Bonus
  *
  * @author Ivan Widjanarko
- * @version -05-2021
+ * @version 19-06-2021
  */
 public class Bonus
 {
@@ -18,7 +18,7 @@ public class Bonus
      * @param id Bonus' ID
      * @param referralCode Referal Code
      * @param extraFee Extra Fee
-     * @param minTotalFee Minimal of Total Fee
+     * @param minTotalFee Minimum Amount of the Total Fee
      * @param active Bonus' Status
      */
     public Bonus(int id, String referralCode, int extraFee, int minTotalFee, boolean active)
@@ -31,8 +31,8 @@ public class Bonus
     }
 
     /**
-     * method for getId
-     * @return    Jobseeker's ID
+     * Method for get bonus's ID
+     * @return    bonus' ID
      */
     public int getId()
     {
@@ -40,7 +40,7 @@ public class Bonus
     }
     
     /**
-     * method for getReferralCode
+     * Method for get referral code of the bonus
      * @return    Referral Code
      */
     public String getReferralCode()
@@ -49,7 +49,7 @@ public class Bonus
     }
     
     /**
-     * method for getExtraFee
+     * Method for get amount of the extra fee
      * @return    Extra Fee
      */
     public int getExtraFee()
@@ -58,8 +58,8 @@ public class Bonus
     }
     
     /**
-     * method for getMinTotalFee
-     * @return    Minimal of Total Fee
+     * Method for get minimum amount of the total fee
+     * @return    Minimum Amount of the Total Fee
      */
     public int getMinTotalFee()
     {
@@ -67,8 +67,8 @@ public class Bonus
     }
     
     /**
-     * method for getActive
-     * @return    false
+     * Method for get bonus' status
+     * @return    active
      */
     public boolean getActive()
     {
@@ -76,7 +76,7 @@ public class Bonus
     }
     
     /**
-     * method for setId
+     * Method for set bonus' ID
      * @param id Bonus' ID
      */
     public void setId(int id)
@@ -85,7 +85,7 @@ public class Bonus
     }
     
     /**
-     * method for setReferralCode
+     * Method for set referral code of the bonus
      * @param referralCode Referral Code
      */
     public void setReferral(String referralCode)
@@ -94,7 +94,7 @@ public class Bonus
     }
     
     /**
-     * method for setExtraFee
+     * Method for set amount of the extra fee
      * @param extraFee Extra Fee
      */
     public void setExtraFee(int extraFee)
@@ -103,8 +103,8 @@ public class Bonus
     }
     
     /**
-     * method for setMinTotalFee
-     * @param minTotalFee Minimal of Total Fee
+     * Method for set minimum amount of the total fee
+     * @param minTotalFee Minimum Amount of teh Total Fee
      */
     public void setMinTotalFee(int minTotalFee)
     {
@@ -112,7 +112,7 @@ public class Bonus
     }
     
     /**
-     * method for setActive
+     * Method for set bonus' status
      * @param active Bonus' Status
      */
     public void setActive(boolean active)
@@ -120,7 +120,10 @@ public class Bonus
         this.active = active;
     }
     
-    /**method for print detail*/
+    /**
+     * Method for print bonus' detail
+     * @return details
+     */
     public String toString(){
         String value =  "===================== BONUS =====================" + "\n" +
             "ID = " + id + "\n" +

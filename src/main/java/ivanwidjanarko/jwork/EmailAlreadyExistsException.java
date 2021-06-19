@@ -1,14 +1,14 @@
 package ivanwidjanarko.jwork;
 
 /**
- * Class for EmailAlreadyExistsException
+ * Class for Email Already Exists Exception
  *
  * @author Ivan Widjanarko
- * @version 18-05-2021
+ * @version 19-06-2021
  */
 
 public class EmailAlreadyExistsException extends Exception {
-    private Jobseeker jobseeker_error;
+    private final Jobseeker jobseeker_error;
 
     /**
      * Constructor for class EmailAlreadyExistsException
@@ -20,8 +20,8 @@ public class EmailAlreadyExistsException extends Exception {
     }
 
     /**
-     * method for getMessage
-     * @return    Message
+     * Method for get the exception message
+     * @return    exception message
      */
     public String getMessage() {
         return super.getMessage() + jobseeker_error.getEmail() + " already exists.";

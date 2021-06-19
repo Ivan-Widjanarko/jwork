@@ -3,10 +3,10 @@ package ivanwidjanarko.jwork;
 import java.util.ArrayList;
 
 /**
- * Class for DatabaseJobseeker
+ * Class for Database Jobseeker
  *
  * @author Ivan Widjanarko
- * @version 20-05-2021
+ * @version 19-06-2021
  */
 public class DatabaseJobseeker
 {
@@ -14,8 +14,8 @@ public class DatabaseJobseeker
     private static int lastId = 0;
 
     /**
-     * method for getJobseekerDatabase
-     * @return    JOBSEEKER_DATABASE
+     * Method for get Jobseeker's Database
+     * @return    Array List of JOBSEEKER_DATABASE
      */
     public static ArrayList<Jobseeker> getJobseekerDatabase()
     {
@@ -23,8 +23,8 @@ public class DatabaseJobseeker
     }
 
     /**
-     * method for getLastId
-     * @return    lastId
+     * Method for get Last ID from Jobseeker's Database
+     * @return    last ID
      */
     public static int getLastId()
     {
@@ -32,10 +32,10 @@ public class DatabaseJobseeker
     }
 
     /**
-     * method for getJobseekerById
-     * @param id Jobseeker ID
-     * @return    returnObject
-     * @throws JobseekerNotFoundException Exception for Jobseeker
+     * Method for get jobseeker by its ID
+     * @param id Jobseeker's ID
+     * @return    jobseeker
+     * @throws JobseekerNotFoundException Exception if Jobseeker not found
      */
     public static Jobseeker getJobseekerById(int id) throws JobseekerNotFoundException
     {
@@ -55,10 +55,10 @@ public class DatabaseJobseeker
     }
 
     /**
-     * method for addJobseeker
+     * Method for add Jobseeker into database
      * @param jobseeker Jobseeker
-     * @return    JOBSEEKER_DATABASE.add(jobseeker)
-     * @throws EmailAlreadyExistsException Exception for Email
+     * @return job addition status
+     * @throws EmailAlreadyExistsException Exception if Email already exists
      */
     public static boolean addJobseeker(Jobseeker jobseeker) throws EmailAlreadyExistsException
     {
@@ -74,10 +74,10 @@ public class DatabaseJobseeker
     }
 
     /**
-     * method for removeJobseeker
-     * @param id Jobseeker ID
-     * @return    boolean
-     * @throws JobseekerNotFoundException Exception for Jobseeker
+     * Method for remove the jobseeker from database
+     * @param id Jobseeker's ID
+     * @return    jobseeker deletion status
+     * @throws JobseekerNotFoundException Exception if Job not found
      */
     public static boolean removeJobseeker(int id) throws JobseekerNotFoundException
     {
@@ -89,9 +89,9 @@ public class DatabaseJobseeker
     }
 
     /**
-     * method for jobseekerLogin
-     * @param email Jobseeker Email
-     * @param password Jobseeker Password
+     * Method for jobseeker to login
+     * @param email Jobseeker's Email
+     * @param password Jobseeker's Password
      * @return    Jobseeker
      */
     public static Jobseeker jobseekerLogin(String email, String password)

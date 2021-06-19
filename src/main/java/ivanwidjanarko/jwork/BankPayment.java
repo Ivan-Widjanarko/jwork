@@ -4,21 +4,21 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 /**
- * Abstract sub-class for BankPayment from super-class Invoice
+ * Abstract sub-class for Bank Payment from super-class of Invoice
  *
  * @author Ivan Widjanarko
- * @version 20-05-2021
+ * @version 19-06-2021
  */
 public class BankPayment extends Invoice
 {
     private final static PaymentType PAYMENT_TYPE = PaymentType.BankPayment;
-    private int adminFee;
+    private int adminFee = 5000;
     
     /**
      * Constructor 1 for objects of class BankPayment
-     * @param id Jobseeker's ID
+     * @param id Invoice's ID
      * @param jobs Job
-     * @param jobseeker Jobseeker Information
+     * @param jobseeker Jobseeker
      */
     public BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
     {
@@ -39,7 +39,7 @@ public class BankPayment extends Invoice
     }
     
     /**
-     * method for getPaymentType
+     * Method for get payment type, in this case Bank Payment ad the payment type
      * @return    Payment Type
      */
     @Override public PaymentType getPaymentType()
@@ -48,8 +48,8 @@ public class BankPayment extends Invoice
     }
     
     /**
-     * method for getAdminFee
-     * @return    Bonus
+     * Method for get administration's fee
+     * @return    adminFee
      */
     public int getAdminFee()
     {
@@ -57,7 +57,7 @@ public class BankPayment extends Invoice
     }
     
     /**
-     * method for setAdminFee
+     * Method for set administration's fee
      * @param adminFee Admin Fee
      */
     public void setAdminFee(int adminFee)
@@ -66,7 +66,7 @@ public class BankPayment extends Invoice
     }
     
     /**
-     * method for setTotalFee
+     * Method for set the total fee
      */
     @Override
     public void setTotalFee()
@@ -88,7 +88,10 @@ public class BankPayment extends Invoice
         }
     }
     
-    /**method for print detail*/
+    /**
+     * Method for print bank payment's detail
+     * @return details
+     */
     @Override
     public String toString(){
         SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy");

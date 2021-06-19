@@ -1,14 +1,13 @@
 package ivanwidjanarko.jwork;
 
 /**
- * Class for InvoiceNotFoundException
+ * Class for Invoice Not Found Exception
  *
  * @author Ivan Widjanarko
- * @version 18-05-2021
+ * @version 19-06-2021
  */
-
 public class InvoiceNotFoundException extends Exception {
-    private int invoice_error;
+    private final int invoice_error;
 
     /**
      * Constructor for class InvoiceNotFoundException
@@ -20,8 +19,8 @@ public class InvoiceNotFoundException extends Exception {
     }
 
     /**
-     * method for getMessage
-     * @return    Message
+     * Method for get the exception message
+     * @return    exception message
      */
     public String getMessage() {
         return super.getMessage() + invoice_error + " not found";

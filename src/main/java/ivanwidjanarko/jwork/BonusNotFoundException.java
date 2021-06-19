@@ -1,14 +1,14 @@
 package ivanwidjanarko.jwork;
 
 /**
- * Class for BonusNotFoundException
+ * Class for Bonus Not Found Exception
  *
  * @author Ivan Widjanarko
- * @version 18-05-2021
+ * @version 19-06-2021
  */
 
 public class BonusNotFoundException extends Exception {
-    private int bonus_error;
+    private final int bonus_error;
 
     /**
      * Constructor for class BonusNotFoundException
@@ -20,8 +20,8 @@ public class BonusNotFoundException extends Exception {
     }
 
     /**
-     * method for getMessage
-     * @return    Message
+     * Method for get the exception message
+     * @return    exception message
      */
     public String getMessage() {
         return super.getMessage() + bonus_error + " not found";

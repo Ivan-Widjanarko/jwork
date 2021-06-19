@@ -9,23 +9,23 @@ import java.util.ArrayList;
  * Class for JobController
  *
  * @author Ivan Widjanarko
- * @version 27-05-2021
+ * @version 19-06-2021
  */
 @RequestMapping("/job")
 @RestController
 public class JobController {
 
     /**
-     * method for get all job
-     * @return Database Job
+     * Method for get all job
+     * @return Database Job Postgre
      */
     @RequestMapping(value = "")
     public ArrayList<Job> getAllJob() {
-        return DatabaseJob.getJobDatabase();
+        return DatabaseJobPostgre.getJobDatabase();
     }
 
     /**
-     * method for get job by id
+     * Method for get job by id
      * @param id Job's ID
      * @return job
      */
@@ -33,8 +33,8 @@ public class JobController {
     public Job getJobById(@PathVariable int id) {
         Job job = null;
         try {
-            job = DatabaseJob.getJobById(id);
-        } catch (JobNotFoundException e) {
+            job = DatabaseJobPostgre.getJobById(id);
+        } catch (Exception e) {
             e.getMessage();
             return null;
         }
@@ -42,27 +42,27 @@ public class JobController {
     }
 
     /**
-     * method for get job by recruiter id
+     * Method for get job by recruiter id
      * @param recruiterId Recruiter's ID
-     * @return Database Job
+     * @return Database Job Postgre
      */
     @RequestMapping("/recruiter/{recruiterId}")
-    public ArrayList<Job> getJobByRecruiter(@PathVariable int recruiterId) {
-        return DatabaseJob.getJobByRecruiter(recruiterId);
+    public Job getJobByRecruiter(@PathVariable int recruiterId) {
+        return DatabaseJobPostgre.getJobByRecruiter(recruiterId);
     }
 
     /**
-     * method for get job by category
+     * Method for get job by category
      * @param category Job's Category
      * @return Database Job
      */
     @RequestMapping("/category/{category}")
-    public ArrayList<Job> getJobByCategory(@PathVariable JobCategory category) {
-        return DatabaseJob.getJobByCategory(category);
+    public Job getJobByCategory(@PathVariable String category) {
+        return DatabaseJobPostgre.getJobByCategory(category);
     }
 
     /**
-     * method for add job
+     * Method for add job
      * @param name Job's Name
      * @param recruiterId  Recruiter's ID
      * @param fee Fee
@@ -73,7 +73,7 @@ public class JobController {
     public Job addJob(@RequestParam(value="name") String name,
                                        @RequestParam(value="recruiterId") int recruiterId,
                                        @RequestParam(value="fee") int fee,
-                                       @RequestParam(value="category") JobCategory category)
+                                       @RequestParam(value="category") String category)
     {
         Recruiter recruiter = null;
         try {
@@ -83,8 +83,8 @@ public class JobController {
             return null;
         }
 
-        Job job = new Job(DatabaseJob.getLastId()+1, name, recruiter, fee, category);
-        DatabaseJob.addJob(job);
+        Job job = new Job(DatabaseJobPostgre.getLastId()+1, name, recruiter, fee, category);
+        DatabaseJobPostgre.addJob(job);
         return job;
     }
 }

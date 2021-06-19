@@ -2,10 +2,19 @@ package ivanwidjanarko.jwork;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.Statement;
 
+/**
+ * Class for Database Connection to PostgreSQL
+ *
+ * @author Ivan Widjanarko
+ * @version 19-06-2021
+ */
 public class DatabaseConnectionPostgre {
 
+    /**
+     * Method to turn on the coonection to database
+     * @return    connection
+     */
     public static Connection connection() {
         Connection c = null;
         String db_name = "ivan_jwork";
@@ -15,12 +24,6 @@ public class DatabaseConnectionPostgre {
         try {
             Class.forName("org.postgresql.Driver");
             c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/"+ db_name, db_user, db_password);
-            if (c != null) {
-                System.out.println("Connection OK");
-            }
-            else {
-                System.out.println("Connection Failed");
-            }
         }
         catch(Exception e) {
             e.printStackTrace();
@@ -28,7 +31,6 @@ public class DatabaseConnectionPostgre {
             System.exit(0);
         }
 
-        System.out.println("Opened database successfully");
         return c;
     }
 }

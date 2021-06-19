@@ -3,10 +3,10 @@ package ivanwidjanarko.jwork;
 import java.util.ArrayList;
 
 /**
- * Class for DatabaseRecruiter
+ * Class for Database Recruiter
  *
  * @author Ivan Widjanarko
- * @version 18-05-2021
+ * @version 19-06-2021
  */
 public class DatabaseRecruiter
 {
@@ -14,8 +14,8 @@ public class DatabaseRecruiter
     private static int lastId = 0;
 
     /**
-     * method for getRecruiterDatabase
-     * @return RECRUITER_DATABASE
+     * Method for get Recruiter's Database
+     * @return    Array List of RECRUITER_DATABASE
      */
     public static ArrayList<Recruiter> getRecruiterDatabase()
     {
@@ -23,8 +23,8 @@ public class DatabaseRecruiter
     }
 
     /**
-     * method for getLastId
-     * @return    lastId
+     * Method for get Last ID from Recruiter's Database
+     * @return    last ID
      */
     public static int getLastId()
     {
@@ -32,10 +32,10 @@ public class DatabaseRecruiter
     }
 
     /**
-     * method for getRecruiterById
-     * @param id Recruiter ID
-     * @return returnObject
-     * @throws RecruiterNotFoundException Exception for Recruiter
+     * Method for get Recruiter by its ID
+     * @param id Recruiter's ID
+     * @return    recruiter
+     * @throws RecruiterNotFoundException Exception if Job not found
      */
     public static Recruiter getRecruiterById(int id) throws RecruiterNotFoundException
     {
@@ -55,9 +55,9 @@ public class DatabaseRecruiter
     }
 
     /**
-     * method for addRecruiter
+     * Method for add Recruiter into database
      * @param recruiter Recruiter
-     * @return RECRUITER_DATABASE.add(recruiter)
+     * @return recruiter addition status
      */
     public static boolean addRecruiter(Recruiter recruiter)
     {
@@ -66,10 +66,10 @@ public class DatabaseRecruiter
     }
 
     /**
-     * method for removeRecruiter
-     * @param id Recruiter ID
-     * @return    boolean
-     * @throws RecruiterNotFoundException Exception for Recruiter
+     * Method for remove the recruiter from database
+     * @param id recruiter's ID
+     * @return    recruiter deletion status
+     * @throws RecruiterNotFoundException Exception if Job not found
      */
     public static boolean removeRecruiter(int id) throws RecruiterNotFoundException
     {

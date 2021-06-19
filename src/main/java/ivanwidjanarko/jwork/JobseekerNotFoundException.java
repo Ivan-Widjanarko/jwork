@@ -1,14 +1,14 @@
 package ivanwidjanarko.jwork;
 
 /**
- * Class for JobseekerNotFoundException
+ * Class for Jobseeker Not Found Exception
  *
  * @author Ivan Widjanarko
- * @version 18-05-2021
+ * @version 19-06-2021
  */
 
 public class JobseekerNotFoundException extends Exception {
-    private int jobseeker_error;
+    private final int jobseeker_error;
 
     /**
      * Constructor for class JobseekerNotFoundException
@@ -20,8 +20,8 @@ public class JobseekerNotFoundException extends Exception {
     }
 
     /**
-     * method for getMessage
-     * @return    Message
+     * Method for get the exception message
+     * @return    exception message
      */
     public String getMessage() {
         return super.getMessage() + jobseeker_error + " not found";

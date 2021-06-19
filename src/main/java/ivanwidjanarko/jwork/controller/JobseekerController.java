@@ -3,20 +3,18 @@ package ivanwidjanarko.jwork.controller;
 import ivanwidjanarko.jwork.*;
 import org.springframework.web.bind.annotation.*;
 
-import static ivanwidjanarko.jwork.DatabaseJobseeker.jobseekerLogin;
-
 /**
  * Class for JobseekerController
  *
  * @author Ivan Widjanarko
- * @version 24-05-2021
+ * @version 19-06-2021
  */
 @RequestMapping("/jobseeker")
 @RestController
 public class JobseekerController {
 
     /**
-     * method for index page
+     * Method for index page
      * @param name name
      * @return String
      */
@@ -26,7 +24,7 @@ public class JobseekerController {
     }
 
     /**
-     * method for get jobseeker by id
+     * Method for get jobseeker by id
      * @param id Jobseeker's ID
      * @return jobseeker
      */
@@ -43,7 +41,7 @@ public class JobseekerController {
     }
 
     /**
-     * method for register job
+     * Method for register as jobseeker
      * @param name Jobseeker's Name
      * @param email Jobseeker's Email
      * @param password Jobseeker's Password
@@ -65,7 +63,7 @@ public class JobseekerController {
     }
 
     /**
-     * method for jobseeker login
+     * Method for jobseeker to login
      * @param email Jobseeker's Email
      * @param password Jobseeker's Password
      * @return Database Jobseeker

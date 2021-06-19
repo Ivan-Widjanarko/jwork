@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Class for DatabaseInvoice
  *
  * @author Ivan Widjanarko
- * @version 18-05-2021
+ * @version 19-06-2021
  */
 public class DatabaseInvoice
 {
@@ -14,8 +14,8 @@ public class DatabaseInvoice
     private static int lastId = 0;
 
     /**
-     * method for getInvoiceDatabase
-     * @return RECRUITER_DATABASE
+     * Method for get Invoice's Database
+     * @return    Array List of INVOICE_DATABASE
      */
     public static ArrayList<Invoice> getInvoiceDatabase()
     {
@@ -23,8 +23,8 @@ public class DatabaseInvoice
     }
 
     /**
-     * method for getLastId
-     * @return    lastId
+     * Method for get Last ID from Invoice's Database
+     * @return    last ID
      */
     public static int getLastId()
     {
@@ -32,10 +32,10 @@ public class DatabaseInvoice
     }
 
     /**
-     * method for getInvoiceById
-     * @param id Invoice ID
-     * @return returnObject
-     * @throws InvoiceNotFoundException Exception for Invoice
+     * Method for get invoice by its ID
+     * @param id Invoice's ID
+     * @return    invoice
+     * @throws InvoiceNotFoundException Exception if Invoice not found
      */
     public static Invoice getInvoiceById(int id) throws InvoiceNotFoundException
     {
@@ -55,9 +55,9 @@ public class DatabaseInvoice
     }
 
     /**
-     * method for getInvoiceByJobseeker
+     * Method for get invoice by Jobseeker's ID
      * @param jobseekerId Jobseeker's ID
-     * @return    returnObject
+     * @return    invoice
      */
     public static ArrayList<Invoice> getInvoiceByJobseeker(int jobseekerId)
     {
@@ -73,10 +73,10 @@ public class DatabaseInvoice
     }
 
     /**
-     * method for addInvoice
+     * Method for add Invoice into database
      * @param invoice Invoice
-     * @return INVOICE_DATABASE.add(invoice)
-     * @throws OngoingInvoiceAlreadyExistsException Exception for Ongoing Invoice
+     * @return invoice addition status
+     * @throws OngoingInvoiceAlreadyExistsException Exception if Ongoing Invoice already exists
      */
     public static boolean addInvoice(Invoice invoice) throws OngoingInvoiceAlreadyExistsException
     {
@@ -92,10 +92,10 @@ public class DatabaseInvoice
     }
 
     /**
-     * method for changeInvoiceStatus
-     * @param id Bonus ID
+     * Method for change the invoice's status
+     * @param id Invoice's ID
      * @param invoiceStatus Invoice Status
-     * @return    boolean
+     * @return    invoice change status
      */
     public static boolean changeInvoiceStatus(int id, InvoiceStatus invoiceStatus)
     {
@@ -109,10 +109,10 @@ public class DatabaseInvoice
     }
 
     /**
-     * method for removeInvoice
-     * @param id Invoice ID
-     * @return    boolean
-     * @throws InvoiceNotFoundException Exception for Invoice
+     * Method for remove the invoice from database
+     * @param id Invoice's ID
+     * @return    invoice deletion status
+     * @throws InvoiceNotFoundException Exception if Invoice not found
      */
     public static boolean removeInvoice(int id) throws InvoiceNotFoundException
     {

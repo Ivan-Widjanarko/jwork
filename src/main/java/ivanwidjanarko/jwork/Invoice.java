@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * Abstract class for Invoice
  *
  * @author Ivan Widjanarko
- * @version 18-05-2021
+ * @version 19-06-2021
  */
 public abstract class Invoice
 {
@@ -21,9 +21,9 @@ public abstract class Invoice
 
     /**
      * Constructor for objects of class Invoice
-     * @param id Jobseeker's ID
+     * @param id Invoice's ID
      * @param jobs Job
-     * @param jobseeker Jobseeker Information
+     * @param jobseeker Jobseeker
      */
     public Invoice(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
     {
@@ -35,8 +35,8 @@ public abstract class Invoice
     }
 
     /**
-     * method for getId
-     * @return    Jobseeker's ID
+     * Method for get invoice's ID
+     * @return    invoice's ID
      */
     public int getId()
     {
@@ -44,7 +44,7 @@ public abstract class Invoice
     }
     
     /**
-     * method for getJobs
+     * Method for get jobs
      * @return    Jobs
      */
     public ArrayList<Job> getJobs()
@@ -53,8 +53,8 @@ public abstract class Invoice
     }
     
     /**
-     * method for getDate
-     * @return    Date of Invoice
+     * Method for get invoice's date
+     * @return    date of the invoice
      */
     public Calendar getDate()
     {
@@ -62,8 +62,8 @@ public abstract class Invoice
     }
     
     /**
-     * method for getTotalFee
-     * @return    Total of Fee
+     * Method for get total fee
+     * @return    Total of the fee
      */
     public int getTotalFee()
     {
@@ -71,8 +71,8 @@ public abstract class Invoice
     }
     
     /**
-     * method for getJobseeker
-     * @return    Jobseeker Information
+     * Method for getJobseeker
+     * @return    Jobseeker
      */
     public Jobseeker getJobseeker()
     {
@@ -80,13 +80,13 @@ public abstract class Invoice
     }
     
     /**
-     * abstract method for getPaymentType
+     * Abstract method for get payment type
      * @return null
      */
     public abstract PaymentType getPaymentType();
     
     /**
-     * method for getInvoiceStatus
+     * Method for get invoice's status
      * @return    Invoice's Status
      */
     public InvoiceStatus getInvoiceStatus()
@@ -95,8 +95,8 @@ public abstract class Invoice
     }
     
     /**
-     * method for setId
-     * @param id Jobseeker's ID
+     * Method for set invoice's ID
+     * @param id Invoice's ID
      */
     public void setId(int id)
     {
@@ -104,7 +104,7 @@ public abstract class Invoice
     }
     
     /**
-     * method for setJobs
+     * Method for set jobs
      * @param jobs Job
      */
     public void setJobs(ArrayList<Job> jobs)
@@ -113,33 +113,33 @@ public abstract class Invoice
     }
     
     /**
-     * method for setDate
-     * @param date Date when the Jobseeker join the app
+     * Method 1 for set invoice's date
+     * @param date Date of the invoice
      */
     public void setDate(Calendar date)
     {
         this.date = date;
     }
-    
+
     /**
-     * method for setDate
-     * @param year Year of Join Date
-     * @param month Month of Join Date
-     * @param dayOfMonth Day of Join Date
+     * Method 2 for set invoice's date
+     * @param year Year of the invoice
+     * @param month Month of the invoice
+     * @param dayOfMonth Day of the invoice
      */
     public void setDate(int year, int month, int dayOfMonth)
     {
         date = new GregorianCalendar(year, month, dayOfMonth);
     }
-    
+
     /**
-     * abstract method for setTotalFee
+     * Abstract method for set the total fee
      */
     public abstract void setTotalFee();
     
     /**
-     * method for setJobseeker
-     * @param jobseeker Jobseeker Information
+     * Method for set jobseeker
+     * @param jobseeker Jobseeker
      */
     public void setJobseeeker(Jobseeker jobseeker)
     {
@@ -147,14 +147,16 @@ public abstract class Invoice
     }
     
     /**
-     * method for setInvoiceStatus
+     * Method for set invoice's status
      * @param invoiceStatus Invoice's Status
      */
     public void setInvoiceStatus(InvoiceStatus invoiceStatus)
     {
         this.invoiceStatus = invoiceStatus;
     }
-    
-    /**abstract method for print Data*/
+
+    /**
+     * Abstract method for print invoice's detail
+     */
     public abstract String toString();
 }

@@ -1,10 +1,10 @@
 package ivanwidjanarko.jwork;
 
 /**
- * Class for FeeCalculator
+ * Class for Fee Calculator (Thread)
  *
  * @author Ivan Widjanarko
- * @version 18-05-2021
+ * @version 19-06-2021
  */
 
 public class FeeCalculator implements Runnable{
@@ -19,7 +19,7 @@ public class FeeCalculator implements Runnable{
     }
 
     /**
-     * method for run
+     * Method for run the fee calculator
      */
     @Override
     public void run() {

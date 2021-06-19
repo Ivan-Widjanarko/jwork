@@ -1,10 +1,10 @@
 package ivanwidjanarko.jwork;
 
 /**
- * Class for BonusCodeAlreadyExistsException
+ * Class for Referral Code Already Exists Exception
  *
  * @author Ivan Widjanarko
- * @version 18-05-2021
+ * @version 19-06-2021
  */
 
 public class ReferralCodeAlreadyExistsException extends Exception {
@@ -12,7 +12,7 @@ public class ReferralCodeAlreadyExistsException extends Exception {
 
     /**
      * Constructor for class ReferralCodeAlreadyExistsException
-     * @param referral_input Bonus Input
+     * @param referral_input Referral Input
      */
     public ReferralCodeAlreadyExistsException(Bonus referral_input) {
         super("Referral Code: ");
@@ -20,8 +20,8 @@ public class ReferralCodeAlreadyExistsException extends Exception {
     }
 
     /**
-     * method for getMessage
-     * @return    Message
+     * Method for get the exception message
+     * @return    exception message
      */
     public String getMessage() {
         return super.getMessage() + referral_error.getReferralCode() + " already exists.";

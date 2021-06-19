@@ -9,14 +9,14 @@ import java.util.ArrayList;
  * Class for InvoiceController
  *
  * @author Ivan Widjanarko
- * @version 24-05-2021
+ * @version 19-06-2021
  */
 @RequestMapping("/invoice")
 @RestController
 public class InvoiceController {
 
     /**
-     * method for get all invoice
+     * Method for get all invoice
      * @return  Database Invoice
      */
     @RequestMapping(value = "")
@@ -25,7 +25,7 @@ public class InvoiceController {
     }
 
     /**
-     * method for get invoice by ID
+     * Method for get invoice by ID
      * @param id Invoice's ID
      * @return invoice
      */
@@ -42,7 +42,7 @@ public class InvoiceController {
     }
 
     /**
-     * method for get invoice by jobseeker's ID
+     * Method for get invoice by jobseeker's ID
      * @param jobseekerId Jobseeker's ID
      * @return Database Invoice
      */
@@ -52,7 +52,7 @@ public class InvoiceController {
     }
 
     /**
-     * method for change invoice status
+     * Method for change invoice status
      * @param id Invoice's ID
      * @param status Invoice's Status
      * @return invoice
@@ -73,7 +73,7 @@ public class InvoiceController {
     }
 
     /**
-     * method for remove invoice
+     * Method for remove invoice
      * @param id Invoice's ID
      * @return boolean
      */
@@ -97,7 +97,7 @@ public class InvoiceController {
     }
 
     /**
-     * method for add bank payment invoice
+     * Method for add bank payment invoice
      * @param jobIdList List of Job ID
      * @param jobseekerId   Jobseeker's ID
      * @param adminFee Administration Fee
@@ -112,7 +112,7 @@ public class InvoiceController {
         try {
             ArrayList<Job> arrayJob = new ArrayList<>();
             for(int id : jobIdList){
-                Job job = DatabaseJob.getJobById(id);
+                Job job = DatabaseJobPostgre.getJobById(id);
                 arrayJob.add(job);
             }
             bankPayment = new BankPayment(DatabaseInvoice.getLastId()+1, arrayJob, DatabaseJobseekerPostgre.getJobseekerById(jobseekerId), adminFee);
@@ -120,7 +120,7 @@ public class InvoiceController {
             DatabaseInvoice.addInvoice(bankPayment);
         }
 
-        catch (JobNotFoundException | OngoingInvoiceAlreadyExistsException e) {
+        catch (OngoingInvoiceAlreadyExistsException e) {
             System.out.println(e.getMessage());
         }
 
@@ -128,7 +128,7 @@ public class InvoiceController {
     }
 
     /**
-     * method for add e-wallet payment invoice
+     * Method for add e-wallet payment invoice
      * @param jobIdList List of Job ID
      * @param jobseekerId   Jobseeker's ID
      * @param referralCode Referral Code
@@ -143,15 +143,15 @@ public class InvoiceController {
         try {
             ArrayList<Job> arrayJob = new ArrayList<>();
             for(int id : jobIdList){
-                Job job = DatabaseJob.getJobById(id);
+                Job job = DatabaseJobPostgre.getJobById(id);
                 arrayJob.add(job);
             }
-            ewalletPayment = new EwalletPayment(DatabaseInvoice.getLastId()+1, arrayJob, DatabaseJobseekerPostgre.getJobseekerById(jobseekerId), DatabaseBonus.getBonusByReferralCode(referralCode));
+            ewalletPayment = new EwalletPayment(DatabaseInvoice.getLastId()+1, arrayJob, DatabaseJobseekerPostgre.getJobseekerById(jobseekerId), DatabaseBonusPostgre.getBonusByReferralCode(referralCode));
             ewalletPayment.setTotalFee();
             DatabaseInvoice.addInvoice(ewalletPayment);
         }
 
-        catch (JobNotFoundException | OngoingInvoiceAlreadyExistsException e) {
+        catch (OngoingInvoiceAlreadyExistsException e) {
             System.out.println(e.getMessage());
         }
 

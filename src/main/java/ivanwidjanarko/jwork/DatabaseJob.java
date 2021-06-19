@@ -3,10 +3,10 @@ package ivanwidjanarko.jwork;
 import java.util.ArrayList;
 
 /**
- * Class for DatabaseJob
+ * Class for Database Job
  *
  * @author Ivan Widjanarko
- * @version 18-05-2021
+ * @version 19-06-2021
  */
 public class DatabaseJob
 {
@@ -14,8 +14,8 @@ public class DatabaseJob
     private static int lastId = 0;
 
     /**
-     * method for getJobDatabase
-     * @return    JOB_DATABASE
+     * Method for get Job's Database
+     * @return    Array List of JOB_DATABASE
      */
     public static ArrayList<Job> getJobDatabase()
     {
@@ -23,8 +23,8 @@ public class DatabaseJob
     }
 
     /**
-     * method for getLastId
-     * @return    lastId
+     * Method for get Last ID from Job's Database
+     * @return    last ID
      */
     public static int getLastId()
     {
@@ -32,10 +32,10 @@ public class DatabaseJob
     }
 
     /**
-     * method for getJobById
-     * @param id Job ID
-     * @return    returnObject
-     * @throws JobNotFoundException Exception for Job
+     * Method for get Job by its ID
+     * @param id Job's ID
+     * @return    job
+     * @throws JobNotFoundException Exception if Job not found
      */
     public static Job getJobById(int id) throws JobNotFoundException
     {
@@ -54,11 +54,10 @@ public class DatabaseJob
         }
     }
 
-
     /**
-     * method for getJobByRecruiter
-     * @param recruiterId Recruiter ID
-     * @return    returnObject
+     * Method for get job by Recruiter's ID
+     * @param recruiterId Recruiter's ID
+     * @return    job
      */
     public static ArrayList<Job> getJobByRecruiter(int recruiterId)
     {
@@ -74,11 +73,11 @@ public class DatabaseJob
     }
 
     /**
-     * method for getJobByCategory
-     * @param category Job Category
-     * @return    returnObject
+     * Method for get job by Its Category
+     * @param category Job's Category
+     * @return    job
      */
-    public static ArrayList<Job> getJobByCategory(JobCategory category)
+    public static ArrayList<Job> getJobByCategory(String category)
     {
         ArrayList<Job> returnObject = new ArrayList<Job>();
         for(Job jobObject: JOB_DATABASE)
@@ -92,9 +91,9 @@ public class DatabaseJob
     }
 
     /**
-     * method for addJob
+     * Method for add Job into database
      * @param job Job
-     * @return    JOB_DATABASE.add(job)
+     * @return job addition status
      */
     public static boolean addJob(Job job)
     {
@@ -103,10 +102,10 @@ public class DatabaseJob
     }
 
     /**
-     * method for removeJob
-     * @param id Job ID
-     * @return    boolean
-     * @throws JobNotFoundException Exception for Job
+     * Method for remove the job from database
+     * @param id Job's ID
+     * @return    job deletion status
+     * @throws JobNotFoundException Exception if Job not found
      */
     public static boolean removeJob(int id) throws JobNotFoundException
     {

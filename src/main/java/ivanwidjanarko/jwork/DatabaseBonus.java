@@ -3,10 +3,10 @@ package ivanwidjanarko.jwork;
 import java.util.ArrayList;
 
 /**
- * Class for DatabaseBonus
+ * Class for Database Bonus
  *
  * @author Ivan Widjanarko
- * @version 18-05-2021
+ * @version 19-06-2021
  */
 public class DatabaseBonus
 {
@@ -14,8 +14,8 @@ public class DatabaseBonus
     private static int lastId = 0;
 
     /**
-     * method for getBonusDatabase
-     * @return    BONUS_DATABASE
+     * Method for get Bonus' Database
+     * @return    Array List of BONUS_DATABASE
      */
     public static ArrayList<Bonus> getBonusDatabase()
     {
@@ -23,8 +23,8 @@ public class DatabaseBonus
     }
 
     /**
-     * method for getLastId
-     * @return    lastId
+     * Method for get Last ID from Bonus' Database
+     * @return    last ID
      */
     public static int getLastId()
     {
@@ -32,10 +32,10 @@ public class DatabaseBonus
     }
 
     /**
-     * method for getBonusById
-     * @param id Bonus ID
-     * @return    returnObject
-     * @throws BonusNotFoundException Exception for Bonus
+     * Method for get bonus by its ID
+     * @param id Bonus' ID
+     * @return    bonus
+     * @throws BonusNotFoundException Exception if Bonus not found
      */
     public static Bonus getBonusById(int id) throws BonusNotFoundException
     {
@@ -55,9 +55,9 @@ public class DatabaseBonus
     }
 
     /**
-     * method for getBonusByReferralCode
+     * Method for get Bonus by Its Referral Code
      * @param referralCode Referral Code
-     * @return    returnObject
+     * @return    bonus
      */
     public static Bonus getBonusByReferralCode(String referralCode)
     {
@@ -73,10 +73,10 @@ public class DatabaseBonus
     }
 
     /**
-     * method for addBonus
+     * Method for add Bonus into database
      * @param bonus Bonus
-     * @return    BONUS_DATABASE.add(bonus)
-     * @throws ReferralCodeAlreadyExistsException Exception for Referral Code
+     * @return    bonus addition status
+     * @throws ReferralCodeAlreadyExistsException Exception if Referral Code already exists
      */
     public static boolean addBonus(Bonus bonus) throws ReferralCodeAlreadyExistsException
     {
@@ -92,9 +92,9 @@ public class DatabaseBonus
     }
 
     /**
-     * method for activateBonus
-     * @param id Bonus ID
-     * @return    false
+     * Method for activate the bonus
+     * @param id Bonus' ID
+     * @return    bonus activation status
      */
     public static boolean activateBonus(int id)
     {
@@ -108,9 +108,9 @@ public class DatabaseBonus
     }
 
     /**
-     * method for deactivateBonus
-     * @param id Bonus ID
-     * @return    false
+     * Method for deactivate the bonus
+     * @param id Bonus' ID
+     * @return    bonus deactivation status
      */
     public static boolean deactivateBonus(int id)
     {
@@ -124,10 +124,10 @@ public class DatabaseBonus
     }
 
     /**
-     * method for removeBonus
-     * @param id Bonus ID
-     * @return    false
-     * @throws BonusNotFoundException Exception for Bonus
+     * Method for remove the bonus from database
+     * @param id Bonus' ID
+     * @return    bonus deletion status
+     * @throws BonusNotFoundException Exception if Bonus not found
      */
     public static boolean removeBonus(int id) throws BonusNotFoundException
     {

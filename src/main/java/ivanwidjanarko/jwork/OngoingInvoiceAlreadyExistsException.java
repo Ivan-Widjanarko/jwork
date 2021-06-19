@@ -1,10 +1,10 @@
 package ivanwidjanarko.jwork;
 
 /**
- * Class for OngoingInvoiceAlreadyExistsException
+ * Class for Ongoing Invoice Already Exists Exception
  *
  * @author Ivan Widjanarko
- * @version 18-05-2021
+ * @version 19-06-2021
  */
 
 public class OngoingInvoiceAlreadyExistsException extends Exception {
@@ -20,8 +20,8 @@ public class OngoingInvoiceAlreadyExistsException extends Exception {
     }
 
     /**
-     * method for getMessage
-     * @return    Message
+     * Method for get the exception message
+     * @return    exception message
      */
     public String getMessage() {
         return super.getMessage() + " already exists.";

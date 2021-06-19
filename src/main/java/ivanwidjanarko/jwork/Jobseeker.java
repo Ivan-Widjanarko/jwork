@@ -4,7 +4,6 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.regex.Pattern;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Class for Jobseeker
@@ -19,12 +18,12 @@ public class Jobseeker
     public Calendar joinDate;
     
     /**
-     * Constructor for objects of class Jobseeker
+     * Constructor 1 for objects of class Jobseeker
      * @param id Jobseeker's ID
      * @param name Jobseeker's name
      * @param email Jobseeker's email
      * @param password Jobseeker's password
-     * @param joinDate Calendar when the Jobseeker join the app
+     * @param joinDate Date when the Jobseeker register for the first time
      */
     public Jobseeker(int id, String name, String email, String password, Calendar joinDate)
     {
@@ -37,14 +36,14 @@ public class Jobseeker
     }
     
     /**
-     * Constructor for objects of class Jobseeker
+     * Constructor 2 for objects of class Jobseeker
      * @param id Jobseeker's ID
      * @param name Jobseeker's name
      * @param email Jobseeker's email
      * @param password Jobseeker's password
-     * @param year Year of Join
-     * @param month Month of Join
-     * @param dayOfMonth Day of Join
+     * @param year Year when the Jobseeker register for the first time
+     * @param month Month when the Jobseeker register for the first time
+     * @param dayOfMonth Day when the Jobseeker register for the first time
      */
     public Jobseeker(int id, String name, String email, String password, int year, int month, int dayOfMonth)
     {
@@ -56,7 +55,7 @@ public class Jobseeker
     }
     
     /**
-     * Constructor for objects of class Jobseeker
+     * Constructor 3 for objects of class Jobseeker
      * @param id Jobseeker's ID
      * @param name Jobseeker's name
      * @param email Jobseeker's email
@@ -73,7 +72,7 @@ public class Jobseeker
     }
 
     /**
-     * method for getId
+     * Method for get jobseeker's ID
      * @return id Jobseeker's ID
      */
     public int getId()
@@ -82,7 +81,7 @@ public class Jobseeker
     }
     
     /**
-     * method for getName
+     * Method for get jobseeker's name
      * @return name Jobseeker's name
      */
     public String getName()
@@ -91,7 +90,7 @@ public class Jobseeker
     }
     
     /**
-     * method for getEmail
+     * Method for get jobseeker's email
      * @return    Jobseeker's email
      */
     public String getEmail()
@@ -100,7 +99,7 @@ public class Jobseeker
     }
     
     /**
-     * method for getPassword
+     * Method for get jobseeker's password
      * @return    Jobseeker's password
      */
     public String getPassword()
@@ -109,8 +108,8 @@ public class Jobseeker
     }
     
     /**
-     * method for getJoinDate
-     * @return    Date when the Jobseeker join the app
+     * Method for get date when the Jobseeker register for the first time
+     * @return    Date when the Jobseeker register for the first time
      */
     public Calendar getJoinDate()
     {
@@ -118,7 +117,7 @@ public class Jobseeker
     }
     
     /**
-     * method for setId
+     * Method for set jobseeker's ID
      * @param id Jobseeker's ID
      */
     public void setId(int id)
@@ -127,7 +126,7 @@ public class Jobseeker
     }
     
     /**
-     * method for setName
+     * Method for set jobseeker's name
      * @param name Jobseeker's name
      */
     public void setName(String name)
@@ -136,7 +135,7 @@ public class Jobseeker
     }
     
     /**
-     * method for setEmail
+     * Method for set jobseeler's email
      * @param email Jobseeker's email
      */
     public void setEmail(String email)
@@ -151,7 +150,7 @@ public class Jobseeker
     }
     
     /**
-     * method for setPassword
+     * Method for set jobseeker's password
      * @param password Jobseeker's password
      */
     public void setPassword(String password)
@@ -166,8 +165,8 @@ public class Jobseeker
     }
     
     /**
-     * method for setJoinDate
-     * @param joinDate Date when the Jobseeker join the app
+     * Method 1 for set date when the Jobseeker register for the first time
+     * @param joinDate Date when the Jobseeker register for the first time
      */
     public void setJoinDate(Calendar joinDate)
     {
@@ -175,17 +174,20 @@ public class Jobseeker
     }
     
     /**
-     * method for setJoinDate
-     * @param year Year of Join Date
-     * @param month Month of Join Date
-     * @param dayOfMonth Day of Join Date
+     * Method 2 for set date when the Jobseeker register for the first time
+     * @param year Year when the Jobseeker register for the first time
+     * @param month Month when the Jobseeker register for the first time
+     * @param dayOfMonth Day when the Jobseeker register for the first time
      */
     public void setJoinDate(int year, int month, int dayOfMonth)
     {
         this.joinDate.set(year, month-1, dayOfMonth);
     }
-    
-    /**method for print detail*/
+
+    /**
+     * Method for print jobseeker's detail
+     * @return details
+     */
     public String toString(){
         SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy");
             
