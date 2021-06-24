@@ -12,7 +12,7 @@ import static ivanwidjanarko.jwork.DatabaseConnectionPostgre.connection;
  * Class for Database Bonus Postgre
  *
  * @author Ivan Widjanarko
- * @version 19-06-2021
+ * @version 25-06-2021
  */
 public class DatabaseBonusPostgre {
 
@@ -48,7 +48,6 @@ public class DatabaseBonusPostgre {
         catch (SQLException e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
         }
         return bonusObject;
     }
@@ -74,7 +73,6 @@ public class DatabaseBonusPostgre {
         catch (SQLException e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
         }
         return value;
     }
@@ -83,20 +81,33 @@ public class DatabaseBonusPostgre {
      * Method for get bonus by its ID
      * @param id Bonus' ID
      * @return    bonus
+     * @throws BonusNotFoundException Exception if Bonus not found
      */
-    public static Bonus getBonusById(int id) {
+    public static Bonus getBonusById(int id) throws BonusNotFoundException {
         Bonus value = null;
         c = connection();
         try {
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM bonus WHERE id = "+ id + ";");
+            ResultSet rs = stmt.executeQuery("SELECT count(*) FROM" +
+                    "(SELECT * FROM bonus WHERE id = " + id +
+                    ") AS id;");
             while (rs.next()) {
-                id = rs.getInt("id");
-                String referralCode = rs.getString("referral_code");
-                int extraFee = rs.getInt("extra_fee");
-                int minTotalFee = rs.getInt("min_total_fee");
-                boolean active = rs.getBoolean("active");
-                value = new Bonus(id, referralCode, extraFee, minTotalFee, active);
+                int count = rs.getInt("count");
+
+                if (count == 0) {
+                    throw new BonusNotFoundException(id);
+                }
+                else {
+                    rs = stmt.executeQuery("SELECT * FROM bonus WHERE id = "+ id + ";");
+                    while (rs.next()) {
+                        id = rs.getInt("id");
+                        String referralCode = rs.getString("referral_code");
+                        int extraFee = rs.getInt("extra_fee");
+                        int minTotalFee = rs.getInt("min_total_fee");
+                        boolean active = rs.getBoolean("active");
+                        value = new Bonus(id, referralCode, extraFee, minTotalFee, active);
+                    }
+                }
             }
             stmt.close();
             c.close();
@@ -105,7 +116,6 @@ public class DatabaseBonusPostgre {
         catch (SQLException e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
         }
         return value;
     }
@@ -136,7 +146,6 @@ public class DatabaseBonusPostgre {
         catch (SQLException e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
         }
         return value;
     }
@@ -145,8 +154,9 @@ public class DatabaseBonusPostgre {
      * Method for add Bonus into database
      * @param bonus Bonus
      * @return    bonus addition status
+     * @throws ReferralCodeAlreadyExistsException Exception if Referral Code already exists
      */
-    public static Bonus addBonus (Bonus bonus) {
+    public static Bonus addBonus (Bonus bonus) throws ReferralCodeAlreadyExistsException {
         c = connection();
         try {
             stmt = c.createStatement();
@@ -156,17 +166,28 @@ public class DatabaseBonusPostgre {
             int minTotalFee = bonus.getMinTotalFee();
             boolean active = bonus.getActive();
 
-            String query =  "INSERT INTO bonus (id, referral_code, extra_fee, min_total_fee, active)"
-                    + "VALUES (" + id + ",'" + referralCode + "','"+ extraFee + "','"+ minTotalFee + "','" + active + "');";
-            stmt.executeUpdate(query);
-            stmt.close();
-            c.close();
+            ResultSet rs = stmt.executeQuery("SELECT count(*) FROM" +
+                    "(SELECT * FROM bonus WHERE referral_code = '" + referralCode +
+                    "') AS referral_code;");
+            while (rs.next()) {
+                int count = rs.getInt("count");
+
+                if (count != 0) {
+                    throw new ReferralCodeAlreadyExistsException(bonus);
+                }
+                else {
+                    String query =  "INSERT INTO bonus (id, referral_code, extra_fee, min_total_fee, active)"
+                            + "VALUES (" + id + ",'" + referralCode + "','"+ extraFee + "','"+ minTotalFee + "','" + active + "');";
+                    stmt.executeUpdate(query);
+                    stmt.close();
+                    c.close();
+                }
+            }
         }
 
         catch (SQLException e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
             return null;
         }
         return bonus;
@@ -192,7 +213,6 @@ public class DatabaseBonusPostgre {
         catch (SQLException e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
         }
         return true;
     }
@@ -217,7 +237,6 @@ public class DatabaseBonusPostgre {
         catch (SQLException e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
         }
         return true;
     }
@@ -226,21 +245,33 @@ public class DatabaseBonusPostgre {
      * Method for remove the bonus from database
      * @param id Bonus' ID
      * @return    bonus deletion status
+     * @throws BonusNotFoundException Exception if Bonus not found
      */
-    public static boolean removeBonus(int id) {
+    public static boolean removeBonus(int id) throws BonusNotFoundException {
         c = connection();
         try {
             stmt = c.createStatement();
-            String query = "DELETE FROM bonus WHERE id = "+ id + ";";
-            stmt.executeUpdate(query);
-            stmt.close();
-            c.close();
+            ResultSet rs = stmt.executeQuery("SELECT count(*) FROM" +
+                    "(SELECT * FROM bonus WHERE id = " + id +
+                    ") AS id;");
+            while (rs.next()) {
+                int count = rs.getInt("count");
+
+                if (count == 0) {
+                    throw new BonusNotFoundException(id);
+                }
+                else {
+                    String query = "DELETE FROM bonus WHERE id = " + id + ";";
+                    stmt.executeUpdate(query);
+                    stmt.close();
+                    c.close();
+                }
+            }
         }
 
         catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
         }
         return true;
     }

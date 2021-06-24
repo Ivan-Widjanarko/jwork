@@ -7,7 +7,7 @@ import java.sql.DriverManager;
  * Class for Database Connection to PostgreSQL
  *
  * @author Ivan Widjanarko
- * @version 19-06-2021
+ * @version 25-06-2021
  */
 public class DatabaseConnectionPostgre {
 
@@ -28,7 +28,6 @@ public class DatabaseConnectionPostgre {
         catch(Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
         }
 
         return c;

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
  * Class for JobseekerController
  *
  * @author Ivan Widjanarko
- * @version 19-06-2021
+ * @version 25-06-2021
  */
 @RequestMapping("/jobseeker")
 @RestController
@@ -76,8 +76,7 @@ public class JobseekerController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public Boolean removeJobseeker(@RequestParam(value = "id") int id){
-        Boolean jobseeker = DatabaseJobseekerPostgre.removeJobseeker(id);
-        return jobseeker;
+    public Boolean removeJobseeker(@PathVariable(value = "id") int id) throws JobseekerNotFoundException {
+        return DatabaseJobseekerPostgre.removeJobseeker(id);
     }
 }

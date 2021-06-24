@@ -13,7 +13,7 @@ import static ivanwidjanarko.jwork.DatabaseConnectionPostgre.connection;
  * Class for Database Jobseeker Postgre
  *
  * @author Ivan Widjanarko
- * @version 19-06-2021
+ * @version 25-06-2021
  */
 public class DatabaseJobseekerPostgre {
 
@@ -51,7 +51,6 @@ public class DatabaseJobseekerPostgre {
         catch (SQLException e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
         }
         return jobseekerObject;
     }
@@ -77,7 +76,6 @@ public class DatabaseJobseekerPostgre {
         catch (SQLException e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
         }
         return value;
     }
@@ -86,31 +84,45 @@ public class DatabaseJobseekerPostgre {
      * Method for get jobseeker by its ID
      * @param id Jobseeker's ID
      * @return    jobseeker
+     * @throws JobseekerNotFoundException Exception if Jobseeker not found
      */
-    public static Jobseeker getJobseekerById(int id) {
+    public static Jobseeker getJobseekerById(int id) throws JobseekerNotFoundException {
         Jobseeker value = null;
         c = connection();
         try {
+            int count = 0;
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM jobseeker WHERE id = "+ id + ";");
+
+            ResultSet rs = stmt.executeQuery("SELECT count(*) FROM" +
+                    "(SELECT * FROM jobseeker WHERE id = " + id +
+                    ") AS id;");
             while (rs.next()) {
-                id = rs.getInt("id");
-                String name = rs.getString("name");
-                String email = rs.getString("email");
-                String password = rs.getString("password");
-                Date joinDate = rs.getDate("join_date");
-                Calendar calendar = new GregorianCalendar();
-                calendar.setTime(joinDate);
-                value = new Jobseeker(id, name, email, password, calendar);
+                count = rs.getInt("count");
             }
-            stmt.close();
+
+            if (count == 0) {
+                throw new JobseekerNotFoundException(id);
+            }
+            else {
+                rs = stmt.executeQuery("SELECT * FROM jobseeker WHERE id = "+ id + ";");
+                while (rs.next()) {
+                    id = rs.getInt("id");
+                    String name = rs.getString("name");
+                    String email = rs.getString("email");
+                    String password = rs.getString("password");
+                    Date joinDate = rs.getDate("join_date");
+                    Calendar calendar = new GregorianCalendar();
+                    calendar.setTime(joinDate);
+                    value = new Jobseeker(id, name, email, password, calendar);
+                }
+                stmt.close();
+            }
             c.close();
         }
 
         catch (SQLException e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
         }
         return value;
     }
@@ -119,10 +131,12 @@ public class DatabaseJobseekerPostgre {
      * Method for add Jobseeker into database
      * @param jobseeker Jobseeker
      * @return job addition status
+     * @throws EmailAlreadyExistsException Exception if Email already exists
      */
-    public static Jobseeker addJobseeker (Jobseeker jobseeker) {
+    public static Jobseeker addJobseeker (Jobseeker jobseeker) throws EmailAlreadyExistsException {
         c = connection();
         try {
+            int count = 0;
             stmt = c.createStatement();
             int id = jobseeker.getId();
             String name = jobseeker.getName();
@@ -135,17 +149,27 @@ public class DatabaseJobseekerPostgre {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String joinDate = sdf.format(date);
 
-            String query =  "INSERT INTO jobseeker (id, name, email, password, join_date)"
-                    + "VALUES (" + id + ",'" + name + "','"+ email + "','"+ password + "','" + joinDate + "');";
-            stmt.executeUpdate(query);
-            stmt.close();
+            ResultSet rs = stmt.executeQuery("SELECT count(*) FROM" +
+                    "(SELECT * FROM jobseeker WHERE email = '" + email +
+                    "') AS email;");
+            while (rs.next()) {
+                count = rs.getInt("count");
+            }
+            if (count != 0) {
+                throw new EmailAlreadyExistsException(jobseeker);
+            }
+            else {
+                String query = "INSERT INTO jobseeker (id, name, email, password, join_date)"
+                        + "VALUES (" + id + ",'" + name + "','" + email + "','" + password + "','" + joinDate + "');";
+                stmt.executeUpdate(query);
+                stmt.close();
+            }
             c.close();
         }
 
         catch (SQLException e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
             return null;
         }
         return jobseeker;
@@ -155,21 +179,33 @@ public class DatabaseJobseekerPostgre {
      * Method for remove the jobseeker from database
      * @param id Jobseeker's ID
      * @return    jobseeker deletion status
+     * @throws JobseekerNotFoundException Exception if Job not found
      */
-    public static boolean removeJobseeker(int id) {
+    public static boolean removeJobseeker(int id) throws JobseekerNotFoundException {
         c = connection();
         try {
+            int count = 0;
             stmt = c.createStatement();
-            String query = "DELETE FROM jobseeker WHERE id = "+ id + ";";
-            stmt.executeUpdate(query);
-            stmt.close();
+            ResultSet rs = stmt.executeQuery("SELECT count(*) FROM" +
+                    "(SELECT * FROM jobseeker WHERE id = " + id +
+                    ") AS id;");
+            while (rs.next()) {
+                count = rs.getInt("count");
+            }
+            if (count == 0) {
+                throw new JobseekerNotFoundException(id);
+            }
+            else {
+                String query = "DELETE FROM jobseeker WHERE id = " + id + ";";
+                stmt.executeUpdate(query);
+                stmt.close();
+            }
             c.close();
         }
 
         catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
         }
         return true;
     }
@@ -212,7 +248,6 @@ public class DatabaseJobseekerPostgre {
             if (id == 0) {
                 return null;
             }
-
             else {
                 jobseeker = new Jobseeker(id, name, email, password, cal);
                 return jobseeker;
@@ -222,9 +257,7 @@ public class DatabaseJobseekerPostgre {
         catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
             return null;
         }
     }
-
 }

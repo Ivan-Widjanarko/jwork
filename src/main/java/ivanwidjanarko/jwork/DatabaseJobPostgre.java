@@ -12,7 +12,7 @@ import static ivanwidjanarko.jwork.DatabaseConnectionPostgre.connection;
  * Class for Database Job Postgre
  *
  * @author Ivan Widjanarko
- * @version 19-06-2021
+ * @version 25-06-2021
  */
 public class DatabaseJobPostgre {
 
@@ -55,7 +55,6 @@ public class DatabaseJobPostgre {
         catch (SQLException e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
         }
         return jobObject;
     }
@@ -81,7 +80,6 @@ public class DatabaseJobPostgre {
         catch (SQLException e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
         }
         return value;
     }
@@ -90,27 +88,40 @@ public class DatabaseJobPostgre {
      * Method for get job by its ID
      * @param job_id Job's ID
      * @return    job
+     * @throws JobNotFoundException Exception if Job not found
      */
-    public static Job getJobById(int job_id) {
+    public static Job getJobById(int job_id) throws JobNotFoundException {
         Job value = null;
         c = connection();
         try {
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM job_recruiter_location WHERE job_id = "+ job_id + ";");
+            ResultSet rs = stmt.executeQuery("SELECT count(*) FROM" +
+                    "(SELECT * FROM job WHERE id = " + job_id +
+                    ") AS id;");
             while (rs.next()) {
-                job_id = rs.getInt("job_id");
-                String job_name = rs.getString("job_name");
-                int recruiter_id = rs.getInt("recruiter_id");
-                String recruiter_name = rs.getString("recruiter_name");
-                String recruiter_email = rs.getString("recruiter_email");
-                String recruiter_phone_number = rs.getString("recruiter_phone_number");
-                String location_province = rs.getString("location_province");
-                String location_city = rs.getString("location_city");
-                String location_description = rs.getString("location_description");
-                int job_fee = rs.getInt("job_fee");
-                String job_category = rs.getString("job_category");
-                value = new Job(job_id, job_name, new Recruiter(recruiter_id, recruiter_name, recruiter_email, recruiter_phone_number,
-                        new Location(location_province, location_city, location_description)), job_fee, job_category);
+                int count = rs.getInt("count");
+
+                if (count == 0) {
+                    throw new JobNotFoundException(job_id);
+                }
+                else {
+                    rs = stmt.executeQuery("SELECT * FROM job_recruiter_location WHERE job_id = " + job_id + ";");
+                    while (rs.next()) {
+                        job_id = rs.getInt("job_id");
+                        String job_name = rs.getString("job_name");
+                        int recruiter_id = rs.getInt("recruiter_id");
+                        String recruiter_name = rs.getString("recruiter_name");
+                        String recruiter_email = rs.getString("recruiter_email");
+                        String recruiter_phone_number = rs.getString("recruiter_phone_number");
+                        String location_province = rs.getString("location_province");
+                        String location_city = rs.getString("location_city");
+                        String location_description = rs.getString("location_description");
+                        int job_fee = rs.getInt("job_fee");
+                        String job_category = rs.getString("job_category");
+                        value = new Job(job_id, job_name, new Recruiter(recruiter_id, recruiter_name, recruiter_email, recruiter_phone_number,
+                                new Location(location_province, location_city, location_description)), job_fee, job_category);
+                    }
+                }
             }
             stmt.close();
             c.close();
@@ -119,7 +130,6 @@ public class DatabaseJobPostgre {
         catch (SQLException e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
         }
         return value;
     }
@@ -157,7 +167,6 @@ public class DatabaseJobPostgre {
         catch (SQLException e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
         }
         return value;
     }
@@ -195,7 +204,6 @@ public class DatabaseJobPostgre {
         catch (SQLException e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
         }
         return value;
     }
@@ -226,7 +234,6 @@ public class DatabaseJobPostgre {
         catch (SQLException e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
             return null;
         }
         return job;
@@ -236,21 +243,33 @@ public class DatabaseJobPostgre {
      * Method for remove the job from database
      * @param id Job's ID
      * @return    job deletion status
+     * @throws JobNotFoundException Exception if Job not found
      */
-    public static boolean removeJob(int id) {
+    public static boolean removeJob(int id) throws JobNotFoundException {
         c = connection();
         try {
             stmt = c.createStatement();
-            String query = "DELETE FROM job WHERE id = "+ id + ";";
-            stmt.executeUpdate(query);
-            stmt.close();
-            c.close();
+            ResultSet rs = stmt.executeQuery("SELECT count(*) FROM" +
+                    "(SELECT * FROM job WHERE id = " + id +
+                    ") AS id;");
+            while (rs.next()) {
+                int count = rs.getInt("count");
+
+                if (count == 0) {
+                    throw new JobNotFoundException(id);
+                }
+                else {
+                    String query = "DELETE FROM job WHERE id = " + id + ";";
+                    stmt.executeUpdate(query);
+                    stmt.close();
+                    c.close();
+                }
+            }
         }
 
         catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
-            System.exit(0);
         }
         return true;
     }

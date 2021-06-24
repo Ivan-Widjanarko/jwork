@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * Class for InvoiceController
  *
  * @author Ivan Widjanarko
- * @version 19-06-2021
+ * @version 25-06-2021
  */
 @RequestMapping("/invoice")
 @RestController
@@ -120,7 +120,7 @@ public class InvoiceController {
             DatabaseInvoice.addInvoice(bankPayment);
         }
 
-        catch (OngoingInvoiceAlreadyExistsException e) {
+        catch (OngoingInvoiceAlreadyExistsException | JobseekerNotFoundException | JobNotFoundException e) {
             System.out.println(e.getMessage());
         }
 
@@ -151,7 +151,7 @@ public class InvoiceController {
             DatabaseInvoice.addInvoice(ewalletPayment);
         }
 
-        catch (OngoingInvoiceAlreadyExistsException e) {
+        catch (OngoingInvoiceAlreadyExistsException | JobseekerNotFoundException | JobNotFoundException e) {
             System.out.println(e.getMessage());
         }
 
